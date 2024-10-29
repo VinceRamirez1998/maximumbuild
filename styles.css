@@ -1,0 +1,295 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default margin */
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: rgb(221, 217, 212);
+}
+
+header {
+    background: #22283E; /* Header background color */
+    color: white; /* Header text color */
+    padding: 20px 0; /* Compact header padding */
+}
+
+nav {
+    display: flex; /* Flexbox for navigation */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Max width for navigation */
+    margin: 0 auto; /* Center navigation */
+    padding: 0 20px; /* Side padding */
+}
+
+.logo img {
+    max-width: 150px; /* Control logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.nav-links {
+    list-style: none; /* Remove default list style */
+    display: flex; /* Flexbox for links */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hero section styles */
+.hero {
+    position: relative; /* Position for child elements */
+    text-align: center; /* Center text */
+    background-image: url('assets/house.jpg'); /* Background image */
+    background-size: cover; /* Cover entire section */
+    background-position: center; /* Center image */
+    height: 48vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    transition: filter 0.3s ease; /* Transition for the filter effect */
+}
+
+.hero p {
+   font-size: 22px;
+   font: bold;
+   font-family: 'montserrat';
+}
+
+.hero:before {
+    content: '';
+    position: absolute; /* Cover entire hero */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(34, 40, 62, 0.5); /* Semi-transparent overlay */
+    backdrop-filter: blur(5px); /* Blur effect */
+    z-index: 1; /* Behind text */
+}
+
+.hero-content {
+    position: relative; /* Positioning for overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset for centering */
+    z-index: 2; /* Above background */
+    color: white; /* Default text color */
+    padding: 20px; /* Space around content */
+    text-align: center; /* Center text */
+    transition: transform 2s ease, color 0.3s; /* Smooth zoom and color transition */
+}
+
+/* Add zoom-in effect on hover */
+.hero:hover .hero-content {
+    transform: translate(-50%, -50%) scale(1.1); /* Zoom in */
+}
+
+/* Button styles */
+.cta-button {
+    background: #22283E; /* Button background */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 15px; /* Space above button */
+    display: inline-block; /* Inline block for centering */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+
+
+/* Darken effect on hover */
+.hero:hover {
+    filter: brightness(45%); /* Darken image on hover */
+}
+
+/* Section styles */
+section {
+    /* padding: 20px; */
+    width: 100%; /* Make section full width */
+    /* Remove or adjust max-width */
+    /* max-width: 1200px; */ /* Optional: Comment out or increase this */
+    /* margin: 20px auto;  */
+    display: flex; /* Allow for flex items if needed */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+
+/* Service links styles */
+.service-links {
+    display: flex; /* Flexbox for alignment */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center items */
+    margin-top: 20px; /* Space above service links */
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative; /* Position relative for absolute child elements */
+    max-width: 100%; /* Full width */
+    margin: auto; /* Center the slideshow */
+}
+
+/* Slide styles */
+.slide {
+    display: none; /* Hide slides by default */
+    position: relative; /* Position for text overlay */
+}
+
+.slide img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Text overlay styles */
+.text {
+    position: absolute; /* Position text on image */
+    bottom: 8px; /* Position text */
+    left: 16px; /* Position text */
+    color: white; /* Text color */
+    font-size: 20px; /* Text size */
+    background: rgba(0, 0, 0, 0.5); /* Background for readability */
+    padding: 10px; /* Padding around text */
+}
+
+.service-links ul {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox for services */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center items */
+}
+
+.service-links li {
+    margin: 10px 15px; /* Space between service items */
+}
+
+/* About content styles */
+.about-content {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px; /* Space above about content */
+}
+
+.team-photo {
+    max-width: 300px; /* Limit team photo size */
+    margin-left: 20px; /* Space to the left of the photo */
+}
+
+/* Service area styles */
+.service-area {
+    text-align: center; /* Center text */
+    margin: 20px; /* Space around service areas */
+}
+
+.service-area img {
+    width: 100px; /* Fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Project styles */
+.project {
+    margin: 10px 0; /* Margin for projects */
+}
+
+/* Footer styles */
+footer {
+    background: #22283E; /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center; /* Center text */
+    padding: 15px 0; /* Padding for footer */
+}
+
+/* Navigation arrows */
+.prev, .next {
+    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute; /* Positioning for arrows */
+    top: 50%; /* Center vertically */
+    width: auto; /* Automatic width */
+    padding: 16px; /* Space around arrows */
+    color: white; /* Arrow color */
+    font-size: 18px; /* Arrow size */
+    transition: 0.6s ease; /* Smooth transition */
+    border-radius: 0 3px 3px 0; /* Rounded corners */
+    user-select: none; /* Prevent text selection */
+}
+
+.next {
+    right: 0; /* Align right */
+    border-radius: 3px 0 0 3px; /* Adjust border radius */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Background on hover */
+}
+
+
+.container {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px; /* Creates a 3D effect */
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    animation: rotate360 60s infinite forwards linear; /* Continuous rotation */
+}
+
+.carousel__face { 
+    position: absolute;
+    width: 313px;
+    height: 170px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(37, 37, 37, 0.5); /* Dark overlay */
+    display: flex;
+    color:white;
+}
+
+span {
+    margin: auto;
+    font-size: 1rem; /* Text size */
+}
+
+.carousel__face:nth-child(1) { background-image: url("assets/house.jpg"); transform: rotateY(0deg) translateZ(430px); }
+.carousel__face:nth-child(2) { background-image: url("assets/house2.jpg"); transform: rotateY(40deg) translateZ(430px); }
+.carousel__face:nth-child(3) { background-image: url("assets/house.jpg"); transform: rotateY(80deg) translateZ(430px); }
+.carousel__face:nth-child(4) { background-image: url("assets/house2.jpg"); transform: rotateY(120deg) translateZ(430px); }
+.carousel__face:nth-child(5) { background-image: url("assets/house.jpg"); transform: rotateY(160deg) translateZ(430px); }
+.carousel__face:nth-child(6) { background-image: url("assets/house2.jpg"); transform: rotateY(200deg) translateZ(430px); }
+.carousel__face:nth-child(7) { background-image: url("assets/house.jpg"); transform: rotateY(240deg) translateZ(430px); }
+.carousel__face:nth-child(8) { background-image: url("assets/house2.jpg"); transform: rotateY(280deg) translateZ(430px); }
+.carousel__face:nth-child(9) { background-image: url("assets/house.jpg"); transform: rotateY(320deg) translateZ(430px); }
+.carousel__face:nth-child(10) { background-image: url("assets/house2.jpg"); transform: rotateY(280deg) translateZ(430px); }
+
+@keyframes rotate360 {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+}
+
+
+.carousel-heading {
+    font-size: 2.5rem; /* Size of the heading */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center align the text */
+    color: rgb(75, 75, 75); /* Text color */
+    margin: 20px 0; /* Vertical spacing */
+    z-index: 3; /* Ensure it's above other elements */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    white-space: nowrap; /* Prevent text from breaking to a new line */
+    overflow: visible; /* Allow text to overflow */
+    display: inline-block; /* Make the container fit the text */
+    font-family: 'montserrat';
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
