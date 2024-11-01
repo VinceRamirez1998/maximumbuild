@@ -3,12 +3,14 @@ body {
     margin: 0; /* Remove default margin */
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll */
-    background-color: rgb(221, 217, 212);
+    background-color: white;
+    color: black;
 }
 
 header {
-    background: #22283E; /* Header background color */
-    color: white; /* Header text color */
+    /* background: #22283E;  */
+    background: #f8f9fa; /* Light header background */
+    color: black; /* Header text color */
     padding: 20px 0; /* Compact header padding */
 }
 
@@ -29,14 +31,21 @@ nav {
 .nav-links {
     list-style: none; /* Remove default list style */
     display: flex; /* Flexbox for links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    flex-grow: 1; /* Allow nav-links to take up available space */
+    justify-content: center; /* Center nav-links */
+    font-size: 18px;
+    font-family: 'Poppins';
 }
 
+
 .nav-links li {
-    margin-left: 20px; /* Space between links */
+    margin-left: 15px; /* Space between links */
 }
 
 .nav-links a {
-    color: white; /* Link text color */
+    color: black; /* Link text color */
     text-decoration: none; /* Remove underline */
 }
 
@@ -66,7 +75,7 @@ nav {
     right: 0;
     bottom: 0;
     background: rgba(34, 40, 62, 0.5); /* Semi-transparent overlay */
-    backdrop-filter: blur(5px); /* Blur effect */
+    /* backdrop-filter: blur(5px); */
     z-index: 1; /* Behind text */
 }
 
@@ -89,14 +98,21 @@ nav {
 
 /* Button styles */
 .cta-button {
-    background: #22283E; /* Button background */
-    color: white; /* Button text color */
-    padding: 10px 20px; /* Button padding */
+     background-color: #22283E; /* Darker background on hover */
+    color:white;
+    padding: 5px 12px; /* Adjust button padding */
     text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners */
-    margin-top: 15px; /* Space above button */
-    display: inline-block; /* Inline block for centering */
-    transition: background 0.3s; /* Smooth background transition */
+    border-radius: 25px; /* Rounded corners */
+    border: 2px solid #22283E;
+    margin-left: 5px; /* Space from the toggle */
+    transition: background-color 0.3s; /* Smooth background transition */
+    font-family: 'Poppins';
+}
+
+.cta-button:hover {
+    background-color: #22283E; /* Darker background on hover */
+    color:white;
+    font-family: 'Poppins';
 }
 
 
@@ -173,6 +189,7 @@ section {
     display: flex; /* Flexbox for alignment */
     align-items: center; /* Center items vertically */
     margin-top: 20px; /* Space above about content */
+    color:rgb(0, 0, 0);
 }
 
 .team-photo {
@@ -184,6 +201,7 @@ section {
 .service-area {
     text-align: center; /* Center text */
     margin: 20px; /* Space around service areas */
+    color:white;
 }
 
 .service-area img {
@@ -194,6 +212,7 @@ section {
 /* Project styles */
 .project {
     margin: 10px 0; /* Margin for projects */
+    color:rgb(0, 0, 0);
 }
 
 /* Footer styles */
@@ -233,6 +252,8 @@ footer {
     width: 320px;
     margin: 100px auto 0 auto;
     perspective: 1000px; /* Creates a 3D effect */
+    padding-top:50px;
+    margin-top:0;
 }
 
 .carousel {
@@ -241,6 +262,9 @@ footer {
     height: 100%;
     transform-style: preserve-3d; 
     animation: rotate360 60s infinite forwards linear; /* Continuous rotation */
+    margin-top: 30px;
+    
+
 }
 
 .carousel__face { 
@@ -253,13 +277,46 @@ footer {
     background-size: cover;
     box-shadow: inset 0 0 0 2000px rgba(37, 37, 37, 0.5); /* Dark overlay */
     display: flex;
-    color:white;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure text stays within bounds */
+    transition: filter 0.3s ease; /* Smooth transition for darkening */
+    color: white;
+}
+.carousel__face:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glow effect */
 }
 
-span {
-    margin: auto;
-    font-size: 1rem; /* Text size */
+
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the text */
+    opacity: 1; /* Initially visible */
+    transition: opacity 0.3s ease; /* Smooth transition */
 }
+
+.description {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) translateY(50%); /* Start below center */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    color: white;
+}
+
+.carousel__face:hover .text-overlay {
+    opacity: 0; /* Hide text on hover */
+}
+
+.carousel__face:hover .description {
+    opacity: 1; /* Show description on hover */
+    transform: translate(-50%, -50%) translateY(0); /* Move to center */
+}
+
+
 
 .carousel__face:nth-child(1) { background-image: url("assets/house.jpg"); transform: rotateY(0deg) translateZ(430px); }
 .carousel__face:nth-child(2) { background-image: url("assets/house2.jpg"); transform: rotateY(40deg) translateZ(430px); }
@@ -282,14 +339,167 @@ span {
     font-size: 2.5rem; /* Size of the heading */
     font-weight: bold; /* Bold text */
     text-align: center; /* Center align the text */
-    color: rgb(75, 75, 75); /* Text color */
+    color: rgb(0, 0, 0);
     margin: 20px 0; /* Vertical spacing */
     z-index: 3; /* Ensure it's above other elements */
     transition: color 0.3s ease; /* Smooth transition for color change */
     white-space: nowrap; /* Prevent text from breaking to a new line */
     overflow: visible; /* Allow text to overflow */
     display: inline-block; /* Make the container fit the text */
-    font-family: 'montserrat';
+    font-family: 'Poppins';
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+}
+
+
+#reviews{
+    color: rgb(0, 0, 0);
+}
+
+#contact{
+    color: rgb(0, 0, 0);
+}
+
+#why-us{
+    color:black;
+}
+
+span {
+    margin: auto;
+    font-size: 1rem; /* Text size */
+}
+
+#why-us{
+color:white;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: black; /* Dark background */
+    color: white; /* Default text color */
+}
+
+body.dark-mode header {
+    background: black; /* Dark header background */
+}
+
+body.dark-mode .nav-links a {
+    color: white; /* Link text color in dark mode */
+}
+
+body.dark-mode .cta-button {
+    background: #22283E; /* Button background for dark mode */
+    color: white; /* Button text color */
+}
+
+body.dark-mode footer {
+    background: #22283E; /* Dark footer background */
+    color: white; /* Footer text color */
+}
+
+body.dark-mode .carousel-heading{
+color:white;
+}
+
+body.dark-mode #reviews{
+    color:white;
+}
+
+body.dark-mode #contact{
+    color:white;
+}
+
+body.dark-mode .project{
+    color:white;
+}
+
+body.dark-mode #why-us{
+    color:white;
+}
+
+body.dark-mode .about-content{
+    color:white;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+    position: relative;
+    display: flex;
+    width: 60px; /* Width of the toggle */
+    height: 34px; /* Height of the toggle */
+    align-items: center; /* Center toggle vertically */
+    margin-left: 10px; /* Reduce margin for a closer fit */
+}
+
+.toggle-input {
+    opacity: 0; /* Hide the default checkbox */
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #22283E; /* Background color for off state */
+    transition: background-color 0.3s;
+    border-radius: 34px; /* Round corners */
+    display: flex; /* Flexbox to position icons */
+    align-items: center; /* Center icons vertically */
+    justify-content: space-between; /* Space icons */
+    padding: 0 8px; /* Padding for icons */
+    z-index: 1; /* Ensure label is above the background */
+    padding: 0 5px;
+}
+
+.toggle-label .toggle-ball {
+    position: absolute;
+    width: 26px; /* Size of the ball */
+    height: 26px; /* Size of the ball */
+    left: 4px; /* Positioning for the ball */
+    bottom: 4px; /* Positioning for the ball */
+    background-color: white; /* Ball color */
+    border-radius: 50%; /* Round shape */
+    transition: transform 0.3s; /* Smooth transition */
+    z-index: 2; /* Ensure ball is above the label */
+}
+
+/* Check input to change label background and ball position */
+.toggle-input:checked + .toggle-label {
+    background-color: white; /* Background color for on state */
+}
+
+.toggle-input:checked + .toggle-label .toggle-ball {
+    transform: translateX(26px); /* Move the ball */
+}
+
+/* Icon styles */
+.icon {
+    font-size: 18px; /* Icon size */
+    color: rgb(85, 84, 84); /* Icon color */
+    transition: opacity 0.3s; /* Smooth transition */
+    z-index: 3; /* Ensure icons are above everything */
+}
+
+/* Show sun icon in light mode */
+.toggle-input:not(:checked) + .toggle-label .sun-icon {
+    opacity: 1; /* Show sun icon */
+}
+
+/* Show moon icon in dark mode */
+.toggle-input:checked + .toggle-label .moon-icon {
+    opacity: 1; /* Show moon icon */
+}
+
+/* Hide moon icon in light mode */
+.toggle-input:not(:checked) + .toggle-label .moon-icon {
+    opacity: 0; /* Hide moon icon */
+}
+
+/* Hide sun icon in dark mode */
+.toggle-input:checked + .toggle-label .sun-icon {
+    opacity: 0; /* Hide sun icon */
 }

@@ -31,3 +31,7 @@ slideInterval = setInterval(showSlides, 500); // Change image every 3 seconds
 
 // Initial call to show the first slide
 showSlides();
+
+
+
+
