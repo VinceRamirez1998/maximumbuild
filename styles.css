@@ -21,9 +21,6 @@ nav {
     max-width: 1200px; /* Max width for navigation */
     margin: 0 auto; /* Center navigation */
     padding: 0 20px; /* Side padding */
-    /* background-color: #fff; /* Light mode background */
-    /* color: #333; Light mode text color */
-    /* border-radius: 20px; */ 
 }
 
 .logo img {
@@ -48,7 +45,7 @@ nav {
 }
 
 .nav-links a {
-    color: black !important;
+    color: black; /* Link text color */
     text-decoration: none; /* Remove underline */
 }
 
@@ -320,11 +317,6 @@ footer {
     transform: translate(-50%, -50%) translateY(0); /* Move to center */
 }
 
-/* Default styles for the burger menu in light mode */
-.menu-toggle div {
-    background: #333; /* Light mode burger color */
-}
-
 
 
 .carousel__face:nth-child(1) { background-image: url("assets/house.jpg"); transform: rotateY(0deg) translateZ(430px); }
@@ -393,7 +385,7 @@ body.dark-mode header {
 }
 
 body.dark-mode .nav-links a {
-    color: white; /* Link text color in dark mode */
+    color: black; /* Link text color in dark mode */
 }
 
 body.dark-mode .cta-button {
@@ -430,13 +422,6 @@ body.dark-mode .about-content{
     color:white;
 }
 
-body.dark-mode .menu-toggle div {
-    background: #fff; /* Dark mode burger color */
-}
-
-body.dark-mode .nav-links a {
-    color: #fff; /* Dark mode text color */
-}
 
 
 /* Toggle Switch Styles */
@@ -524,20 +509,38 @@ body.dark-mode .nav-links a {
 
 
 /* Responsive styles */
+/* Responsive styles */
 @media (max-width: 768px) {
     .nav-links {
         display: none; /* Hide links by default */
         flex-direction: column; /* Stack links vertically */
         position: absolute;
-        background-color: #fff; /* Match nav background */
+        background-color: #fff; /* Background color for light mode */
         top: 60px; /* Adjust based on nav height */
         right: 0;
         width: 100%; /* Full width */
         z-index: 10;
+        padding: 1rem; /* Add padding for the dropdown */
     }
 
     .nav-links.active {
         display: flex; /* Show links when active */
+    }
+
+    /* Styling links */
+    .nav-links a {
+        text-decoration: none;
+        color: #000; /* Default text color for light mode */
+        padding: 0.5rem 1rem; /* Padding for links */
+    }
+
+    /* Dark mode styles for nav links */
+    body.dark-mode .nav-links {
+        background-color: #333; /* Dark mode dropdown background */
+    }
+
+    body.dark-mode .nav-links a {
+        color: #fff; /* Text color for dark mode */
     }
 
     .toggle-container {
@@ -553,10 +556,6 @@ body.dark-mode .nav-links a {
         cursor: pointer;
     }
 
-    .toggle-ball {
-        /* Add styles for the toggle ball */
-    }
-
     /* Show hamburger icon */
     .menu-toggle {
         display: flex;
@@ -567,11 +566,17 @@ body.dark-mode .nav-links a {
     .menu-toggle div {
         width: 25px;
         height: 3px;
-        background: #333;
+        background: #000; /* Default burger color for light mode */
         margin: 4px 0;
         transition: 0.3s;
     }
+
+    /* Dark mode styles for the burger menu */
+    body.dark-mode .menu-toggle div {
+        background: #fff; /* Change burger color to white in dark mode */
+    }
 }
+
 
 @media (min-width: 769px) {
     .menu-toggle {
