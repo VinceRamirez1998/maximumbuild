@@ -21,6 +21,9 @@ nav {
     max-width: 1200px; /* Max width for navigation */
     margin: 0 auto; /* Center navigation */
     padding: 0 20px; /* Side padding */
+    /* background-color: #fff; /* Light mode background */
+    /* color: #333; Light mode text color */
+    /* border-radius: 20px; */ 
 }
 
 .logo img {
@@ -45,7 +48,7 @@ nav {
 }
 
 .nav-links a {
-    color: black; /* Link text color */
+    color: black !important;
     text-decoration: none; /* Remove underline */
 }
 
@@ -94,6 +97,7 @@ nav {
 /* Add zoom-in effect on hover */
 .hero:hover .hero-content {
     transform: translate(-50%, -50%) scale(1.1); /* Zoom in */
+    
 }
 
 /* Button styles */
@@ -119,7 +123,7 @@ nav {
 
 /* Darken effect on hover */
 .hero:hover {
-    filter: brightness(45%); /* Darken image on hover */
+    filter: brightness(75%); /* Darken image on hover */
 }
 
 /* Section styles */
@@ -316,6 +320,11 @@ footer {
     transform: translate(-50%, -50%) translateY(0); /* Move to center */
 }
 
+/* Default styles for the burger menu in light mode */
+.menu-toggle div {
+    background: #333; /* Light mode burger color */
+}
+
 
 
 .carousel__face:nth-child(1) { background-image: url("assets/house.jpg"); transform: rotateY(0deg) translateZ(430px); }
@@ -421,6 +430,15 @@ body.dark-mode .about-content{
     color:white;
 }
 
+body.dark-mode .menu-toggle div {
+    background: #fff; /* Dark mode burger color */
+}
+
+body.dark-mode .nav-links a {
+    color: #fff; /* Dark mode text color */
+}
+
+
 /* Toggle Switch Styles */
 .toggle-container {
     position: relative;
@@ -502,4 +520,65 @@ body.dark-mode .about-content{
 /* Hide sun icon in dark mode */
 .toggle-input:checked + .toggle-label .sun-icon {
     opacity: 0; /* Hide sun icon */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        background-color: #fff; /* Match nav background */
+        top: 60px; /* Adjust based on nav height */
+        right: 0;
+        width: 100%; /* Full width */
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .toggle-container {
+        margin-left: auto; /* Move toggle to the right */
+    }
+
+    /* Styles for toggle input */
+    .toggle-input {
+        display: none; /* Hide the checkbox */
+    }
+
+    .toggle-label {
+        cursor: pointer;
+    }
+
+    .toggle-ball {
+        /* Add styles for the toggle ball */
+    }
+
+    /* Show hamburger icon */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background: #333;
+        margin: 4px 0;
+        transition: 0.3s;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Hide hamburger icon on larger screens */
+    }
+
+    .nav-links {
+        display: flex; /* Show links in a row */
+    }
 }
