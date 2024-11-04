@@ -309,7 +309,7 @@ section {
     }
 
     .about-image img {
-        max-width: 120px; /* Full width for very small screens */
+        max-width: 360px; /* Full width for very small screens */
         height: auto; /* Maintain aspect ratio */
         
     }
