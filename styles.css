@@ -290,7 +290,7 @@ section {
 
 @media (max-width: 480px) {
     .about-section h2 {
-        font-size: 2em !important; /* Adjust header size for smaller screens */
+        font-size: 1.1rem !important; /* Adjust header size for smaller screens */
         font-family: 'Poppins';
         font-weight: bold !important; 
         color: black;
@@ -582,12 +582,19 @@ body {
     align-items: center; /* Center vertically */
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .carousel-heading{
-    font-size: 1.3rem;
+    .carousel-heading {
+        font-size: 1.3rem !important; /* Smaller font size for tablets */
     }
-
 }
+
+@media (max-width: 480px) {
+    .carousel-heading {
+        font-size: 1.1rem !important; /* Smaller font size for mobile */
+    }
+}
+
 
 
 #reviews{
