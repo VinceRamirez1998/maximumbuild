@@ -99,7 +99,7 @@ nav {
 
 /* Button styles */
 .cta-button {
-     background-color: #22283E; /* Darker background on hover */
+    background-color: #22283E; /* Darker background on hover */
     color:white;
     padding: 5px 12px; /* Adjust button padding */
     text-decoration: none; /* Remove underline */
@@ -189,8 +189,8 @@ section {
     margin-top: 520px;
     background-color: #f9f9f9;
     text-align: center;
-    border-top: 1px solid #22283E;
-    border-bottom: 1px solid #22283E;
+    /* border-top: 1px solid #22283E;
+    border-bottom: 1px solid #22283E; */
     padding-bottom: 40px;
 }
 
@@ -342,20 +342,80 @@ section {
 
 /* Service area styles */
 .service-area {
-    text-align: center; /* Center text */
-    margin: 20px; /* Space around service areas */
+    flex: 0 1 calc(33.33% - 20px); /* Adjust the width of each service area */
+    margin-bottom: 20px; /* Space below each service area */
+    box-sizing: border-box; /* Include padding/border in width calculation */
+    overflow: hidden;
     color:white;
+   
+}
+.service-content {
+    position: relative;
+    text-align: center;
+    border-radius: 8px; /* Optional: rounded corners */
+    padding: 20px; /* Add padding around content */
+    text-align: center; /* Center text in the content */
+}
+
+
+.service-content img {
+    width: 450px; /* Fixed width */
+    height: 350px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    transition: transform 0.3s ease; /* Transition for image size */
+    border-radius: 30px;
+}
+
+.service-area:hover .service-content img {
+    transform: scale(1.05); /* Enlarge the image on hover */
+}
+
+.service-content .description {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.service-area:hover img {
+    filter: brightness(0.6); /* Darken the image */
+}
+
+.service-area:hover .description {
+    display: block; /* Show description on hover */
 }
 
 .service-area img {
-    width: 100px; /* Fixed width for images */
-    height: auto; /* Maintain aspect ratio */
+    width: 420px; /* Fixed width for images */
+    height: 250px; /* Maintain aspect ratio */
 }
 
 /* Project styles */
 .project {
     margin: 10px 0; /* Margin for projects */
-    color:rgb(0, 0, 0);
+    color:rgb(255, 18, 18);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .service-area {
+        flex: 0 1 calc(50% - 20px); /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-area {
+        flex: 0 1 100%; /* One item per row on small screens */
+    }
+
+    .service-area img {
+        width: 320px; /* Fixed width for images */
+    }
 }
 
 /* Footer styles */
@@ -534,6 +594,36 @@ body {
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
     color: white;
+    z-index: 1;
+}
+.service-area:before {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Start fully above */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    transition: bottom 0.5s ease; /* Smooth transition */
+    z-index: 0; /* Place it behind the content */
+}
+
+.service-area:hover:before {
+    bottom: 0; /* Slide down on hover */
+}
+
+.service-area:hover .description {
+    display: block; /* Show description on hover */
+    animation: fadeIn 0.5s forwards; /* Optional: Fade in effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .carousel__face:hover .text-overlay {
@@ -850,3 +940,5 @@ body.dark-mode .about-content{
         display: flex; /* Show links in a row */
     }
 }
+
+
