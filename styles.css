@@ -185,12 +185,154 @@ section {
     margin: 10px 15px; /* Space between service items */
 }
 
-/* About content styles */
+.about-section {
+    margin-top: 520px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-top: 1px solid #22283E;
+    border-bottom: 1px solid #22283E;
+    padding-bottom: 40px;
+}
+
+.about-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #22283E;
+    font-weight: bold;
+}
+
 .about-content {
-    display: flex; /* Flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    margin-top: 20px; /* Space above about content */
-    color:rgb(0, 0, 0);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%; /* Responsive width */
+    max-width: 350px; /* Max width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s, transform 0.3s;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 2;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.about-button {
+    text-align: center;
+}
+
+.about-button a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #22283E;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.about-button a:hover {
+    background-color: #555555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .about-image {
+        margin-bottom: 20px; /* Space between images and text */
+        padding: 0 15px; /* Add horizontal padding to create space */
+    }
+
+    .about-text {
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .about-image img {
+        max-width: 420px; /* Responsive width for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+   
+    }
+    
+    .about-section h2 {
+        font-size: 1.3em !important; /* Adjust header size for smaller screens */
+        font-family: 'Poppins';
+        font-weight: bold !important; 
+        color: black;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section h2 {
+        font-size: 2em !important; /* Adjust header size for smaller screens */
+        font-family: 'Poppins';
+        font-weight: bold !important; 
+        color: black;
+    }
+
+    .about-text p {
+        font-size: 1em; /* Adjust paragraph size for smaller screens */
+    }
+
+    .about-button a {
+        padding: 10px 20px; /* Adjust button padding */
+    }
+
+    .about-image {
+        padding: 0 10px; /* Add horizontal padding for very small screens */
+    }
+
+    .about-image img {
+        max-width: 120px; /* Full width for very small screens */
+        height: auto; /* Maintain aspect ratio */
+        
+    }
+}
+
+
+
+
+/* About content styles */
+#about img {
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+#about img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(5, 5, 5, 0.3) !important; /* Softer glow */
+    transform: scale(1.02); /* Slightly less scale for a more subtle effect */
+}
+
+
+#about img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image */
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glow effect */
 }
 
 .team-photo {
@@ -217,12 +359,98 @@ section {
 }
 
 /* Footer styles */
-footer {
-    background: #22283E; /* Footer background color */
-    color: white; /* Footer text color */
-    text-align: center; /* Center text */
-    padding: 15px 0; /* Padding for footer */
+body {
+    margin: 0; /* Reset body margins */
 }
+
+.footer {
+    width: 100%;
+    background-color: #22283E;
+    color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Aligns content to the edges */
+    align-items: center; /* Vertically centers content */
+    max-width: 1200px; /* Optional: Limit max width for larger screens */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Adds padding to the sides */
+    height: 135px;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1; /* Takes up equal space */
+}
+
+.footer-center {
+    flex: 2; /* Takes up more space for center content */
+    text-align: center; /* Centers text within this div */
+}
+
+.footer h2 {
+    margin: 0 0 10px;
+    font-size: 1.8em;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+.social-icon {
+    font-size: 24px; /* Set the size of the icons */
+    color: white; /* Icon color */
+    margin-left: 10px; /* Space between icons */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-icon:hover {
+    color: #00bcd4; /* Change color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        height: auto; /* Allow height to adjust */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .footer-left,
+    .footer-right {
+        text-align: center; /* Center align left and right content */
+        margin-bottom: 10px; /* Space between sections */
+    }
+
+    .social-icon {
+        font-size: 20px; /* Slightly smaller icons on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer h2 {
+        font-size: 1.5em; /* Adjust header size for smaller screens */
+    }
+
+    .footer p {
+        font-size: 0.9em; /* Adjust paragraph size for smaller screens */
+    }
+}
+
+
 
 /* Navigation arrows */
 .prev, .next {
@@ -319,6 +547,8 @@ footer {
 
 
 
+
+
 .carousel__face:nth-child(1) { background-image: url("assets/house.jpg"); transform: rotateY(0deg) translateZ(430px); }
 .carousel__face:nth-child(2) { background-image: url("assets/house2.jpg"); transform: rotateY(40deg) translateZ(430px); }
 .carousel__face:nth-child(3) { background-image: url("assets/house.jpg"); transform: rotateY(80deg) translateZ(430px); }
@@ -350,6 +580,13 @@ footer {
     font-family: 'Poppins';
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+}
+
+@media (max-width: 768px) {
+    .carousel-heading{
+    font-size: 1.3rem;
+    }
+
 }
 
 
