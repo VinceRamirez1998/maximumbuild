@@ -45,7 +45,7 @@ nav {
 }
 
 .nav-links a {
-    color: black; /* Link text color */
+    color: black !important; /* Link text color */
     text-decoration: none; /* Remove underline */
 }
 
@@ -387,6 +387,10 @@ body.dark-mode header {
 body.dark-mode .nav-links a {
     color: black; /* Link text color in dark mode */
 }
+ /* Dark mode styles for nav links */
+ body.dark-mode .nav-links li a {
+   color: white !important; /* Dark mode dropdown background */
+}
 
 body.dark-mode .cta-button {
     background: #22283E; /* Button background for dark mode */
@@ -509,38 +513,52 @@ body.dark-mode .about-content{
 
 
 /* Responsive styles */
-/* Responsive styles */
 @media (max-width: 768px) {
     .nav-links {
         display: none; /* Hide links by default */
         flex-direction: column; /* Stack links vertically */
-        position: absolute;
+        position: absolute; /* Position it absolutely */
         background-color: #fff; /* Background color for light mode */
         top: 60px; /* Adjust based on nav height */
-        right: 0;
+        right: 0; /* Align to the right */
         width: 100%; /* Full width */
-        z-index: 10;
+        z-index: 10; /* Ensure it appears above other content */
         padding: 1rem; /* Add padding for the dropdown */
     }
 
     .nav-links.active {
         display: flex; /* Show links when active */
+        margin-top: 60px;
+        padding-top: 20px;
     }
 
     /* Styling links */
     .nav-links a {
-        text-decoration: none;
+        text-decoration: none; /* Remove underline */
         color: #000; /* Default text color for light mode */
         padding: 0.5rem 1rem; /* Padding for links */
+        display: block; /* Make the link fill the space */
+        border-radius: 5px; /* Rounded corners for links */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    }
+
+    .nav-links a:hover {
+        background-color: #292a2b; /* Background color on hover */
+        color: white !important; /* Text color on hover */
     }
 
     /* Dark mode styles for nav links */
     body.dark-mode .nav-links {
-        background-color: #333; /* Dark mode dropdown background */
+        background-color: #000000; /* Dark mode dropdown background */
     }
 
     body.dark-mode .nav-links a {
         color: #fff; /* Text color for dark mode */
+    }
+
+    body.dark-mode .nav-links a:hover {
+        background-color: white; /* Darker blue for hover in dark mode */
+        color: black !important; /* Maintain white text */
     }
 
     .toggle-container {
@@ -553,28 +571,29 @@ body.dark-mode .about-content{
     }
 
     .toggle-label {
-        cursor: pointer;
+        cursor: pointer; /* Pointer cursor for toggle */
     }
 
     /* Show hamburger icon */
     .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
+        display: flex; /* Make sure it's displayed */
+        flex-direction: column; /* Stack the lines */
+        cursor: pointer; /* Pointer cursor for toggle */
     }
 
     .menu-toggle div {
-        width: 25px;
-        height: 3px;
+        width: 25px; /* Width of burger lines */
+        height: 3px; /* Height of burger lines */
         background: #000; /* Default burger color for light mode */
-        margin: 4px 0;
-        transition: 0.3s;
+        margin: 4px 0; /* Space between lines */
+        transition: 0.3s; /* Smooth transition */
     }
 
     /* Dark mode styles for the burger menu */
     body.dark-mode .menu-toggle div {
         background: #fff; /* Change burger color to white in dark mode */
     }
+  
 }
 
 
