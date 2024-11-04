@@ -218,7 +218,7 @@ section {
 .about-image img {
     width: 100%; /* Responsive width */
     max-width: 350px; /* Max width for larger screens */
-    height: auto; /* Maintain aspect ratio */
+    height: 550px; /* Maintain aspect ratio */
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
