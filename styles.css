@@ -125,7 +125,6 @@ nav {
 
 /* Section styles */
 section {
-    /* padding: 20px; */
     width: 100%; /* Make section full width */
     /* Remove or adjust max-width */
     /* max-width: 1200px; */ /* Optional: Comment out or increase this */
@@ -233,10 +232,12 @@ section {
 }
 
 .about-text p {
+    font-weight: 400;
     font-size: 1.2em;
     line-height: 1.8;
-    color: #555;
+    color: #ffffff;
     margin-bottom: 30px;
+    font-family: 'Poppins';
 }
 
 .about-button {
@@ -347,6 +348,18 @@ section {
     box-sizing: border-box; /* Include padding/border in width calculation */
     overflow: hidden;
     color:white;
+   
+}
+
+.service-area1 {
+    flex: 0 1 calc(33.33% - 20px); /* Adjust the width of each service area */
+    margin-bottom: 20px; /* Space below each service area */
+    box-sizing: border-box; /* Include padding/border in width calculation */
+    overflow: hidden;
+    color:white;
+    background-color: rgb(19, 18, 18); /* Change this to your desired background color */
+    width: 100%; /* Ensure it takes the full width */
+    text-align: center; /* Center align text if desired */
    
 }
 .service-content {
@@ -603,7 +616,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
     transition: bottom 0.5s ease; /* Smooth transition */
     z-index: 0; /* Place it behind the content */
 }
@@ -758,6 +770,24 @@ body.dark-mode #why-us{
 
 body.dark-mode .about-content{
     color:white;
+}
+
+body.dark-mode .learn-more-button{
+    color:white;
+    background-color: #22283E;
+}
+
+body.dark-mode .learn-more-button:hover{
+    color:white;
+    background-color: #151925;
+}
+
+body.dark-mode .image-content h2{
+    color:white;
+}
+
+body.dark-mode .about-text p{
+    color: white;
 }
 
 
@@ -942,3 +972,176 @@ body.dark-mode .about-content{
 }
 
 
+/* TOMS */
+#tomsabout {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    width: 100%;
+    padding-top: 55px;
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Poppins';
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align content */
+    justify-content: flex-start; /* Align items to the top */
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 10px; /* Space between image and name */
+}
+
+.learn-more-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.learn-more-button:hover {
+    background-color: #292a2b;
+}
+
+.image-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Adjust weight if desired */
+    color: #000000; /* Adjust color as needed */
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Space above the CEO name */
+}
+
+#service-areas{
+padding-top: 100px;
+}
+
+#why-use-symcorp {
+    background-color: #f9f9f9; /* Adjust background color as needed */
+    padding-bottom: 20px;
+}
+
+.benefits-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Evenly distribute space between items */
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start; /* Align icon and text at the start */
+    margin: 15px; /* Space between items */
+    width: calc(33.33% - 30px); /* Width for three items per row with margin adjustment */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.check-icon {
+    width: 24px; /* Set icon size */
+    height: 24px;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.benefit-content {
+    display: flex;
+    flex-direction: column; /* Stack title and description vertically */
+}
+
+.benefit-item h4 {
+    margin: 0; /* Remove default margin */
+    font-family: 'Poppins', sans-serif;
+}
+
+.benefit-item p {
+    margin: 5px 0 0; /* Space for paragraph text */
+    font-family: 'Poppins', sans-serif;
+}
+
+.licenses {
+    text-align: center;
+    margin-top: 20px; /* Space above licenses */
+}
+
+/* Media Query for Tablet Screens (768px and below) */
+@media (max-width: 768px) {
+    #why-use-symcorp {
+        padding-bottom: 20px;
+    }
+    
+    .benefit-item {
+        width: calc(50% - 30px); /* Two items per row on tablets */
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .benefits-list {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #tomsabout {
+        display: flex;
+        justify-content: center;
+        padding-top: 0;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: flex-start; /* Align items to the start */
+        width: 100%;
+        padding-top: 0;
+    }
+
+    #service-areas{
+        padding-top: 0;
+    }
+}
+
+/* Media Query for Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+    #why-use-symcorp {
+        padding-bottom: 20px;
+    }
+
+    .benefits-list {
+        justify-content: center; /* Center items if needed */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .benefit-item {
+        width: calc(100% - 30px); /* Full width for each item on mobile */
+    }
+    #tomsabout {
+        display: flex;
+        justify-content: center;
+        padding-top: 0;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: flex-start; /* Align items to the start */
+        width: 100%;
+        padding-top: 0;
+    }
+
+    #service-areas{
+        padding-top: 0;
+    }
+}
