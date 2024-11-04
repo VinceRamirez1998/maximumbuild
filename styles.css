@@ -557,37 +557,194 @@ body {
     padding-top:50px;
     margin-top:0;
 }
-
 .carousel {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 100%;
-    transform-style: preserve-3d; 
-    animation: rotate360 60s infinite forwards linear; /* Continuous rotation */
-    margin-top: 30px;
-    
-
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden; /* Hide overflow */
 }
 
-.carousel__face { 
-    position: absolute;
-    width: 313px;
-    height: 170px;
-    top: 20px;
-    left: 10px;
-    right: 10px;
-    background-size: cover;
-    box-shadow: inset 0 0 0 2000px rgba(37, 37, 37, 0.5); /* Dark overlay */
+.carousel-images {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Ensure text stays within bounds */
-    transition: filter 0.3s ease; /* Smooth transition for darkening */
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.carousel-item {
+    flex: 0 0 33.33%; /* Each item takes a third of the carousel */
+    padding: 10px; /* Gap between images */
+    box-sizing: border-box; /* Include padding in width */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+}
+
+
+.carousel-item.active {
+    opacity: 1; /* Fully visible when active */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: left; /* Align text to the left */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.title {
+    font-size: 20px;
+    margin: 10px 0 5px;
+}
+
+.descriptions {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.learn-more {
+    background-color: #232324;
     color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
-.carousel__face:hover {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glow effect */
+
+.learn-more:hover {
+    background-color: #3b3b3b;
 }
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.left {
+    left: 10px;
+    z-index: 2;
+}
+
+.right {
+    right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 50%; /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%; /* One item per row on small screens */
+    }
+
+    .arrow {
+        font-size: 20px; /* Smaller arrows on mobile */
+        padding: 8px;
+    }
+    
+}
+
+
+.reviews-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin: auto;
+    overflow: hidden; /* Hide overflow */
+    text-align: center; /* Center text */
+    background-color: #f9f9f9; /* Background color for the carousel */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}   
+
+.reviews-images {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.review-item {
+    min-width: 100%; /* Each review takes full width */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+}
+
+.review-item.active {
+    opacity: 1; /* Fully visible when active */
+}
+
+.customer-name {
+    font-weight: bold; /* Make customer names bold */
+    font-size: 1.2em; /* Slightly larger font size */
+    margin: 10px 0;
+}
+
+.customer-statement {
+    font-size: 1em; /* Standard font size */
+    margin: 10px 0;
+    color: #555; /* Gray color for statement */
+}
+
+.customer-rating {
+    font-size: 1.5em; /* Larger font size for rating */
+    color: gold; /* Gold color for stars */
+    margin: 10px 0;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+.left {
+    left: 10px;
+    z-index: 2;
+}
+
+.right {
+    right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reviews-carousel {
+        max-width: 90%; /* Full width on smaller screens */
+    }
+
+    .arrow {
+        font-size: 20px; /* Smaller arrows on mobile */
+        padding: 8px;
+    }
+}
+
 
 
 .text-overlay {
@@ -638,34 +795,9 @@ body {
     }
 }
 
-.carousel__face:hover .text-overlay {
-    opacity: 0; /* Hide text on hover */
-}
-
-.carousel__face:hover .description {
-    opacity: 1; /* Show description on hover */
-    transform: translate(-50%, -50%) translateY(0); /* Move to center */
-}
 
 
 
-
-
-.carousel__face:nth-child(1) { background-image: url("assets/house.jpg"); transform: rotateY(0deg) translateZ(430px); }
-.carousel__face:nth-child(2) { background-image: url("assets/house2.jpg"); transform: rotateY(40deg) translateZ(430px); }
-.carousel__face:nth-child(3) { background-image: url("assets/house.jpg"); transform: rotateY(80deg) translateZ(430px); }
-.carousel__face:nth-child(4) { background-image: url("assets/house2.jpg"); transform: rotateY(120deg) translateZ(430px); }
-.carousel__face:nth-child(5) { background-image: url("assets/house.jpg"); transform: rotateY(160deg) translateZ(430px); }
-.carousel__face:nth-child(6) { background-image: url("assets/house2.jpg"); transform: rotateY(200deg) translateZ(430px); }
-.carousel__face:nth-child(7) { background-image: url("assets/house.jpg"); transform: rotateY(240deg) translateZ(430px); }
-.carousel__face:nth-child(8) { background-image: url("assets/house2.jpg"); transform: rotateY(280deg) translateZ(430px); }
-.carousel__face:nth-child(9) { background-image: url("assets/house.jpg"); transform: rotateY(320deg) translateZ(430px); }
-.carousel__face:nth-child(10) { background-image: url("assets/house2.jpg"); transform: rotateY(280deg) translateZ(430px); }
-
-@keyframes rotate360 {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(-360deg); }
-}
 
 
 .carousel-heading {
@@ -789,6 +921,15 @@ body.dark-mode .image-content h2{
 body.dark-mode .about-text p{
     color: white;
 }
+
+
+#why-use-maximumbuild h2,
+#why-use-maximumbuild h3,
+#why-use-maximumbuild h4,
+#why-use-maximumbuild p {
+    color: black; /* Light mode color */
+}
+
 
 
 
@@ -1033,7 +1174,7 @@ body.dark-mode .about-text p{
 padding-top: 100px;
 }
 
-#why-use-symcorp {
+#why-use-maximumbuild {
     background-color: #f9f9f9; /* Adjust background color as needed */
     padding-bottom: 20px;
 }
@@ -1082,9 +1223,10 @@ padding-top: 100px;
 
 /* Media Query for Tablet Screens (768px and below) */
 @media (max-width: 768px) {
-    #why-use-symcorp {
+    #why-use-maximumbuild {
         padding-bottom: 20px;
     }
+    
     
     .benefit-item {
         width: calc(50% - 30px); /* Two items per row on tablets */
@@ -1115,7 +1257,7 @@ padding-top: 100px;
 
 /* Media Query for Mobile Screens (480px and below) */
 @media (max-width: 480px) {
-    #why-use-symcorp {
+    #why-use-maximumbuild {
         padding-bottom: 20px;
     }
 
