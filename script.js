@@ -73,7 +73,7 @@ const leftArrow2 = document.querySelector('.reviews-carousel .left');
 // Function to update the carousel's position
 function showReviews() {
     // Determine how far the carousel should slide (600px for desktop, 300px for mobile)
-    const slideDistance = window.innerWidth <= 768 ? 390 : 600;
+    const slideDistance = window.innerWidth <= 768 ? 415 : 600;
 
     // Calculate the offset based on the current index
     const offset = -currentIndex2 * slideDistance;
@@ -88,7 +88,7 @@ function showReviews() {
 
 // Right arrow functionality: Slide to the next group of items
 rightArrow2.addEventListener('click', () => {
-    const slideDistance = window.innerWidth <= 768 ? 390 : 600;
+    const slideDistance = window.innerWidth <= 768 ? 415 : 600;
 
     // If we're not at the end, move to the next index, otherwise loop back
     if (currentIndex2 < Math.floor(totalItems2 / (window.innerWidth <= 768 ? 1 : 3))) {
@@ -103,7 +103,7 @@ rightArrow2.addEventListener('click', () => {
 
 // Left arrow functionality: Slide to the previous group of items
 leftArrow2.addEventListener('click', () => {
-    const slideDistance = window.innerWidth <= 768 ? 390 : 600;
+    const slideDistance = window.innerWidth <= 768 ? 415 : 600;
 
     // If we're not at the beginning, move to the previous index, otherwise loop back
     if (currentIndex2 > 0) {
