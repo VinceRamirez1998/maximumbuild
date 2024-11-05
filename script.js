@@ -63,35 +63,41 @@ window.addEventListener('resize', showItems); // Recalculate items per slide and
 
 // Reviews Carousel
 let currentIndex2 = 0;
-const items2 = document.querySelectorAll('.review-item');
-const totalItems2 = items2.length;
 const reviewsContainer = document.querySelector('.reviews-images');
-
 const rightArrow2 = document.querySelector('.reviews-carousel .right');
 const leftArrow2 = document.querySelector('.reviews-carousel .left');
 
-// Function to update the carousel's position
+// Function to update the carousel's position and control visibility of arrows
 function showReviews() {
-    // Determine how far the carousel should slide (600px for desktop, 300px for mobile)
-    const slideDistance = window.innerWidth <= 768 ? 320 : 600;
+    const items2 = document.querySelectorAll('.review-item');
+    const totalItems2 = items2.length;
+    const itemsPerSlide = window.innerWidth <= 768 ? 1 : 3;  // 1 item per slide on mobile, 3 on desktop
+    const slideDistance = items2[0] ? items2[0].offsetWidth + 20 : 0;  // Width of each item plus a gap
+
+    // Disable arrows if no items are available in the carousel
+    if (totalItems2 === 0) {
+        leftArrow2.disabled = true;
+        rightArrow2.disabled = true;
+        return;
+    }
 
     // Calculate the offset based on the current index
-    const offset = -currentIndex2 * slideDistance;
+    const offset = -(currentIndex2 * slideDistance);
+    reviewsContainer.style.transform = `translateX(${offset}px)`; // Move the carousel
 
-    // Apply the transform to move the carousel
-    reviewsContainer.style.transform = `translateX(${offset}px)`;
-
-    // Disable arrows when reaching the first or last group
+    // Disable arrows when reaching the first or last group of items
     leftArrow2.disabled = currentIndex2 === 0;
-    rightArrow2.disabled = currentIndex2 === Math.floor(totalItems2 / (window.innerWidth <= 768 ? 1 : 3)) - 1;
+    rightArrow2.disabled = currentIndex2 >= Math.ceil(totalItems2 / itemsPerSlide) - 1;
 }
 
 // Right arrow functionality: Slide to the next group of items
 rightArrow2.addEventListener('click', () => {
-    const slideDistance = window.innerWidth <= 768 ? 320 : 600;
+    const items2 = document.querySelectorAll('.review-item');
+    const totalItems2 = items2.length;
+    const itemsPerSlide = window.innerWidth <= 768 ? 1 : 3;
 
-    // If we're not at the end, move to the next index, otherwise loop back
-    if (currentIndex2 < Math.floor(totalItems2 / (window.innerWidth <= 768 ? 1 : 3))) {
+    // If we're not at the end, move to the next index
+    if (currentIndex2 < Math.ceil(totalItems2 / itemsPerSlide) - 1) {
         currentIndex2++;
     } else {
         currentIndex2 = 0; // Loop back to the first group
@@ -103,13 +109,15 @@ rightArrow2.addEventListener('click', () => {
 
 // Left arrow functionality: Slide to the previous group of items
 leftArrow2.addEventListener('click', () => {
-    const slideDistance = window.innerWidth <= 768 ? 320 : 600;
+    const items2 = document.querySelectorAll('.review-item');
+    const totalItems2 = items2.length;
+    const itemsPerSlide = window.innerWidth <= 768 ? 1 : 3;
 
-    // If we're not at the beginning, move to the previous index, otherwise loop back
+    // If we're not at the beginning, move to the previous index
     if (currentIndex2 > 0) {
         currentIndex2--;
     } else {
-        currentIndex2 = Math.floor(totalItems2 / (window.innerWidth <= 768 ? 1 : 3)) - 1; // Loop back to the last group
+        currentIndex2 = Math.ceil(totalItems2 / itemsPerSlide) - 1; // Loop back to the last group
     }
 
     // Update the carousel position
@@ -126,7 +134,8 @@ showReviews();
 
 // Adjust items per page based on the window width on initial load and resize
 window.addEventListener('resize', updateItemsPerPage);
-updateItemsPerPage(); // Make sure the initial setup is correct
+updateItemsPerPage(); // Ensure the initial setup is correct
+
 
 
 // SCROLL UP FUNCTION 
