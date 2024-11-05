@@ -11,7 +11,6 @@ header {
     /* background: #22283E;  */
     background: #f8f9fa; /* Light header background */
     color: black; /* Header text color */
-    padding: 20px 0; /* Compact header padding */
 }
 
 nav {
@@ -61,11 +60,28 @@ nav {
     transition: filter 0.3s ease; /* Transition for the filter effect */
 }
 
+.hero2 {
+    position: relative; /* Position for child elements */
+    text-align: center; /* Center text */
+    background-image: url('assets/house2.jpg'); /* Background image */
+    background-size: cover; /* Cover entire section */
+    background-position: center; /* Center image */
+    height: 48vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    transition: filter 0.3s ease; /* Transition for the filter effect */
+}
+
 .hero p {
    font-size: 22px;
    font: bold;
    font-family: 'montserrat';
 }
+
+.hero2 p {
+    font-size: 22px;
+    font: bold;
+    font-family: 'montserrat';
+ }
 
 .hero:before {
     content: '';
@@ -77,6 +93,18 @@ nav {
     background: rgba(34, 40, 62, 0.5); /* Semi-transparent overlay */
     /* backdrop-filter: blur(5px); */
     z-index: 1; /* Behind text */
+}
+
+.hero2:before {
+    content: '';
+    position: absolute; /* Cover entire hero */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(34, 40, 62, 0.5); /* Semi-transparent overlay */
+    /* backdrop-filter: blur(5px); */
+    z-index: 2; /* Behind text */
 }
 
 .hero-content {
@@ -91,8 +119,25 @@ nav {
     transition: transform 2s ease, color 0.3s; /* Smooth zoom and color transition */
 }
 
+.hero-content2 {
+    position: relative; /* Positioning for overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset for centering */
+    z-index: 2; /* Above background */
+    color: white; /* Default text color */
+    padding: 20px; /* Space around content */
+    text-align: center; /* Center text */
+    transition: transform 2s ease, color 0.3s; /* Smooth zoom and color transition */
+}
+
 /* Add zoom-in effect on hover */
 .hero:hover .hero-content {
+    transform: translate(-50%, -50%) scale(1.1); /* Zoom in */
+    
+}
+
+.hero2:hover .hero-content2 {
     transform: translate(-50%, -50%) scale(1.1); /* Zoom in */
     
 }
@@ -144,6 +189,10 @@ nav {
 
 /* Darken effect on hover */
 .hero:hover {
+    filter: brightness(75%); /* Darken image on hover */
+}
+
+.hero2:hover {
     filter: brightness(75%); /* Darken image on hover */
 }
 
