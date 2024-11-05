@@ -59,8 +59,6 @@ window.addEventListener('resize', showItems); // Recalculate items per slide and
 
 
 
-
-
 // Reviews Carousel
 let currentIndex2 = 0;
 const reviewsContainer = document.querySelector('.reviews-images');
@@ -87,7 +85,10 @@ function showReviews() {
 
     // Disable arrows when reaching the first or last group of items
     leftArrow2.disabled = currentIndex2 === 0;
-    rightArrow2.disabled = currentIndex2 >= Math.ceil(totalItems2 / itemsPerSlide) - 1;
+
+    // Disable right arrow when reaching 8 slides
+    const maxSlides = 6; // Set the max number of slides to 8
+    rightArrow2.disabled = currentIndex2 >= maxSlides - 1 || currentIndex2 >= Math.ceil(totalItems2 / itemsPerSlide) - 1;
 }
 
 // Right arrow functionality: Slide to the next group of items
@@ -97,7 +98,7 @@ rightArrow2.addEventListener('click', () => {
     const itemsPerSlide = window.innerWidth <= 768 ? 1 : 3;
 
     // If we're not at the end, move to the next index
-    if (currentIndex2 < Math.ceil(totalItems2 / itemsPerSlide) - 1) {
+    if (currentIndex2 < Math.ceil(totalItems2 / itemsPerSlide) - 1 && currentIndex2 < 6) {
         currentIndex2++;
     } else {
         currentIndex2 = 0; // Loop back to the first group
