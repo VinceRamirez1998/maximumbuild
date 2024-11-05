@@ -669,25 +669,25 @@ body {
 .reviews-carousel {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Adjust as needed */
-    margin: auto;
-    overflow: hidden; /* Hide overflow */
-    text-align: center; /* Center text */
-    background-color: #f9f9f9; /* Background color for the carousel */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding around the content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
-}   
+    overflow: hidden; /* Hide content outside the container */
+}
 
 .reviews-images {
     display: flex;
-    transition: transform 0.5s ease; /* Smooth transition for sliding */
+    transition: transform 0.5s ease; /* Smooth sliding */
+    width: 100%; /* Ensure it spans the full width */
+    justify-content: center; /* Center the content if needed */
 }
 
 .review-item {
-    min-width: 100%; /* Each review takes full width */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.5s ease; /* Smooth opacity transition */
+    flex: 1 0 33.33%; /* Each review item takes up 1/3 of the container width */
+    max-width: 550px !important; /* Limit the width of each item to 900px */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.review-item p {
+    margin: 10px 0;
 }
 
 .review-item.active {
@@ -716,21 +716,25 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
+    padding: 10px;
     cursor: pointer;
     font-size: 24px;
-    padding: 10px;
-    border-radius: 5px; /* Rounded corners for buttons */
 }
 
-.left {
-    left: 10px;
-    z-index: 2;
+.arrow.left {
+    left: 0;
 }
 
-.right {
-    right: 10px;
+.arrow.right {
+    right: 0;
+}
+
+.arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* Responsive Design */
@@ -1286,4 +1290,29 @@ padding-top: 100px;
     #service-areas{
         padding-top: 0;
     }
+}
+
+.scroll-up-arrow {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the left */
+    background-color: black; /* Darker matte background */
+    color: white; /* Light gray (matte white) arrow */
+    border: none;
+    padding: 12px;
+    border-radius: 5px; /* Make it circular */
+    font-size: 24px; /* Arrow size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    display: none; /* Initially hide the button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a matte effect */
+}
+
+.scroll-up-arrow:hover {
+    background-color: #141414; /* Darken background on hover */
+    transform: translateY(-4px); /* Slightly lift the button on hover */
+}
+
+.scroll-up-arrow:focus {
+    outline: none; /* Remove focus outline */
 }
