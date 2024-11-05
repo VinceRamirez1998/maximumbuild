@@ -145,14 +145,15 @@ const scrollUpButton = document.querySelector('.scroll-up-arrow');
 
 // Function to handle scroll event
 function handleScroll() {
-    // Check if we're near the bottom of the page
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPosition = window.scrollY + window.innerHeight;  // Current scroll position
+    const documentHeight = document.documentElement.scrollHeight;  // Total document height
 
-    // If we are near the bottom of the page, show the button
-    if (scrollPosition >= documentHeight - 100) {  // 100px from the bottom
+    // Check if we've scrolled 50% of the document height
+    if (scrollPosition >= documentHeight / 2) {
+        // Show the scroll-up button if 50% of the page has been scrolled
         scrollUpButton.style.display = 'block';
     } else {
+        // Hide the scroll-up button if less than 50% of the page is scrolled
         scrollUpButton.style.display = 'none';
     }
 }
@@ -168,8 +169,11 @@ function scrollToTop() {
 // Attach event listener to window scroll
 window.addEventListener('scroll', handleScroll);
 
-// Add click event to scroll up button
+// Add click event to scroll-up button
 scrollUpButton.addEventListener('click', scrollToTop);
 
 // Initially run the scroll function in case page is already scrolled
 handleScroll();
+
+
+
