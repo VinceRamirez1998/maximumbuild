@@ -419,6 +419,28 @@ section {
     padding-top: 20px !important;
 }
 
+.reviews-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.reviews-images {
+    display: flex;
+    justify-content: center; /* Center the items inside the container */
+    align-items: center; /* Align items vertically */
+    transition: transform 0.5s ease; /* Smooth transition */
+    width: 100%;
+}
+
+.review-item {
+    flex: 0 0 auto; /* Prevent items from growing/shrinking */
+    width: 100%; /* Adjust this width based on how many items you want to show */
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
 }
 
 
