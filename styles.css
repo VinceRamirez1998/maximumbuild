@@ -434,11 +434,10 @@ section {
 }
 
 .review-item {
-    flex: 0 0 auto; /* Prevent items from growing/shrinking */
-    width: 100%; /* Adjust this width based on how many items you want to show */
-    padding: 20px;
-    text-align: center;
+    flex: 0 1 100%;
+    padding: 40px !important;
     box-sizing: border-box;
+    text-align: center;
 }
 
 }
@@ -807,10 +806,7 @@ body {
 
 .review-item {
     flex: 1 0 33.33%;
-    max-width: 550px !important;
     padding: 25px;
-    margin-right: 20px;
-    margin-left: 20px;
     box-sizing: border-box;
     text-align: center;
 }
