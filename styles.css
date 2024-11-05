@@ -680,9 +680,11 @@ body {
 }
 
 .review-item {
-    flex: 1 0 33.33%; /* Each review item takes up 1/3 of the container width */
-    max-width: 550px !important; /* Limit the width of each item to 900px */
-    padding: 20px;
+    flex: 1 0 33.33%;
+    max-width: 550px !important;
+    padding: 25px;
+    margin-right: 20px;
+    margin-left: 20px;
     box-sizing: border-box;
     text-align: center;
 }
