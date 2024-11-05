@@ -675,7 +675,7 @@ body {
 .reviews-images {
     display: flex;
     transition: transform 0.5s ease; /* Smooth sliding */
-    width: 100%; /* Ensure it spans the full width */
+    width: 130%; /* Ensure it spans the full width */
     justify-content: center; /* Center the content if needed */
 }
 
