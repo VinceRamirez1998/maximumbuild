@@ -73,7 +73,7 @@ const leftArrow2 = document.querySelector('.reviews-carousel .left');
 // Function to update the carousel's position
 function showReviews() {
     // Determine how far the carousel should slide (600px for desktop, 300px for mobile)
-    const slideDistance = window.innerWidth <= 768 ? 490 : 600;
+    const slideDistance = window.innerWidth <= 768 ? 320 : 600;
 
     // Calculate the offset based on the current index
     const offset = -currentIndex2 * slideDistance;
