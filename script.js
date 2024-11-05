@@ -48,63 +48,69 @@ showItems();
 
 
 // Reviews Carousel
+// Reviews Carousel
 let currentIndex2 = 0;
 const items2 = document.querySelectorAll('.review-item');
 const totalItems2 = items2.length;
-const itemsPerPage = 3; // We want to display 3 items at a time
-const totalGroups = Math.ceil(totalItems2 / itemsPerPage); // Calculate the total number of groups of 3 items
+const reviewsContainer = document.querySelector('.reviews-images');
 
 const rightArrow2 = document.querySelector('.reviews-carousel .right');
 const leftArrow2 = document.querySelector('.reviews-carousel .left');
 
-// Function to update the carousel
+// Function to update the carousel's position
 function showReviews() {
-    const offset = -currentIndex2 * (100 / totalGroups); // Calculate the offset to slide by 100% per group of 3
-    document.querySelector('.reviews-images').style.transform = `translateX(${offset}%)`;
+    // Determine how far the carousel should slide (600px for desktop, 300px for mobile)
+    const slideDistance = window.innerWidth <= 768 ? 390 : 600;
+
+    // Calculate the offset based on the current index
+    const offset = -currentIndex2 * slideDistance;
+
+    // Apply the transform to move the carousel
+    reviewsContainer.style.transform = `translateX(${offset}px)`;
 
     // Disable arrows when reaching the first or last group
     leftArrow2.disabled = currentIndex2 === 0;
-    rightArrow2.disabled = currentIndex2 === totalGroups - 1;
+    rightArrow2.disabled = currentIndex2 === Math.floor(totalItems2 / (window.innerWidth <= 768 ? 1 : 3)) - 1;
 }
 
-// Right arrow functionality: Slide to the next group of 3 items
+// Right arrow functionality: Slide to the next group of items
 rightArrow2.addEventListener('click', () => {
-    if (currentIndex2 < totalGroups - 1) {
+    const slideDistance = window.innerWidth <= 768 ? 390 : 600;
+
+    // If we're not at the end, move to the next index, otherwise loop back
+    if (currentIndex2 < Math.floor(totalItems2 / (window.innerWidth <= 768 ? 1 : 3))) {
         currentIndex2++;
     } else {
         currentIndex2 = 0; // Loop back to the first group
     }
+
+    // Update the carousel position
     showReviews();
 });
 
-// Left arrow functionality: Slide to the previous group of 3 items
+// Left arrow functionality: Slide to the previous group of items
 leftArrow2.addEventListener('click', () => {
+    const slideDistance = window.innerWidth <= 768 ? 390 : 600;
+
+    // If we're not at the beginning, move to the previous index, otherwise loop back
     if (currentIndex2 > 0) {
         currentIndex2--;
     } else {
-        currentIndex2 = totalGroups - 1; // Loop back to the last group
+        currentIndex2 = Math.floor(totalItems2 / (window.innerWidth <= 768 ? 1 : 3)) - 1; // Loop back to the last group
     }
+
+    // Update the carousel position
     showReviews();
 });
+
+// Function to handle responsive design changes (on window resize)
+function updateItemsPerPage() {
+    showReviews(); // Recalculate carousel positioning on resize
+}
 
 // Initial display setup
 showReviews();
 
-const scrollUpButton = document.querySelector('.scroll-up-arrow');
-
-// Show or hide the scroll-up button based on scroll position
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) { // When scrolled more than 300px
-        scrollUpButton.style.display = 'block'; // Show button
-    } else {
-        scrollUpButton.style.display = 'none'; // Hide button
-    }
-});
-
-// Scroll to the top when the button is clicked
-scrollUpButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Smooth scrolling
-    });
-});
+// Adjust items per page based on the window width on initial load and resize
+window.addEventListener('resize', updateItemsPerPage);
+updateItemsPerPage(); // Make sure the initial setup is correct

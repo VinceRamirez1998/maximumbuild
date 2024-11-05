@@ -741,14 +741,25 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .reviews-carousel {
-        max-width: 90%; /* Full width on smaller screens */
+    .review-item {
+        flex: 0 0 100%; /* 1 item per row on mobile */
+        max-width: 100% !important; /* Make sure the item can expand to full width */
+        margin: 10px 0; /* Reduce margins on mobile */
+    }
+
+    .reviews-images {
+        width: 100%;  /* Ensure the container spans the full width */
+        flex: 1 0 100%; /* Each item takes up full width */
+        justify-content: flex-start;  /* Align items to the left */
     }
 
     .arrow {
-        font-size: 20px; /* Smaller arrows on mobile */
+        font-size: 20px;
         padding: 8px;
     }
+    
+
+
 }
 
 
