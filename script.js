@@ -60,7 +60,7 @@ window.addEventListener('resize', showItems); // Recalculate items per slide and
 
 
 
-// Reviews Carousel
+
 // Reviews Carousel
 let currentIndex2 = 0;
 const items2 = document.querySelectorAll('.review-item');
@@ -127,3 +127,39 @@ showReviews();
 // Adjust items per page based on the window width on initial load and resize
 window.addEventListener('resize', updateItemsPerPage);
 updateItemsPerPage(); // Make sure the initial setup is correct
+
+
+// SCROLL UP FUNCTION 
+// Get the button element
+const scrollUpButton = document.querySelector('.scroll-up-arrow');
+
+// Function to handle scroll event
+function handleScroll() {
+    // Check if we're near the bottom of the page
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // If we are near the bottom of the page, show the button
+    if (scrollPosition >= documentHeight - 100) {  // 100px from the bottom
+        scrollUpButton.style.display = 'block';
+    } else {
+        scrollUpButton.style.display = 'none';
+    }
+}
+
+// Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // Smooth scroll effect
+    });
+}
+
+// Attach event listener to window scroll
+window.addEventListener('scroll', handleScroll);
+
+// Add click event to scroll up button
+scrollUpButton.addEventListener('click', scrollToTop);
+
+// Initially run the scroll function in case page is already scrolled
+handleScroll();
