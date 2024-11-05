@@ -1,14 +1,21 @@
 let currentIndex = 0; // Start at the first set of images
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
-const itemsPerSlide = 3; // Number of items to display at once
 const rightArrow = document.querySelector('.right');
 const leftArrow = document.querySelector('.left');
 
+// Function to calculate how many items should be displayed
+function getItemsPerSlide() {
+    if (window.innerWidth <= 768) {
+        return 1; // 1 item for mobile
+    }
+    return 3; // 3 items for desktop
+}
+
 // Function to show only the required images
 function showItems() {
-    // Calculate the offset for sliding based on the current index
-    const offset = -currentIndex * (100 / itemsPerSlide); 
+    const itemsPerSlide = getItemsPerSlide(); // Get number of items to display at once
+    const offset = -currentIndex * (100 / itemsPerSlide); // Calculate the offset for sliding based on the current index
     document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
     
     // Manage active classes for opacity transition
@@ -27,6 +34,7 @@ function showItems() {
 
 // Right arrow click event
 rightArrow.addEventListener('click', () => {
+    const itemsPerSlide = getItemsPerSlide(); // Get number of items to display at once
     if (currentIndex < totalItems - itemsPerSlide) {
         currentIndex += itemsPerSlide; // Move to the next set of images
         showItems();
@@ -35,6 +43,7 @@ rightArrow.addEventListener('click', () => {
 
 // Left arrow click event
 leftArrow.addEventListener('click', () => {
+    const itemsPerSlide = getItemsPerSlide(); // Get number of items to display at once
     if (currentIndex > 0) {
         currentIndex -= itemsPerSlide; // Move to the previous set of images
         showItems();
@@ -43,6 +52,10 @@ leftArrow.addEventListener('click', () => {
 
 // Initial display setup
 showItems();
+
+// Handle resize to adjust items per slide dynamically
+window.addEventListener('resize', showItems); // Recalculate items per slide and update display on resize
+
 
 
 
