@@ -141,37 +141,34 @@
     
 /* Form Section Styles */
 #request-quote {
-    max-width: 1200px;
+    max-width: 600px;  /* Smaller width for the form container */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 30px 20px;  /* Reduced padding for a more compact look */
     background-color: #fff;
-    border-radius: 25px;
+    border-radius: 15px;  /* Slightly smaller border radius */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 #request-quote h2 {
-    font-size: 2.5rem;
-    color: #000000;
+    font-size: 2rem;  /* Slightly smaller font size */
+    color: #000;
     font-weight: 600;
     margin-bottom: 20px;
-    font-family: 'Poppins';
 }
 
 #request-quote p {
-    font-size: 1.125rem;
-    color: #000000;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    font-family: 'Poppins';
+    font-size: 1rem;  /* Slightly smaller paragraph text */
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 #request-quote .form-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2-column layout */
-    gap: 20px;
-    max-width: 900px;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */ 
+    gap: 15px;  /* Reduced gap between form fields */
     margin: 0 auto;
 }
 
@@ -182,55 +179,77 @@
 }
 
 #request-quote label {
-    font-size: 1rem;
+    font-size: 0.875rem;  /* Smaller label font size */
     font-weight: 500;
-    color: #000000;
-    margin-bottom: 8px;
-    font-family: 'Poppins';
+    color: #000;
+    margin-bottom: 5px;
+    text-align: start;
 }
 
 #request-quote input, 
 #request-quote textarea {
-    width: 100%;  /* Make the input and textarea take up full width of its container */
-    padding: 12px;
+    width: 100%;  /* Make the input and textarea take up full width */
+    padding: 10px;  /* Reduced padding for more compact input fields */
     border-radius: 6px;
     border: 1px solid #ddd;
-    font-size: 1rem;
-    margin-top: 6px;
+    font-size: 0.875rem;  /* Smaller font size */
+    margin-top: 5px;
     background-color: #f9f9f9;
     box-sizing: border-box;
-    max-width: 250px;
-    max-height: 170px;
+}
+
+#request-quote input {
+    height: 40px;  /* Reduced input height */
 }
 
 #request-quote textarea {
-    grid-column: span 2; /* Make textarea span across both columns */
-    height: 150px;  /* Adjust height for better visibility */
+    grid-column: span 2;  /* Make textarea span across both columns */
+    height: 120px;  /* Reduced height for a more compact form */
 }
 
 /* Button Styles */
 #request-quote .cta-button {
-    background-color: black;
+    background-color: #22283E;
     color: white;
-    padding: 14px 30px;
+    padding: 12px 25px;
     border-radius: 6px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%;  /* Make button take up full width of its container */
+    width: 100%;  /* Full width for button */
     border: none;
     grid-column: span 2;  /* Ensure button spans both columns */
     margin-top: 20px;  /* Space between button and form fields */
 }
 
 #request-quote .cta-button:hover {
-    background-color: #2b2b2b;
+    background-color: #1d2b3a;
+}
+
+textarea {
+    font-family: 'Poppins';
+    max-width: 190px; /* Max width for large screens */
+    max-height: 150px; /* Max width for large screens */
+    min-height: 150px;
+    min-width: 190px;
+    width: 250px; /* Allow full width up to max-width */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    #request-quote {
+        max-width: 100%;  /* Make the form full width on smaller screens */
+        padding: 20px;  /* Less padding for smaller screens */
+    }
+
     #request-quote .form-wrapper {
-        grid-template-columns: 1fr; /* Stack form elements in 1 column on small screens */
+        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
+        width: 392px;
+    }
+
+    #request-quote input, 
+    #request-quote textarea {
+        max-width: 100%;  /* Ensure form fields are full width */
     }
 
     #request-quote .cta-button {
@@ -264,8 +283,66 @@
         line-height: 20px;
         margin-top: 23px;
     }
+
+    #request-quote label {
+    font-size: 0.875rem;  /* Smaller label font size */
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: start;
+    }
+
+    #request-quote{
+        padding: 0;
+    }
+
+    #request-quote p {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1.5;
+        }
+
+    #request-quote .form-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    textarea {
+    font-family: 'Poppins';
+    max-width: 190px; /* Max width for large screens */
+    max-height: 150px; /* Max width for large screens */
+    min-height: 150px;
+    min-width: 190px;
+    width: 250px; /* Allow full width up to max-width */
 }
 
+}
+
+@media (max-width: 468px) {
+
+
+    #request-quote .form-wrapper {
+        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
+        width: 292px;
+    }
+
+    #request-quote h2  {
+       font-size: 1.5rem;
+    }
+
+    textarea {
+    font-family: 'Poppins';
+    max-width: 190px; /* Max width for large screens */
+    max-height: 150px; /* Max width for large screens */
+    min-height: 150px;
+    min-width: 190px;
+    width: 250px; /* Allow full width up to max-width */
+}
+
+   
+}
 
 
 
