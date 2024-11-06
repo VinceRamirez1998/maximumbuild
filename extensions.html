@@ -351,7 +351,7 @@ textarea {
         <div class="hero2">
             <div class="hero-content2">
                 <p>Elevate Your Vision, Construct Your Future!</p>
-                <a href="#services" class="cta-button">Get Started</a>
+                <button class="cta-button" id="getStartedButton">Get Started</button>
             </div>
         </div>
         
@@ -463,7 +463,7 @@ textarea {
             <section id="request-quote">
                 <h2>Request a Free Quote</h2>
                 <p>MaximumBuild: Renovating your home, your way.</p>
-                <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p>
+                <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
             
                 <!-- Form -->
                 <form action="submit_form.php" method="POST">
@@ -555,6 +555,15 @@ textarea {
             // Close the menu when a link is clicked
             navLinks.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+            });
+        </script>
+        <script>
+            // JavaScript to scroll to the bottom of the page when "Get Started" button is clicked
+            document.getElementById("getStartedButton").addEventListener("click", function() {
+                window.scrollTo({
+                    top: document.body.scrollHeight,  // Scroll to the very bottom of the page
+                    behavior: "smooth"  // Smooth scrolling
+                });
             });
         </script>
     </body>
