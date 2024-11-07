@@ -1,0 +1,365 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Build</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    /* Form Section Styles */
+#request-quote {
+    max-width: 600px;  /* Smaller width for the form container */
+    margin: 0 auto;
+    padding: 30px 20px;  /* Reduced padding for a more compact look */
+    background-color: #fff;
+    border-radius: 15px;  /* Slightly smaller border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#request-quote h2 {
+    font-size: 2rem;  /* Slightly smaller font size */
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#request-quote p {
+    font-size: 1rem;  /* Slightly smaller paragraph text */
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+#request-quote .form-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */ 
+    gap: 15px;  /* Reduced gap between form fields */
+    margin: 0 auto;
+}
+
+#request-quote .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#request-quote label {
+    font-size: 0.875rem;  /* Smaller label font size */
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: start;
+}
+
+#request-quote input, 
+#request-quote textarea {
+    width: 100%;  /* Make the input and textarea take up full width */
+    padding: 10px;  /* Reduced padding for more compact input fields */
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 0.875rem;  /* Smaller font size */
+    margin-top: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+#request-quote input {
+    height: 40px;  /* Reduced input height */
+}
+
+#request-quote textarea {
+    grid-column: span 2;  /* Make textarea span across both columns */
+    height: 120px;  /* Reduced height for a more compact form */
+}
+
+/* Button Styles */
+#request-quote .cta-button {
+    background-color: #22283E;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;  /* Full width for button */
+    border: none;
+    grid-column: span 2;  /* Ensure button spans both columns */
+    margin-top: 20px;  /* Space between button and form fields */
+}
+
+#request-quote .cta-button:hover {
+    background-color: #1d2b3a;
+}
+
+textarea {
+    font-family: 'Poppins';
+    max-width: 190px; /* Max width for large screens */
+    max-height: 150px; /* Max width for large screens */
+    min-height: 150px;
+    min-width: 190px;
+    width: 250px; /* Allow full width up to max-width */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #request-quote {
+        max-width: 100%;  /* Make the form full width on smaller screens */
+        padding: 20px;  /* Less padding for smaller screens */
+    }
+
+    #request-quote .form-wrapper {
+        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
+        width: 392px;
+    }
+
+    #request-quote input, 
+    #request-quote textarea {
+        max-width: 100%;  /* Ensure form fields are full width */
+    }
+
+    #request-quote .cta-button {
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .benefits-list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 70px;
+        }
+
+    .cta-button1{
+        background-color: #22283E;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+        border-radius: 25px;
+        border: 2px solid #22283E;
+        margin-left: 5px;
+        transition: background-color 0.3s;
+        font-family: 'Poppins';
+        font-size: 14px;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+        margin-top: 23px;
+    }
+
+    #request-quote label {
+    font-size: 0.875rem;  /* Smaller label font size */
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: start;
+    }
+
+    #request-quote{
+        padding: 0;
+    }
+
+    #request-quote p {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1.5;
+        }
+
+    #request-quote .form-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    textarea {
+    font-family: 'Poppins';
+    max-width: 190px; /* Max width for large screens */
+    max-height: 150px; /* Max width for large screens */
+    min-height: 150px;
+    min-width: 190px;
+    width: 250px; /* Allow full width up to max-width */
+}
+
+}
+
+@media (max-width: 468px) {
+
+
+    #request-quote .form-wrapper {
+        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
+        width: 292px;
+    }
+
+    #request-quote h2  {
+       font-size: 1.5rem;
+    }
+
+    textarea {
+    font-family: 'Poppins';
+    max-width: 190px; /* Max width for large screens */
+    max-height: 150px; /* Max width for large screens */
+    min-height: 150px;
+    min-width: 190px;
+    width: 250px; /* Allow full width up to max-width */
+
+    }
+}
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <a href="index.html" class="logo"><img src="assets/logo.png" alt="Company Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="toggle-container">
+                <input type="checkbox" id="mode-toggle" class="toggle-input">
+                <label for="mode-toggle" class="toggle-label">
+                    <span class="toggle-ball"></span>
+                    <i class="fas fa-sun icon sun-icon"></i>
+                    <i class="fas fa-moon icon moon-icon"></i>
+                </label>
+            </div>
+            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button2">Request Quotation</a>
+        </nav>
+    </header>
+
+
+     
+    <button class="scroll-up-arrow">&#8593;</button>
+
+    <div style="padding-bottom: 30px; margin-bottom: 50px;" class="service-area1">
+        <h2 style="color:white" class="carousel-heading">Let's Discuss 
+            Your Next Project</h2>
+        <div style="text-align: center;" class="about-text">
+            <a>Fill out the form, or call us to arrange up a free consultations or</a>
+            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button1">Request Quotation</a>
+        </div>
+    </div>
+    
+    <section id="request-quote">
+        <h2>Get Started</h2>
+        <p style="padding-bottom: 10px;">Service Areas: Gold Coast to Brisbane</p>
+        <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
+    
+        <!-- Form -->
+        <form action="submit_form.php" method="POST">
+            <div class="form-wrapper">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="suburb">Suburb</label>
+                    <input type="text" id="suburb" name="suburb" placeholder="Enter Your Suburb" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" style="font-family: 'Poppins';" placeholder="Enter Your Full Address" rows="6" required></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="message">How can we assist you?</label>
+                    <textarea id="message" name="message" style="font-family: 'Poppins';" placeholder="Please provide details about your project" rows="6" required></textarea>
+                </div>
+                
+    
+                <!-- Move Submit button to bottom -->
+                <div class="form-group button-group">
+                    <button type="submit" class="cta-button">Submit</button>
+                </div>
+            </div>
+        </form>
+    
+        <p>If you prefer, you can call us directly at <strong>0418 872 166</strong> to discuss your project.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="footer-center">
+                <p>Email: <a href="mailto:tom@maximumbuild.com.au">tom@maximumbuild.com.au</a></p>
+                <p>Phone: <a href="tel:0418 872 166">0418 872 166</a></p>
+                <p>2024 Maximum Build Pty Ltd.</p>
+                <p>&copy;  All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.facebook.com/maximumbuild1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+                <a href="mailto:tom@maximumbuild.com.au" aria-label="Gmail"><i class="fas fa-envelope social-icon"></i></a>
+                <a href="https://www.instagram.com/maximumbuild/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    
+    
+  
+    
+
+    <script src="script.js"></script>
+    <script>
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+
+  <script>
+    const toggleInput = document.getElementById('mode-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Toggle nav links on burger icon click
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Optional: close the menu when a link is clicked
+    navLinks.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+
+  </script>
+  <script>
+ 
+  </script>
+
+    
+</body>
+</html>
