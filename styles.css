@@ -279,8 +279,10 @@ section {
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 40px;
+    gap: 120px;
 }
+
+
 
 .about-image {
     flex: 1;
@@ -1303,8 +1305,10 @@ body.dark-mode .card{
 
 .text-content {
     flex: 1;
-    padding: 20px;
+    /* padding: 20px; */
     font-family: 'Poppins';
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .image-content {
