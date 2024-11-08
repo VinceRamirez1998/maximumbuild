@@ -1344,6 +1344,9 @@ body.dark-mode .nav-links .dropdown li a:hover {
     .nav-links {
         display: flex; /* Show links in a row */
     }
+    .nav-links li:hover .dropdown {
+        display: block; /* Show dropdown on hover */
+    }
 }
 
 
@@ -1489,6 +1492,9 @@ padding-top: 100px;
     #service-areas{
         padding-top: 0;
     }
+    .nav-links .dropdown {
+        display: none !important; /* Always hide the dropdown on mobile/tablet */
+    }
 }
 
 /* Media Query for Mobile Screens (480px and below) */
@@ -1526,6 +1532,9 @@ padding-top: 100px;
     .nav-links a:hover {
         background-color: #22283E; /* Background color on hover */
         color: white !important; /* Text color on hover */
+    }
+    .nav-links .dropdown {
+        display: none !important; /* Always hide the dropdown on mobile/tablet */
     }
 }
 

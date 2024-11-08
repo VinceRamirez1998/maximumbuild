@@ -99,6 +99,34 @@
         html {
             scroll-behavior: smooth;
         }
+                /* Styling for the small top links section */
+        .top-links {
+            text-align: start; /* Center align the links */
+            font-size: .8rem;   /* Make the text smaller */
+            margin-top: 20px;    /* Add some space above */
+            margin-bottom: 20px; /* Add space below */
+            font-family: 'Poppins';
+        }
+
+        .top-links a {
+            color: #000000;            /* Set text color */
+            text-decoration: none;  /* Remove underlines */
+            padding: 0 10px;        /* Add horizontal spacing between links */
+            padding-left: 20px;
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .top-links a:hover {
+            color: #22283E; /* Change color on hover (Red) */
+        }
+
+        /* Make the links responsive */
+        @media (max-width: 768px) {
+            .top-links {
+                font-size: 0.7rem;  /* Further reduce font size on smaller screens */
+            }
+        }
+
 
 
 </style>
@@ -114,7 +142,14 @@
                 <a href="index.html" class="logo"><img src="assets/logo.png" alt="Company Logo"></a>
             </div>
             <ul class="nav-links">
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">About Us</a>
+                    <!-- Dropdown for About Us -->
+                    <ul class="dropdown">
+                        <li><a href="our-values.html">Our Values</a></li>
+                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="/contact.html">Contact</a></li>
@@ -131,7 +166,8 @@
         </nav>
     </header>
     
-    
+
+   
     
     
     <div class="heroabout">
@@ -149,10 +185,17 @@
     </div>
 
     
-    
+   
+
     <div id="learn-more">
     <section style="padding-bottom:60px;" id="tomsabout">
         <div class="tomsabout">
+            <div class="top-links">
+                <a href="index.html">Home</a> |
+                <a href="/our-values.html">Our Values</a> | 
+                <a href="#link2">Why Choose Us</a> | 
+                <a href="/contact.html">Contact</a> 
+            </div>
             <div class="about-content">
                 <div class="text-content">
                     <h1>About MaximumBuild</h1>
