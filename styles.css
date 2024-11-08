@@ -1153,6 +1153,10 @@ body.dark-mode .nav-links .dropdown li a:hover {
     color: black !important;
 }
 
+body.dark-mode .top-links a{
+    color:white;
+}
+
 
 
 #why-use-maximumbuild h2,
@@ -1535,6 +1539,14 @@ padding-top: 100px;
     }
     .nav-links .dropdown {
         display: none !important; /* Always hide the dropdown on mobile/tablet */
+    }
+
+    .image-content img{
+        border-radius: 0;
+    }
+
+    .about-content{
+        gap: 70px;
     }
 }
 
