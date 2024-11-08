@@ -41,6 +41,7 @@ nav {
 
 .nav-links li {
     margin-left: 15px; /* Space between links */
+   
 }
 
 .nav-links a {
@@ -205,6 +206,7 @@ section {
     display: flex; /* Allow for flex items if needed */
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center children horizontally */
+    padding-bottom: 50px;
 }
 
 
@@ -617,7 +619,7 @@ body {
     background-color: #22283E;
     color: white;
     padding: 20px 0;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .footer-content {
