@@ -1595,3 +1595,30 @@ padding-top: 100px;
         width: 90%; /* Make the benefits list take up less width */
     }
 }
+
+.top-links {
+    text-align: start; /* Center align the links */
+    font-size: .8rem;   /* Make the text smaller */
+    margin-top: 20px;    /* Add some space above */
+    margin-bottom: 20px; /* Add space below */
+    font-family: 'Poppins';
+}
+
+.top-links a {
+    color: #000000;            /* Set text color */
+    text-decoration: none;  /* Remove underlines */
+    padding: 0 10px;        /* Add horizontal spacing between links */
+    padding-left: 20px;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.top-links a:hover {
+    color: #22283E; /* Change color on hover (Red) */
+}
+
+/* Make the links responsive */
+@media (max-width: 768px) {
+    .top-links {
+        font-size: 0.7rem;  /* Further reduce font size on smaller screens */
+    }
+}
