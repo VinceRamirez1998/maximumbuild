@@ -466,7 +466,7 @@ section {
 
 .nav-links.active {
     display: flex; /* Show links when active */
-    margin-top: 35px !important;
+    margin-top: 42px !important;
     padding-top: 20px !important;
 }
 
@@ -840,6 +840,16 @@ body {
     .arrow {
         font-size: 20px; /* Smaller arrows on mobile */
         padding: 8px;
+    }
+
+    nav {
+        display: flex; /* Flexbox for navigation */
+        justify-content: space-between; /* Space between logo and links */
+        align-items: center; /* Center items vertically */
+        max-width: 1200px; /* Max width for navigation */
+        margin: 0 auto; /* Center navigation */
+        padding: 0 20px; /* Side padding */
+        height: 100px;
     }
     
 }
@@ -1307,8 +1317,8 @@ body.dark-mode .card{
     flex: 1;
     /* padding: 20px; */
     font-family: 'Poppins';
-    text-align: justify;
-    text-justify: inter-word;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .image-content {
