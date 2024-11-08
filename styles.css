@@ -36,13 +36,45 @@ nav {
     justify-content: center; /* Center nav-links */
     font-size: 18px;
     font-family: 'Poppins';
+    gap: 20px;
 }
-
 
 .nav-links li {
-    margin-left: 15px; /* Space between links */
-   
+    position: relative;
 }
+
+.nav-links .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    list-style: none;
+    width: 200px;
+    z-index: 1000;
+}
+
+.nav-links li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.nav-links .dropdown li a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links .dropdown li a:hover {
+    background-color: #22283E;
+    color:white !important;
+}
+
+
 
 .nav-links a {
     color: black !important; /* Link text color */
@@ -1009,6 +1041,9 @@ body {
     .carousel-heading {
         font-size: 1.1rem !important; /* Smaller font size for mobile */
     }
+    .nav-links li a {
+        margin-left: 30px;
+    }
 }
 
 
@@ -1107,6 +1142,17 @@ body.dark-mode .about-text p{
 body.dark-mode .card{
     color: black;
 }
+
+body.dark-mode .nav-links .dropdown {
+    background-color: black;
+}
+
+
+body.dark-mode .nav-links .dropdown li a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black !important;
+}
+
 
 
 #why-use-maximumbuild h2,
@@ -1477,6 +1523,10 @@ padding-top: 100px;
         padding-top: 0;
     }
     
+    .nav-links a:hover {
+        background-color: #22283E; /* Background color on hover */
+        color: white !important; /* Text color on hover */
+    }
 }
 
 .scroll-up-arrow {
