@@ -282,7 +282,7 @@ textarea {
         <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
     
         <!-- Form -->
-        <form action="submit_form.php" method="POST">
+        <form id="quote-form">
             <div class="form-wrapper">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -352,57 +352,67 @@ textarea {
     
 
     <script src="script.js"></script>
-  
-
     <script>
-        document.getElementById('quoteForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+        const form = document.getElementById('quote-form');
+        const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQzNDc5MTQ2OCwiYWFpIjoxMSwidWlkIjo2ODIxMDcxMCwiaWFkIjoiMjAyNC0xMS0xMVQwNTozNzoyOC4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjYzNTI3ODksInJnbiI6ImFwc2UyIn0.9R5pAl_ccFFosuymxOVcCRpMw2oQjsGOgy7k2tm6ckA';  // Replace with your API key
 
-    // Collect form data
-    const formData = {
-        name: document.querySelector('[aria-label="Full Name"]').value,
-        phone: document.querySelector('[aria-label="Phone Number"]').value,
-        email: document.querySelector('[aria-label="Email Address"]').value,
-        suburb: document.querySelector('[aria-label="Suburb"]').value,
-        address: document.querySelector('[aria-label="Address"]').value,
-        message: document.querySelector('[aria-label="How can we assist you?"]').value,
-    };
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
 
-    // Prepare the request data for Monday.com API
-    const query = `mutation {
-        create_item (
-            board_id: 1933350367, 
-            item_name: "${formData.name}", 
-            column_values: "{\"phone\":\"${formData.phone}\",\"email\":\"${formData.email}\",\"suburb\":\"${formData.suburb}\",\"address\":\"${formData.address}\",\"message\":\"${formData.message}\"}"
-        ) {
-            id
-        }
-    }`;
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                suburb: document.getElementById('suburb').value,
+                address: document.getElementById('address').value,
+                message: document.getElementById('message').value,
+                date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
+            };
 
-    // Send the data to Monday.com using a POST request
-    try {
-        const response = await fetch('https://api.monday.com/v2', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQzNDc5MTQ2OCwiYWFpIjoxMSwidWlkIjo2ODIxMDcxMCwiaWFkIjoiMjAyNC0xMS0xMVQwNTozNzoyOC4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjYzNTI3ODksInJnbiI6ImFwc2UyIn0.9R5pAl_ccFFosuymxOVcCRpMw2oQjsGOgy7k2tm6ckA', // Replace with your actual API key
-            },
-            body: JSON.stringify({ query })
+            // GraphQL mutation to create an item in Monday.com
+            const query = `
+                mutation {
+                    create_item(
+                        board_id: 1933350367,
+                        item_name: "${formData.name}",
+                        column_values: "{
+                            \\"text\\": \\"${formData.name}\\",
+                            \\"text2\\": \\"${formData.email}\\",
+                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
+                            \\"dup__of_address\\": \\"${formData.address}\\",
+                            \\"dup__of_suburb\\": \\"${formData.suburb}\\",
+                            \\"date4\\": \\"${formData.date}\\",
+                            \\"dup__of_suburb\\": \\"${formData.message}\\"
+                        }"
+                    ) {
+                        id
+                    }
+                }`;
+
+            // Send request to Monday API
+            try {
+                const response = await fetch('https://api.monday.com/v2', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`,
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                const result = await response.json();
+                if (result.data.create_item.id) {
+                    alert('Your submission has been successfully sent to Monday.com!');
+                    form.reset();  // Optionally reset the form after successful submission
+                } else {
+                    alert('There was an error. Please try again.');
+                }
+            } catch (error) {
+                alert('There was an error sending your data. Please try again later.');
+                console.error(error);
+            }
         });
-
-        const result = await response.json();
-        if (result.data.create_item.id) {
-            alert('Your submission has been successfully sent to Monday.com!');
-            document.getElementById('quoteForm').reset(); // Reset the form after submission
-        } else {
-            alert('There was an error. Please try again.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('There was an error sending your request.');
-    }
-});
-
     </script>
 
   <script>
