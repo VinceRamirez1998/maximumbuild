@@ -282,7 +282,7 @@ textarea {
         <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
     
         <!-- Form -->
-        <form action="submit_form.php" method="POST">
+        <form id="quote-form">
             <div class="form-wrapper">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -396,6 +396,63 @@ textarea {
   <script>
  
   </script>
+  <script>
+// Capture form submission
+document.getElementById('quote-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data
+    const formData = new FormData(event.target);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+
+    // Send the data to Monday.com
+    sendDataToMonday(formObject);
+});
+
+// Function to send data to Monday.com
+function sendDataToMonday(formData) {
+    const apiKey = 'your-api-key'; // Replace with your actual Monday.com API key
+    const boardId = 1933350367; // Replace with your actual board ID
+    const url = `https://api.monday.com/v2`;
+
+    // Define the GraphQL query to create a new item
+    const query = `
+        mutation {
+            create_item (
+                board_id: ${boardId},
+                item_name: "${formData.name}",
+                column_values: "{\"text\": \"${formData.name}\", \"text2\": \"${formData.email}\", \"dup__of_email_address\": \"${formData.phone}\", \"dup__of_phone_number\": \"${formData.address}\", \"dup__of_address\": \"${formData.suburb}\", \"dup__of_suburb\": \"${formData.message}\"}"
+            ) {
+                id
+            }
+        }
+    `;
+
+    // Make the POST request to the Monday.com API
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': apiKey,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: query })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Data submitted to Monday.com:', data);
+        // Optionally, show a success message to the user
+        alert('Your request has been submitted successfully!');
+    })
+    .catch(error => {
+        console.error('Error submitting data to Monday.com:', error);
+        alert('There was an error submitting your request. Please try again later.');
+    });
+}
+
+</script>
 
     
 </body>
