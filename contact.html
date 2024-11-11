@@ -282,7 +282,7 @@ textarea {
         <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
     
         <!-- Form -->
-        <form id="quote-form">
+        <form action="submit_form.php" method="POST">
             <div class="form-wrapper">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -396,12 +396,7 @@ textarea {
   <script>
  
   </script>
- <script>
-    // Escape special characters in strings
-    function escapeString(str) {
-        return str.replace(/(["\\])/g, '\\$1');
-    }
-
+  <script>
     // Capture form submission
     document.getElementById('quote-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission
@@ -419,8 +414,8 @@ textarea {
 
     // Function to send data to Monday.com
     function sendDataToMonday(formData) {
-        const apiKey = 'your-api-key'; // Replace with your actual Monday.com API key
-        const boardId = 1933350367; // Replace with your actual board ID
+        const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQzNDc5MTQ2OCwiYWFpIjoxMSwidWlkIjo2ODIxMDcxMCwiaWFkIjoiMjAyNC0xMS0xMVQwNTozNzoyOC43NzFaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjYzNTI3ODksInJnbiI6ImFwc2UyIn0.SmXrNavM_3GqfMTzYglS3Nv2dsgH6sBlMiLGvrUgH8Q';
+        const boardId = 1933350367; // Replace with your board ID
         const url = `https://api.monday.com/v2`;
 
         // Define the GraphQL query to create a new item
@@ -428,8 +423,8 @@ textarea {
             mutation {
                 create_item (
                     board_id: ${boardId},
-                    item_name: "${escapeString(formData.name)}",
-                    column_values: "{\"text\": \"${escapeString(formData.name)}\", \"text2\": \"${escapeString(formData.email)}\", \"dup__of_email_address\": \"${escapeString(formData.phone)}\", \"dup__of_phone_number\": \"${escapeString(formData.address)}\", \"dup__of_address\": \"${escapeString(formData.suburb)}\", \"dup__of_suburb\": \"${escapeString(formData.message)}\"}"
+                    item_name: "${formData.name}",
+                    column_values: "{\"phone\": \"${formData.phone}\", \"email\": \"${formData.email}\", \"suburb\": \"${formData.suburb}\", \"address\": \"${formData.address}\", \"message\": \"${formData.message}\"}"
                 ) {
                     id
                 }
@@ -447,13 +442,9 @@ textarea {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.errors) {
-                console.error('GraphQL Error:', data.errors);
-                alert('There was an error submitting your request: ' + JSON.stringify(data.errors));
-            } else {
-                alert('Your request has been submitted successfully!');
-                document.getElementById('quote-form').reset(); // Reset the form
-            }
+            console.log('Data submitted to Monday.com:', data);
+            // Optionally, show a success message to the user
+            alert('Your request has been submitted successfully!');
         })
         .catch(error => {
             console.error('Error submitting data to Monday.com:', error);
@@ -461,7 +452,6 @@ textarea {
         });
     }
 </script>
-
 
     
 </body>
