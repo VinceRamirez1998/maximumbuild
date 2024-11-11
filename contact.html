@@ -380,10 +380,10 @@ textarea {
                             \\"text\\": \\"${formData.name}\\",
                             \\"text2\\": \\"${formData.email}\\",
                             \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                            \\"dup__of_address\\": \\"${formData.address}\\",
-                            \\"dup__of_suburb\\": \\"${formData.suburb}\\",
+                            \\"text60\\": \\"${formData.address}\\",
+                            \\"dup__of_address\\": \\"${formData.suburb}\\",
                             \\"date4\\": \\"${formData.date}\\",
-                            \\"dup__of_suburb\\": \\"${formData.message}\\"
+                            \\"text8\\": \\"${formData.message}\\"
                         }"
                     ) {
                         id
@@ -403,7 +403,7 @@ textarea {
 
                 const result = await response.json();
                 if (result.data.create_item.id) {
-                    alert('Your submission has been successfully sent to Monday.com!');
+                    alert('Your submission has been successfully sent to MaximumBuild!');
                     form.reset();  // Optionally reset the form after successful submission
                 } else {
                     alert('There was an error. Please try again.');
