@@ -1,5 +1,4 @@
-// Import fetch as an ES Module
-import fetch from 'node-fetch';  // Using ESM syntax
+import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -7,11 +6,10 @@ export default async function handler(req, res) {
 
         console.log('Form data received:', { name, phone, email, suburb, address, message, date });
 
-        // Build the GraphQL mutation query
         const query = `
             mutation {
                 create_item(
-                    board_id: 1933350367,  // Replace with your actual Monday.com board ID
+                    board_id: 1933350367,
                     item_name: "${name}",
                     column_values: "{
                         \\"text\\": \\"${name}\\",
@@ -27,25 +25,21 @@ export default async function handler(req, res) {
                 }
             }`;
 
-        console.log('GraphQL query:', query);
-
         try {
             const response = await fetch('https://api.monday.com/v2', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.MONDAY_API_KEY}`,  // Use env variable for security
+                    'Authorization': `Bearer ${process.env.MONDAY_API_KEY}`,  // Access the API key from the .env file
                 },
                 body: JSON.stringify({ query }),
             });
 
             const result = await response.json();
-            console.log('Monday.com API response:', result);
 
             if (result.data && result.data.create_item.id) {
                 res.status(200).json({ success: true });
             } else {
-                console.error('Failed to create item in Monday.com:', result);
                 res.status(500).json({ success: false, error: 'Failed to create item in Monday.com.' });
             }
         } catch (error) {
