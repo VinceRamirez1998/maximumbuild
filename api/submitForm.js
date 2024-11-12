@@ -1,60 +1,47 @@
-const form = document.getElementById('quote-form');
+// In /api/submitForm.js (Vercel API route)
 
-form.addEventListener('submit', async function(event) {
-    event.preventDefault();
+export default async function handler(req, res) {
+    if (req.method === 'POST') {
+        const { query } = req.body;
 
-    // Collect form data
-    const formData = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        suburb: document.getElementById('suburb').value,
-        address: document.getElementById('address').value,
-        message: document.getElementById('message').value,
-        date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
-    };
-
-    // Prepare GraphQL mutation query
-    const query = `
-        mutation {
-            create_item(
-                board_id: 1933350367,
-                item_name: "${formData.name}",
-                column_values: "{
-                    \\"text\\": \\"${formData.name}\\",
-                    \\"text2\\": \\"${formData.email}\\",
-                    \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                    \\"long_text\\": \\"${formData.address}\\",
-                    \\"dup__of_address\\": \\"${formData.suburb}\\",
-                    \\"date4\\": \\"${formData.date}\\",
-                    \\"long_text6\\": \\"${formData.message}\\"
-                }"
-            ) {
-                id
-            }
-        }`;
-
-    // Send request to your Vercel API endpoint (this assumes your backend is running at /api/submitForm)
-    try {
-        const response = await fetch('/api/submitForm', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ query }),
-        });
-
-        // Handle the response from the backend API
-        const result = await response.json();
-
-        if (result.success) {
-            alert('Your submission has been successfully sent!');
-            form.reset();  // Optionally reset the form after successful submission
-        } else {
-            alert('There was an error. Please try again later.');
+        // Check if the query is missing
+        if (!query) {
+            return res.status(400).json({ success: false, error: 'Query parameter is missing.' });
         }
-    } catch (error) {
-        alert('There was an error sending your data. Please try again later.');
-        console.error(error);
+
+        const mondayApiUrl = 'https://api.monday.com/v2';
+        const apiKey = process.env.MONDAY_API_KEY;  // Ensure the API key is set in environment variables
+
+        if (!apiKey) {
+            return res.status(500).json({ success: false, error: 'Monday.com API Key is not set.' });
+        }
+
+        try {
+            // Send the GraphQL query to Monday.com
+            const response = await fetch(mondayApiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`,
+                },
+                body: JSON.stringify({ query }),
+            });
+
+            // Handle the response from Monday.com
+            const result = await response.json();
+
+            // Check if the result has the expected data
+            if (result.data) {
+                return res.status(200).json({ success: true });
+            } else {
+                return res.status(500).json({ success: false, error: 'Failed to create item in Monday.com.' });
+            }
+        } catch (error) {
+            console.error('Error during API call to Monday.com:', error);
+            return res.status(500).json({ success: false, error: 'There was an error during the form submission.' });
+        }
+    } else {
+        // Handle unsupported methods
+        res.status(405).json({ success: false, error: 'Method Not Allowed' });
     }
-});
+}
