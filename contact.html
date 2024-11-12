@@ -381,51 +381,40 @@ textarea {
 
     <script src="script.js"></script>
     <script>
-        // Google Apps Script URL (to handle the POST request)
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvmCKy2jBuhFFL9qcAsZDMVi3CIUHQFKYKL0jDe_wJ/dev'; // Replace with the deployed URL of your Apps Script web app
+        // Optionally, you could add JavaScript for client-side form handling here,
+        // but this isn't required as Apps Script handles the submission.
+        
+        // Example: Show response message dynamically after form submission
+        document.getElementById('quote-form').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the form from reloading the page
 
-        // Listen for form submission
-        const form = document.getElementById('quote-form');
+            // Disable submit button to prevent multiple submissions
+            document.querySelector('button[type="submit"]').disabled = true;
 
-        form.addEventListener('submit', async function(event) {
-            event.preventDefault();  // Prevent the default form submission behavior
+            // Display a loading message while waiting for response
+            document.getElementById('response-message').innerText = "Sending your details...";
 
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                suburb: document.getElementById('suburb').value,
-                address: document.getElementById('address').value,
-                message: document.getElementById('message').value,
-                date: new Date().toISOString().split('T')[0], // Get current date in YYYY-MM-DD format
-            };
+            var formData = new FormData(this);
 
-            // Prepare the payload (data to send to Google Apps Script)
-            const payload = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            };
-
-            // Send the data to Google Apps Script
-            try {
-                const response = await fetch(SCRIPT_URL, payload);
-                const result = await response.json();
-
-                if (result.success) {
-                    alert('Your submission has been successfully sent to MaximumBuild!');
-                    form.reset();  // Optionally reset the form after successful submission
+            fetch(this.action, {
+                method: this.method,
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('response-message').innerText = data.message;
                 } else {
-                    alert('There was an error. Please try again.');
+                    document.getElementById('response-message').innerText = data.message;
                 }
-            } catch (error) {
-                alert('There was an error sending your data. Please try again later.');
-                console.error(error);
-            }
-        });
+                // Re-enable the submit button after response
+                document.querySelector('button[type="submit"]').disabled = false;
+            })
+            .catch(error => {
+                document.getElementById('response-message').innerText = 'There was an error sending your data. Please try again later.';
+                document.querySelector('button[type="submit"]').disabled = false;
+            });
+        };
     </script>
 
   <script>
