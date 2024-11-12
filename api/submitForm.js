@@ -1,56 +1,60 @@
-import fetch from 'node-fetch';
+const form = document.getElementById('quote-form');
 
-export default async function handler(req, res) {
-    if (req.method === 'POST') {
-        const { name, phone, email, suburb, address, message, date } = req.body;
+form.addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-        const query = `
-            mutation {
-                create_item(
-                    board_id: 1933350367,
-                    item_name: "${name}",
-                    column_values: "{
-                        \\"text\\": \\"${name}\\",
-                        \\"text2\\": \\"${email}\\",
-                        \\"dup__of_email_address\\": \\"${phone}\\",
-                        \\"long_text\\": \\"${address}\\",
-                        \\"dup__of_address\\": \\"${suburb}\\",
-                        \\"date4\\": \\"${date}\\",
-                        \\"long_text6\\": \\"${message}\\"
-                    }"
-                ) {
-                    id
-                }
-            }`;
+    // Collect form data
+    const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        suburb: document.getElementById('suburb').value,
+        address: document.getElementById('address').value,
+        message: document.getElementById('message').value,
+        date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
+    };
 
-        try {
-            const response = await fetch('https://api.monday.com/v2', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.MONDAY_API_KEY}`,  // Access API key securely from .env
-                },
-                body: JSON.stringify({ query }),
-            });
-
-            // Log the raw response to see what we get back
-            const rawResponse = await response.text();
-            console.log('Raw response from Monday.com:', rawResponse);
-
-            // Try parsing the response as JSON
-            const result = JSON.parse(rawResponse);
-            console.log('Parsed result:', result);
-
-            if (result.data && result.data.create_item.id) {
-                res.status(200).json({ success: true });
-            } else {
-                res.status(500).json({ success: false, error: 'Failed to create item in Monday.com.' });
+    // Prepare GraphQL mutation query
+    const query = `
+        mutation {
+            create_item(
+                board_id: 1933350367,
+                item_name: "${formData.name}",
+                column_values: "{
+                    \\"text\\": \\"${formData.name}\\",
+                    \\"text2\\": \\"${formData.email}\\",
+                    \\"dup__of_email_address\\": \\"${formData.phone}\\",
+                    \\"long_text\\": \\"${formData.address}\\",
+                    \\"dup__of_address\\": \\"${formData.suburb}\\",
+                    \\"date4\\": \\"${formData.date}\\",
+                    \\"long_text6\\": \\"${formData.message}\\"
+                }"
+            ) {
+                id
             }
-        } catch (error) {
-            console.error('Error during API call to Monday.com:', error);
-            res.status(500).json({ success: false, error: 'There was an error during the form submission.' });
+        }`;
+
+    // Send request to your Vercel API endpoint (this assumes your backend is running at /api/submitForm)
+    try {
+        const response = await fetch('/api/submitForm', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query }),
+        });
+
+        // Handle the response from the backend API
+        const result = await response.json();
+
+        if (result.success) {
+            alert('Your submission has been successfully sent!');
+            form.reset();  // Optionally reset the form after successful submission
+        } else {
+            alert('There was an error. Please try again later.');
         }
-    } else {
-        res.status(405).json({ success: false, error: 'Method not allowed' });
+    } catch (error) {
+        alert('There was an error sending your data. Please try again later.');
+        console.error(error);
     }
-}
+});
