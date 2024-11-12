@@ -1,17 +1,17 @@
-// /api/submitForm.js
+// Import fetch as an ES Module
+import fetch from 'node-fetch';  // Using ESM syntax
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { name, phone, email, suburb, address, message, date } = req.body;
 
-        // Log form data for debugging
         console.log('Form data received:', { name, phone, email, suburb, address, message, date });
 
         // Build the GraphQL mutation query
         const query = `
             mutation {
                 create_item(
-                    board_id: 1933350367,  // Replace with your Monday.com board ID
+                    board_id: 1933350367,  // Replace with your actual Monday.com board ID
                     item_name: "${name}",
                     column_values: "{
                         \\"text\\": \\"${name}\\",
@@ -27,22 +27,22 @@ export default async function handler(req, res) {
                 }
             }`;
 
-        // Send the GraphQL request to Monday.com
+        console.log('GraphQL query:', query);
+
         try {
             const response = await fetch('https://api.monday.com/v2', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.MONDAY_API_KEY}`,  // Securely using env variable
+                    'Authorization': `Bearer ${process.env.MONDAY_API_KEY}`,  // Use env variable for security
                 },
                 body: JSON.stringify({ query }),
             });
 
             const result = await response.json();
+            console.log('Monday.com API response:', result);
 
-            // Check if the item was created successfully
             if (result.data && result.data.create_item.id) {
-                console.log('Item created in Monday.com:', result);
                 res.status(200).json({ success: true });
             } else {
                 console.error('Failed to create item in Monday.com:', result);
