@@ -381,13 +381,11 @@ textarea {
 
     <script src="script.js"></script>
     <script>
-        const form = document.getElementById('quote-form');
-        const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQzNDc5MTQ2OCwiYWFpIjoxMSwidWlkIjo2ODIxMDcxMCwiaWFkIjoiMjAyNC0xMS0xMVQwNTozNzoyOC4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjYzNTI3ODksInJnbiI6ImFwc2UyIn0.9R5pAl_ccFFosuymxOVcCRpMw2oQjsGOgy7k2tm6ckA';  // Replace with your API key
+       const form = document.getElementById('quote-form');
 
-        form.addEventListener('submit', async function(event) {
+        form.addEventListener('submit', async function (event) {
             event.preventDefault();
 
-            // Collect form data
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
@@ -395,44 +393,22 @@ textarea {
                 suburb: document.getElementById('suburb').value,
                 address: document.getElementById('address').value,
                 message: document.getElementById('message').value,
-                date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
+                date: new Date().toISOString().split('T')[0],  // Current date
             };
 
-            // GraphQL mutation to create an item in Monday.com
-            const query = `
-                mutation {
-                    create_item(
-                        board_id: 1933350367,
-                        item_name: "${formData.name}",
-                        column_values: "{
-                            \\"text\\": \\"${formData.name}\\",
-                            \\"text2\\": \\"${formData.email}\\",
-                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                            \\"long_text\\": \\"${formData.address}\\",
-                            \\"dup__of_address\\": \\"${formData.suburb}\\",
-                            \\"date4\\": \\"${formData.date}\\",
-                            \\"long_text6\\": \\"${formData.message}\\"
-                        }"
-                    ) {
-                        id
-                    }
-                }`;
-
-            // Send request to Monday API
             try {
-                const response = await fetch('https://api.monday.com/v2', {
+                const response = await fetch('/api/submitForm', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${API_KEY}`,
                     },
-                    body: JSON.stringify({ query })
+                    body: JSON.stringify(formData),
                 });
 
                 const result = await response.json();
-                if (result.data.create_item.id) {
-                    alert('Your submission has been successfully sent to MaximumBuild!');
-                    form.reset();  // Optionally reset the form after successful submission
+                if (result.success) {
+                    alert('Your submission has been successfully sent!');
+                    form.reset();
                 } else {
                     alert('There was an error. Please try again.');
                 }
@@ -440,7 +416,7 @@ textarea {
                 alert('There was an error sending your data. Please try again later.');
                 console.error(error);
             }
-        });
+});
     </script>
 
   <script>
