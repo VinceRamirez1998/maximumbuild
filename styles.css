@@ -822,6 +822,16 @@ section {
     .office-hours .time {
         text-align: left; /* Align times to the left on smaller screens */
     }
+
+    .footer-line {
+        border: none;
+        height: 1px;
+        background-color: #ffffff; /* Line color */
+        margin: 20px auto; /* Centers the line and adds margin above and below */
+        width: 680px; /* Set the width to 600px */
+        position: relative; /* Ensure it's not constrained */
+        justify-content: start;
+    }
 }
 
 @media (max-width: 480px) {
@@ -831,6 +841,15 @@ section {
 
     .footer-center h2 {
         font-size: 1.4em;
+    }
+    .footer-line {
+        border: none;
+        height: 1px;
+        background-color: #ffffff; /* Line color */
+        margin: 20px auto; /* Centers the line and adds margin above and below */
+        width: 340px; /* Set the width to 600px */
+        position: relative; /* Ensure it's not constrained */
+        justify-content: start;
     }
 }
 
