@@ -381,81 +381,74 @@ textarea {
 
     <script src="script.js"></script>
     <script>
-     document.getElementById('quote-form').onsubmit = function(event) {
-    // event.preventDefault(); // Remove this line if you want normal form submission
-
-    // Disable the submit button to prevent multiple submissions
-    document.querySelector('button[type="submit"]').disabled = true;
-
-    // Display a loading message while waiting for the response
-    document.getElementById('response-message').innerText = "Sending your details...";
-
-    var formData = new FormData(this);
-
-    fetch(this.action, {
-        method: this.method,
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            document.getElementById('response-message').innerText = data.message;
-        } else {
-            document.getElementById('response-message').innerText = data.message;
+        document.getElementById('quote-form').onsubmit = function(event) {
+          event.preventDefault(); // Remove this line if you want normal form submission
+      
+          // Disable the submit button to prevent multiple submissions
+          document.querySelector('button[type="submit"]').disabled = true;
+      
+          // Display a loading message while waiting for the response
+          document.getElementById('response-message').innerText = "Sending your details...";
+      
+          var formData = new FormData(this);
+      
+          fetch(this.action, {
+              method: this.method,
+              body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  document.getElementById('response-message').innerText = data.message;
+              } else {
+                  document.getElementById('response-message').innerText = data.message;
+              }
+              // Re-enable the submit button after response
+              document.querySelector('button[type="submit"]').disabled = false;
+          })
+          .catch(error => {
+              document.getElementById('response-message').innerText = 'There was an error sending your data. Please try again later.';
+              document.querySelector('button[type="submit"]').disabled = false;
+          });
+        };
+      </script>
+      <script>
+        const toggleInput = document.getElementById('mode-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuToggle = document.getElementById('menu-toggle');
+      
+        // Toggle nav links on burger icon click
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+      
+        // Optional: close the menu when a link is clicked
+        navLinks.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+      </script>
+      <script>
+        // Get the button element
+        const toggleButton = document.getElementById('mode-toggle');
+        const body = document.body;
+      
+        // Check if dark mode is enabled in localStorage on page load
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            body.classList.add('dark-mode');
         }
-        // Re-enable the submit button after response
-        document.querySelector('button[type="submit"]').disabled = false;
-    })
-    .catch(error => {
-        document.getElementById('response-message').innerText = 'There was an error sending your data. Please try again later.';
-        document.querySelector('button[type="submit"]').disabled = false;
-    });
-};
-
-    </script>
-
-  <script>
-    const toggleInput = document.getElementById('mode-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const menuToggle = document.getElementById('menu-toggle');
-
-    // Toggle nav links on burger icon click
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Optional: close the menu when a link is clicked
-    navLinks.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-    });
-
-  </script>
-  <script>
-    // Get the button element
-    const toggleButton = document.getElementById('mode-toggle');
-    const body = document.body;
-
-    // Check if dark mode is enabled in localStorage on page load
-    if (localStorage.getItem('dark-mode') === 'enabled') {
-        body.classList.add('dark-mode');
-    }
-
-    // Toggle dark mode and save the preference
-    toggleButton.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        
-        // Save the preference to localStorage
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('dark-mode', 'enabled');
-        } else {
-            localStorage.removeItem('dark-mode');
-        }
-    });
-
-  </script>
-  <script>
- 
-  </script>
+      
+        // Toggle dark mode and save the preference
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+      
+            // Save the preference to localStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('dark-mode', 'enabled');
+            } else {
+                localStorage.removeItem('dark-mode');
+            }
+        });
+      </script>
 
     
 </body>
