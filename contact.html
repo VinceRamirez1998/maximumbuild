@@ -381,40 +381,37 @@ textarea {
 
     <script src="script.js"></script>
     <script>
-        // Optionally, you could add JavaScript for client-side form handling here,
-        // but this isn't required as Apps Script handles the submission.
-        
-        // Example: Show response message dynamically after form submission
-        document.getElementById('quote-form').onsubmit = function(event) {
-            event.preventDefault(); // Prevent the form from reloading the page
+     document.getElementById('quote-form').onsubmit = function(event) {
+    // event.preventDefault(); // Remove this line if you want normal form submission
 
-            // Disable submit button to prevent multiple submissions
-            document.querySelector('button[type="submit"]').disabled = true;
+    // Disable the submit button to prevent multiple submissions
+    document.querySelector('button[type="submit"]').disabled = true;
 
-            // Display a loading message while waiting for response
-            document.getElementById('response-message').innerText = "Sending your details...";
+    // Display a loading message while waiting for the response
+    document.getElementById('response-message').innerText = "Sending your details...";
 
-            var formData = new FormData(this);
+    var formData = new FormData(this);
 
-            fetch(this.action, {
-                method: this.method,
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById('response-message').innerText = data.message;
-                } else {
-                    document.getElementById('response-message').innerText = data.message;
-                }
-                // Re-enable the submit button after response
-                document.querySelector('button[type="submit"]').disabled = false;
-            })
-            .catch(error => {
-                document.getElementById('response-message').innerText = 'There was an error sending your data. Please try again later.';
-                document.querySelector('button[type="submit"]').disabled = false;
-            });
-        };
+    fetch(this.action, {
+        method: this.method,
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('response-message').innerText = data.message;
+        } else {
+            document.getElementById('response-message').innerText = data.message;
+        }
+        // Re-enable the submit button after response
+        document.querySelector('button[type="submit"]').disabled = false;
+    })
+    .catch(error => {
+        document.getElementById('response-message').innerText = 'There was an error sending your data. Please try again later.';
+        document.querySelector('button[type="submit"]').disabled = false;
+    });
+};
+
     </script>
 
   <script>
