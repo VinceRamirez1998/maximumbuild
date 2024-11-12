@@ -396,6 +396,26 @@ textarea {
               date: $('#date').val(),
               message: $('#message').val()
             };
+
+              // Create GraphQL mutation
+              const query = `
+                mutation {
+                    create_item(
+                        board_id: 1933350367,
+                        item_name: "${formData.name}",
+                        column_values: "{
+                            \\"text\\": \\"${formData.name}\\",
+                            \\"text2\\": \\"${formData.email}\\",
+                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
+                            \\"long_text\\": \\"${formData.address}\\",
+                            \\"dup__of_address\\": \\"${formData.suburb}\\",
+                            \\"date4\\": \\"${formData.date}\\",
+                            \\"long_text6\\": \\"${formData.message}\\"
+                        }"
+                    ) {
+                        id
+                    }
+                }`;
     
             // Send POST request to Google Apps Script (your server-side endpoint)
             $.ajax({
