@@ -4,8 +4,6 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { name, phone, email, suburb, address, message, date } = req.body;
 
-        console.log('Form data received:', { name, phone, email, suburb, address, message, date });
-
         const query = `
             mutation {
                 create_item(
@@ -30,12 +28,18 @@ export default async function handler(req, res) {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.MONDAY_API_KEY}`,  // Access the API key from the .env file
+                    'Authorization': `Bearer ${process.env.MONDAY_API_KEY}`,  // Access API key securely from .env
                 },
                 body: JSON.stringify({ query }),
             });
 
-            const result = await response.json();
+            // Log the raw response to see what we get back
+            const rawResponse = await response.text();
+            console.log('Raw response from Monday.com:', rawResponse);
+
+            // Try parsing the response as JSON
+            const result = JSON.parse(rawResponse);
+            console.log('Parsed result:', result);
 
             if (result.data && result.data.create_item.id) {
                 res.status(200).json({ success: true });
