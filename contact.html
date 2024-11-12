@@ -381,63 +381,52 @@ textarea {
 
     <script src="script.js"></script>
     <script>
-        // jQuery to handle form submission via AJAX
-        $(document).ready(function() {
-          $('#contactForm').on('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
-    
-            // Get form data
-            var formData = {
-              name: $('#name').val(),
-              email: $('#email').val(),
-              phone: $('#phone').val(),
-              address: $('#address').val(),
-              suburb: $('#suburb').val(),
-              date: $('#date').val(),
-              message: $('#message').val()
+        // Google Apps Script URL (to handle the POST request)
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvmCKy2jBuhFFL9qcAsZDMVi3CIUHQFKYKL0jDe_wJ/dev'; // Replace with the deployed URL of your Apps Script web app
+
+        // Listen for form submission
+        const form = document.getElementById('quote-form');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();  // Prevent the default form submission behavior
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                suburb: document.getElementById('suburb').value,
+                address: document.getElementById('address').value,
+                message: document.getElementById('message').value,
+                date: new Date().toISOString().split('T')[0], // Get current date in YYYY-MM-DD format
             };
 
-              // Create GraphQL mutation
-              const query = `
-                mutation {
-                    create_item(
-                        board_id: 1933350367,
-                        item_name: "${formData.name}",
-                        column_values: "{
-                            \\"text\\": \\"${formData.name}\\",
-                            \\"text2\\": \\"${formData.email}\\",
-                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                            \\"long_text\\": \\"${formData.address}\\",
-                            \\"dup__of_address\\": \\"${formData.suburb}\\",
-                            \\"date4\\": \\"${formData.date}\\",
-                            \\"long_text6\\": \\"${formData.message}\\"
-                        }"
-                    ) {
-                        id
-                    }
-                }`;
-    
-            // Send POST request to Google Apps Script (your server-side endpoint)
-            $.ajax({
-              url: 'https://script.google.com/macros/s/AKfycbwvmCKy2jBuhFFL9qcAsZDMVi3CIUHQFKYKL0jDe_wJ/dev', // The URL of your deployed Google Apps Script
-              type: 'POST',
-              contentType: 'application/json',
-              data: JSON.stringify(formData), // Convert form data to JSON
-              success: function(response) {
-                var result = JSON.parse(response); // Parse the response from Google Apps Script
+            // Prepare the payload (data to send to Google Apps Script)
+            const payload = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            };
+
+            // Send the data to Google Apps Script
+            try {
+                const response = await fetch(SCRIPT_URL, payload);
+                const result = await response.json();
+
                 if (result.success) {
-                  $('#responseMessage').html('Form submitted successfully!');
+                    alert('Your submission has been successfully sent to MaximumBuild!');
+                    form.reset();  // Optionally reset the form after successful submission
                 } else {
-                  $('#responseMessage').html('There was an error: ' + (result.error || 'Unknown error'));
+                    alert('There was an error. Please try again.');
                 }
-              },
-              error: function(xhr, status, error) {
-                $('#responseMessage').html('Error: ' + error);
-              }
-            });
-          });
+            } catch (error) {
+                alert('There was an error sending your data. Please try again later.');
+                console.error(error);
+            }
         });
-      </script>
+    </script>
 
   <script>
     const toggleInput = document.getElementById('mode-toggle');
