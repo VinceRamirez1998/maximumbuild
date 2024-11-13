@@ -615,11 +615,29 @@ textarea {
                 navLinks.classList.remove('active');
             });
         </script>
-         <script>
-            // JavaScript to scroll to the bottom of the page when "Get Started" button is clicked
+        <script>
             document.getElementById("getStartedButton").addEventListener("click", function() {
+                // Check if the device is mobile (e.g., smaller than or equal to 1024px width)
+                const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+        
+                // Get all the sections or elements you want to scroll between
+                const sections = document.querySelectorAll("section"); // Adjust the selector to match your layout
+        
+                // Make sure there are at least two sections
+                if (sections.length < 2) return;
+        
+                // Calculate the second-to-last section
+                const secondToLastSection = sections[sections.length - 2]; // Second to last element in the list
+        
+                // Calculate scroll position: get the top offset of the second-to-last section
+                const scrollPosition = secondToLastSection.offsetTop;
+        
+                // Adjust the scroll position based on device type
+                const offset = isMobile ? 2180 : 1150; // -100 for mobile, -510 for desktop
+        
+                // Scroll to the calculated position with an offset
                 window.scrollTo({
-                    top: document.body.scrollHeight,  // Scroll to the very bottom of the page
+                    top: scrollPosition + offset,  // Scroll to the second-to-last position with offset
                     behavior: "smooth"  // Smooth scrolling
                 });
             });
