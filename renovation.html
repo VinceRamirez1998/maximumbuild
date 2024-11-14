@@ -491,10 +491,11 @@ textarea {
             <section id="request-quote">
                 <h2>Get Started</h2>
                 <p>MaximumBuild: Renovating your home, your way.</p>
+                <p style="padding-bottom: 10px;">Service Areas: Gold Coast to Brisbane</p>
                 <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
             
                 <!-- Form -->
-                <form action="submit_form.php" method="POST">
+                <form id="quote-form">
                     <div class="form-wrapper">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -515,7 +516,7 @@ textarea {
                             <label for="suburb">Suburb</label>
                             <input type="text" id="suburb" name="suburb" placeholder="Enter Your Suburb" required>
                         </div>
-
+        
                         <div class="form-group">
                             <label for="address">Address</label>
                             <textarea id="address" name="address" style="font-family: 'Poppins';" placeholder="Enter Your Full Address" rows="6" required></textarea>
@@ -590,6 +591,68 @@ textarea {
                 </footer>
 
         <script src="script.js"></script>
+
+        <script>
+            const form = document.getElementById('quote-form');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            // Collect form data from the form fields
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                suburb: document.getElementById('suburb').value,
+                address: document.getElementById('address').value,
+                message: document.getElementById('message').value,
+                date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
+            };
+
+            // GraphQL mutation to create an item in Monday.com
+            const query = `
+                mutation {
+                    create_item(
+                        board_id: 1933350367,
+                        item_name: "${formData.name}",
+                        column_values: "{
+                            \\"text\\": \\"${formData.name}\\",
+                            \\"text2\\": \\"${formData.email}\\",
+                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
+                            \\"long_text\\": \\"${formData.address}\\",
+                            \\"dup__of_address\\": \\"${formData.suburb}\\",
+                            \\"date4\\": \\"${formData.date}\\",
+                            \\"long_text6\\": \\"${formData.message}\\"
+                        }"
+                    ) {
+                        id
+                    }
+                }`;
+
+            // Send request to your Vercel API endpoint (this assumes your backend is running at /api/submitForm)
+            try {
+                const response = await fetch('/api/submitForm', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query }),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Your submission has been successfully sent!');
+                    form.reset();  // Optionally reset the form after successful submission
+                } else {
+                    alert('There was an error. Please try again later.');
+                }
+            } catch (error) {
+                alert('There was an error sending your data. Please try again later.');
+                console.error(error);
+            }
+        });
+    </script>
       
         <script>
             const menuToggle = document.getElementById('menu-toggle');
