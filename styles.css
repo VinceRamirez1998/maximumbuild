@@ -1696,14 +1696,19 @@ padding-top: 100px;
     }
 
     #testimonials{
-       width: 400px !important;
+       width: 467px !important;
         font-family: 'Poppins';
         font-size: 20px !important;
     }
 
     .testimonial-item{
-        width: 100% !important;
-        margin-right: 10px !important;
+        width: 55% !important;
+        margin-right: 83px !important;
+    }
+
+    #testimonials h2{
+        font-size: 22px;
+        padding-right: 90px;
     }
 
     .text-content{
