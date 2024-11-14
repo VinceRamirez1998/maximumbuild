@@ -3,13 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximum Build</title>
+    <meta name="description" content="Maximum Build is your trusted home building and renovation expert. We specialize in renovations, new homes, high rises, extensions, office fits, and maintenance.">
+    <meta name="author" content="Maximum Build">
+    <title>Maximum Build - Home Building & Renovation Experts</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    /* General Body and Text */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding-bottom: 26px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.text-content {
+    width: 60%;
+}
+
+.text-content h1 {
+    font-size: 36px;
+}
+
+.text-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.text-content ul p {
+    font-size: 16px;
+}
+
+
+/* Testimonials Section */
+#testimonials {
+    background-color: rgb(5, 5, 5);
+    color:white;
+    text-align: center;
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 1391px;
+}
+
+.testimonial-item {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.testimonial-item p {
+    font-size: 16px;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.testimonial-item span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* FAQ Section */
+/* Container for the entire FAQ section */
+.faq-container {
+    max-width: 1200px; /* Equivalent to max-w-4xl */
+    margin: 0 auto;
+    padding: 0 16px; /* Default padding for small screens */
+    margin-bottom: 150px;
+    
+}
+
+/* Title of the FAQ section */
+.faq-title {
+    font-size: 2rem; /* Equivalent to text-3xl */
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Poppins' !important;
+}
+
+/* List container for the FAQ items */
+.faq-list {
+    margin-top: 1rem;
+    font-family: 'Poppins' !important;
+}
+
+/* Individual FAQ item */
+.faq-item {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem; /* Rounded corners */
+    position: relative;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.4), 0 8px 40px rgba(255, 255, 255, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+    font-family: 'Poppins' !important;
+}
+
+/* Glow effect on hover */
+.faq-item:hover {
+    box-shadow: 0 6px 40px rgba(255, 255, 255, 0.6), 0 12px 50px rgba(255, 255, 255, 0.5);
+}
+
+/* Icon styles */
+.faq-icon {
+    color: wheat;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+
+/* FAQ question text */
+.faq-question {
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: white; /* Tailwind orange-300 */
+    font-family: 'Poppins' !important;
+}
+
+/* FAQ description */
+.faq-description {
+    color: #D1D5DB; /* Tailwind gray-300 */
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    overflow: hidden;
+    font-family: 'Poppins' !important;
+}
+
+/* Reveal FAQ description on hover */
+.faq-item:hover .faq-description {
+    max-height: 100px;
+    opacity: 1;
+}
+
+/* Icon styles */
+.faq-icon {
+    color: wheat;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+
+/* Arrow icon styles */
+.faq-arrow {
+    margin-left: auto; /* Push the arrow to the right */
+    color: #D1D5DB; /* Light gray color for the arrow */
+    font-size: 1.25rem; /* Slightly larger arrow */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect on arrow */
+.faq-item:hover .faq-arrow {
+    transform: translateX(5px); /* Arrow moves slightly on hover */
+}
+
+/* Adjust padding on larger screens */
+@media (min-width: 640px) {
+    .faq-container {
+        padding: 0 24px; /* sm:px-6 equivalent */
+    }
+}
+
+@media (min-width: 1024px) {
+    .faq-container {
+        padding: 0 32px; /* lg:px-8 equivalent */
+    }
+}
+
+</style>
 <body>
     <header>
         <nav>
@@ -18,12 +221,9 @@
                 <div></div>
                 <div></div>
             </div>
-            <div>
-                <a href="index.html" class="logo"><img src="assets/logo.png" alt="Company Logo"></a>
-            </div>
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="Maximum Build Logo"></a>
             <ul class="nav-links">
                 <li><a href="about.html">About Us</a>
-                    <!-- Dropdown for About Us -->
                     <ul class="dropdown">
                         <li><a href="our-values.html">Our Values</a></li>
                         <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -31,7 +231,6 @@
                     </ul>
                 </li>
                 <li><a href="services.html">Services</a>
-                
                     <ul class="dropdown">
                         <li><a href="renovation.html">Renovations</a></li>
                         <li><a href="newhomes.html">New Homes</a></li>
@@ -40,7 +239,6 @@
                         <li><a href="officefits.html">Office Fits</a></li>
                         <li><a href="maintenance.html">Maintenance</a></li>
                     </ul>
-
                 </li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="/contact.html">Contact</a></li>
@@ -57,466 +255,140 @@
         </nav>
     </header>
 
-    <style>
-        /* General Body */
-        body {
-            font-family: 'Poppins';
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #000000;
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        #about {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 40px;
-        }
-
-        #about h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #000000;
-        }
-
-        #about p {
-            font-size: 1.125rem;
-            color: #000000;
-            line-height: 1.8;
-        }
-
-        .renovation-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-height: 400px;
-        }
-
-        .about-image-container {
-            flex-basis: 45%;
-        }
-
-        /* Services Section */
-        #services {
-            padding: 60px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        #services h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #000000;
-        }
-
-        #services p {
-            font-size: 1.125rem;
-            color: #000000;
-            margin-bottom: 30px;
-        }
-
-        #services ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 1.1rem;
-            color: #000000;
-            margin-top: 20px;
-        }
-
-        #services ul li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        #services ul li::before {
-            content: '✔';
-            position: absolute;
-            left: 0;
-            color: #000000;
-            font-size: 18px;
-        }
-
-        .benefits-list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-left: 250px;
-            padding-right: 250px;
-            margin-bottom: 70px;
-        }
-        
-
-    
-/* Form Section Styles */
-#request-quote {
-    max-width: 600px;  /* Smaller width for the form container */
-    margin: 0 auto;
-    padding: 30px 20px;  /* Reduced padding for a more compact look */
-    background-color: #fff;
-    border-radius: 15px;  /* Slightly smaller border radius */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 50px;
-}
-
-#request-quote h2 {
-    font-size: 2rem;  /* Slightly smaller font size */
-    color: #000;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-#request-quote p {
-    font-size: 1rem;  /* Slightly smaller paragraph text */
-    color: #000;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-#request-quote .form-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */ 
-    gap: 15px;  /* Reduced gap between form fields */
-    margin: 0 auto;
-}
-
-#request-quote .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-#request-quote label {
-    font-size: 0.875rem;  /* Smaller label font size */
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 5px;
-    text-align: start;
-}
-
-#request-quote input, 
-#request-quote textarea {
-    width: 100%;  /* Make the input and textarea take up full width */
-    padding: 10px;  /* Reduced padding for more compact input fields */
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    font-size: 0.875rem;  /* Smaller font size */
-    margin-top: 5px;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-}
-
-#request-quote input {
-    height: 40px;  /* Reduced input height */
-}
-
-#request-quote textarea {
-    grid-column: span 2;  /* Make textarea span across both columns */
-    height: 120px;  /* Reduced height for a more compact form */
-}
-
-/* Button Styles */
-#request-quote .cta-button {
-    background-color: #22283E;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;  /* Full width for button */
-    border: none;
-    grid-column: span 2;  /* Ensure button spans both columns */
-    margin-top: 20px;  /* Space between button and form fields */
-}
-
-#request-quote .cta-button:hover {
-    background-color: #1d2b3a;
-}
-
-textarea {
-    font-family: 'Poppins';
-    max-width: 190px; /* Max width for large screens */
-    max-height: 150px; /* Max width for large screens */
-    min-height: 150px;
-    min-width: 190px;
-    width: 250px; /* Allow full width up to max-width */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    #request-quote {
-        max-width: 100%;  /* Make the form full width on smaller screens */
-        padding: 20px;  /* Less padding for smaller screens */
-    }
-
-    #request-quote .form-wrapper {
-        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
-        width: 392px;
-    }
-
-    #request-quote input, 
-    #request-quote textarea {
-        max-width: 100%;  /* Ensure form fields are full width */
-    }
-
-    #request-quote .cta-button {
-        width: auto;
-        margin-top: 20px;
-    }
-
-    .benefits-list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-left: 0;
-            padding-right: 0;
-            margin-bottom: 70px;
-        }
-
-    .cta-button1{
-        background-color: #22283E;
-        color: white;
-        padding-left: 10px;
-        padding-right: 10px;
-        text-decoration: none;
-        border-radius: 25px;
-        border: 2px solid #22283E;
-        margin-left: 5px;
-        transition: background-color 0.3s;
-        font-family: 'Poppins';
-        font-size: 14px;
-        display: inline-block;
-        text-align: center;
-        line-height: 20px;
-        margin-top: 23px;
-    }
-
-    #request-quote label {
-    font-size: 0.875rem;  /* Smaller label font size */
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 5px;
-    text-align: start;
-    }
-
-    #request-quote{
-        padding: 0;
-    }
-
-    #request-quote p {
-    font-size: 1rem;
-    color: #000;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    line-height: 1.5;
-        }
-
-    #request-quote .form-wrapper {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    textarea {
-    font-family: 'Poppins';
-    max-width: 190px; /* Max width for large screens */
-    max-height: 150px; /* Max width for large screens */
-    min-height: 150px;
-    min-width: 190px;
-    width: 250px; /* Allow full width up to max-width */
-}
-
-}
-
-@media (max-width: 468px) {
-
-
-    #request-quote .form-wrapper {
-        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
-        width: 292px;
-    }
-
-    #request-quote h2  {
-       font-size: 1.5rem;
-    }
-
-    textarea {
-    font-family: 'Poppins';
-    max-width: 190px; /* Max width for large screens */
-    max-height: 150px; /* Max width for large screens */
-    min-height: 150px;
-    min-width: 190px;
-    width: 250px; /* Allow full width up to max-width */
-}
-
-
-   
-}
-
-
-
-    </style>
-
-      
-        
-        <!-- Main Content -->
-
-
-            <section id="tomsabout">
-                <div class="tomsabout">
-                    <div class="top-links">
-                        <a href="renovation.html">Home</a> |
-                        <a href="renovation.html">About</a> |
-                        <a href="newhomes.html">Our Values</a> | 
-                        <a href="highrise.html">Contact Us</a>
-                    </div>
-                    <div class="about-content">
-                        <div class="text-content">
-                            <h1>About Services</h1>
-                            <p>
-                                We specialize in a comprehensive range of construction and renovation solutions tailored to meet your needs. Whether you're building a new home, renovating an existing space, or undertaking a large-scale commercial project, our expert team is here to help. Our services include:
-                            </p>
-                            <ul>
-                                <li><strong class="bluecolor">Renovation</strong>: Transform your current space with professional design and remodeling services.</li>
-                                <li><strong class="bluecolor">New Homes</strong>: From concept to completion, we build custom homes that match your vision.</li>
-                                <li><strong class="bluecolor">High Rise</strong>: Expertise in constructing multi-story buildings with a focus on quality and safety.</li>
-                                <li><strong class="bluecolor">Extensions</strong>: Expand your living or working space with stylish and functional extensions.</li>
-                                <li><strong class="bluecolor">Office Fits</strong>: Custom office fit-outs designed to optimize productivity and reflect your brand.</li>
-                                <li><strong class="bluecolor">Maintenance</strong>: Ongoing support and maintenance to keep your property in top condition.</li>
-                            </ul>
-                            <p>
-                                No matter the project size or scope, we bring craftsmanship, attention to detail, and a commitment to excellence.
-                            </p>
-                            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="learn-more-button">Contact Us</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
-
-           
-
-
-            <div style="padding-bottom: 30px; margin-bottom: 50px;" class="service-area1">
-                <h2 style="color:white" class="carousel-heading">Contact Us</h2>
-                <div style="text-align: center;" class="about-text">
-                    <a>Ready to renovate? Fill the form or</a>
-                    <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button1">Request Quotation</a>
+    <!-- Main Content -->
+    <section id="tomsabout">
+        <div class="tomsabout">
+            <div class="top-links">
+                <a href="renovation.html">Home</a> | <a href="about.html">About</a> | <a href="our-values.html">Our Values</a> | <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="about-content">
+                <div class="text-content">
+                    <h1>Why Choose Us?</h1>
+                    <p>At Maximum Build, we believe your home deserves the best. Whether it’s a renovation, a new build, or a custom office fit-out, we deliver exceptional craftsmanship and service. Our experienced team is dedicated to helping you achieve your vision while providing the highest quality construction.</p>
+                    <ul>
+                        <li>• Reliable, experienced builders</li>
+                        <li>• Transparent pricing and timelines</li>
+                        <li>• High-quality craftsmanship and attention to detail</li>
+                        <li>• Comprehensive services from renovations to new homes</li>
+                    </ul>
+                    <p>Our focus is on delivering results that exceed expectations, creating spaces that reflect your style and meet your practical needs.</p>
+                    <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="learn-more-button">Request a Quote</a>
+                    <a href="/services.html" style="background-color: #c2c2c2;" class="learn-more-button">View All Services</a>
                 </div>
             </div>
-            
-            <section id="request-quote">
-                <h2>Get Started</h2>
-                <p>MaximumBuild: Renovating your home, your way.</p>
-                <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
-            
-                <!-- Form -->
-                <form action="submit_form.php" method="POST">
-                    <div class="form-wrapper">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="suburb">Suburb</label>
-                            <input type="text" id="suburb" name="suburb" placeholder="Enter Your Suburb" required>
-                        </div>
+        </div>
+    </section>
 
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <textarea id="address" name="address" style="font-family: 'Poppins';" placeholder="Enter Your Full Address" rows="6" required></textarea>
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="message">How can we assist you?</label>
-                            <textarea id="message" name="message" style="font-family: 'Poppins';" placeholder="Please provide details about your project" rows="6" required></textarea>
-                        </div>
-                        
-            
-                        <!-- Move Submit button to bottom -->
-                        <div class="form-group button-group">
-                            <button type="submit" class="cta-button">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            
-                <p>If you prefer, you can call us directly at <strong>0418 872 166</strong> to discuss your project.</p>
-            </section>
-            
 
-            <!-- Scroll-Up Button -->
-                <button class="scroll-up-arrow">&#8593;</button>
 
-  
-                <footer class="footer">
-                    <div class="footer-content">
-                        <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
-                        <div class="footer-left">
-                            <img src="assets/logo.png" alt="Company Logo" class="footer-logo">
-                            <p>Phone: <a href="tel:0418 872 166">0418 872 166</a></p>
-                            <p>Email: <a>tom@maximumbuild.com.au</a></p>
-                            <p>Service Areas: <a><br>Gold Coast to Brisbane</a></br></p>
-                            <div class="social-icons">
-                                <a href="https://www.facebook.com/maximumbuild1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                                <a href="mailto:tom@maximumbuild.com.au" aria-label="Gmail"><i class="fas fa-envelope social-icon"></i></a>
-                                <a href="https://www.instagram.com/maximumbuild/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                            </div>
-                        </div>
-                
-                        <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
-                        <div class="footer-center">
-                            <h2>Maximum Build Pty Ltd</h2>
-                            <p>QBCC License: 150 149 22</p>
-                            <div class="master-builders">
-                                <img src="assets/master-builders-logo.png" alt="Master Builders Logo" class="master-builders-logo">
-                            </div>
-                        </div>
-                
-                        <!-- 3rd Grid: Right - Office Hours -->
-                        <div class="footer-right">
-                            <h3>Office Hours</h3>
-                            <ul class="office-hours">
-                                <li><span class="day">Monday</span><span class="time">8:30am - 4:00pm</span></li>
-                                <li><span class="day">Tuesday</span><span class="time">8:30am - 4:00pm</span></li>
-                                <li><span class="day">Wednesday</span><span class="time">8:30am - 4:00pm</span></li>
-                                <li><span class="day">Thursday</span><span class="time">8:30am - 4:00pm</span></li>
-                                <li><span class="day">Friday</span><span class="time">8:30am - 3:00pm</span></li>
-                                <li><span class="day">Saturday</span><span class="time">Closed</span></li>
-                                <li><span class="day">Sunday</span><span class="time">Closed</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                
-                    <!-- Horizontal Line -->
-                    <hr class="footer-line">
-                
-                    <!-- Copyright Notice -->
-                    <div class="footer-bottom">
-                        <p>© Maximum Build 2024. All rights reserved.</p>
-                    </div>
-                </footer>
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-list">
+            <div class="testimonial-item">
+                <p>"Maximum Build transformed our outdated kitchen into a modern, open space. The team was professional, reliable, and delivered on time. We couldn't be happier!"</p>
+                <span style="color: black;">- Sarah & Mike</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"The new office fit-out was beyond our expectations. Maximum Build took our vision and turned it into a practical and stylish workplace."</p>
+                <span style="color:black">- John Bennett</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <div class="faq-container">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+    
+        <div class="faq-list">
+            <div class="faq-item">
+                <i class="faq-icon fas fa-info-circle"></i>
+                <div>
+                    <h3 class="faq-question">What is Maximum Build?</h3>
+                    <p class="faq-description">Maximum Build is a construction company specializing in high-quality residential and commercial projects. We handle everything from design to completion, ensuring timely, budget-friendly, and top-tier results. Whether it’s building your dream home or expanding your business, we bring your vision to life with expert craftsmanship and attention to detail.</p>
+                </div>
+                <i class="faq-arrow fas fa-chevron-down"></i> <!-- Arrow Down Icon -->
+            </div>
+            <div class="faq-item">
+                <i class="faq-icon fas fa-calendar-check"></i>
+                <div>
+                    <h3 class="faq-question">How can I book a service?</h3>
+                    <p class="faq-description">Booking a service with Maximum Build is simple! Just visit our website, choose the service you need, and fill out the booking form with your details. You can also schedule a consultation by calling our office or emailing us. Once your request is received, our team will contact you to confirm the details and schedule an appointment at your convenience.</p>
+                </div>
+                <i class="faq-arrow fas fa-chevron-down"></i> <!-- Arrow Down Icon -->
+            </div>
+            <div class="faq-item">
+                <i class="faq-icon fas fa-tools"></i>
+                <div>
+                    <h3 class="faq-question">What types of services are available?</h3>
+                    <p class="faq-description">Maximum Build offers a wide range of construction services, including extensions, high-rise buildings, property maintenance, new home construction, office fit-outs, and renovations. Whether you're looking to expand your space, build from the ground up, or renovate an existing property, we have the expertise to bring your vision to life.</p>
+                </div>
+                <i class="faq-arrow fas fa-chevron-down"></i> <!-- Arrow Down Icon -->
+            </div>
+            <div class="faq-item">
+                <i class="faq-icon fas fa-headset"></i>
+                <div>
+                    <h3 class="faq-question">How can I contact customer support?</h3>
+                    <p class="faq-description">You can reach our customer support team via the contact form on our website, call us at (150 149 22) or by emailing tom@maximumbuild.com.au</p>
+                </div>
+                <i class="faq-arrow fas fa-chevron-down"></i> <!-- Arrow Down Icon -->
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Scroll-Up Button -->
+    <button class="scroll-up-arrow">&#8593;</button>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
+            <div class="footer-left">
+                <img src="assets/logo.png" alt="Company Logo" class="footer-logo">
+                <p>Phone: <a href="tel:0418 872 166">0418 872 166</a></p>
+                <p>Email: <a href="mailto:tom@maximumbuild.com.au">tom@maximumbuild.com.au</a></p>
+                <p>Service Areas: <a>Gold Coast to Brisbane</a></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/maximumbuild1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+                    <a href="mailto:tom@maximumbuild.com.au" aria-label="Gmail"><i class="fas fa-envelope social-icon"></i></a>
+                    <a href="https://www.instagram.com/maximumbuild/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                </div>
+            </div>
+
+            <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
+            <div class="footer-center">
+                <h2>Maximum Build Pty Ltd</h2>
+                <p>QBCC License: 150 149 22</p>
+                <div class="master-builders">
+                    <img src="assets/master-builders-logo.png" alt="Master Builders Logo" class="master-builders-logo">
+                </div>
+            </div>
+
+            <!-- 3rd Grid: Right - Office Hours -->
+            <div class="footer-right">
+                <h3>Office Hours</h3>
+                <ul class="office-hours">
+                    <li><span class="day">Monday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Tuesday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Wednesday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Thursday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Friday</span><span class="time">8:30am - 3:00pm</span></li>
+                    <li><span class="day">Saturday</span><span class="time">Closed</span></li>
+                    <li><span class="day">Sunday</span><span class="time">Closed</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Horizontal Line -->
+        <hr class="footer-line">
+
+        <!-- Copyright Notice -->
+        <div class="footer-bottom">
+            <p>© Maximum Build 2024. All rights reserved.</p>
+        </div>
+    </footer>
 
         <script src="script.js"></script>
       

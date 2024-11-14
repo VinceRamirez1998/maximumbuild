@@ -9,7 +9,7 @@ body {
 
 header {
     /* background: #22283E;  */
-    background: #f8f9fa; /* Light header background */
+    background: #ffffff; /* Light header background */
     color: black; /* Header text color */
 }
 
@@ -1197,6 +1197,7 @@ body.dark-mode {
 
 body.dark-mode header {
     background: black; /* Dark header background */
+    color:white;
 }
 
 body.dark-mode .nav-links a {
@@ -1281,6 +1282,19 @@ body.dark-mode .bluecolor{
     color:#00bcd4;
 }
 
+body.dark-mode #faq{
+    color: white;
+    font-family: 'Poppins';
+}
+
+body.dark-mode .faq-item{
+    color:black;
+    font-family: 'Poppins';
+}
+
+body.dark-mode .faq-title{
+    color:white;
+}
 
 
 #why-use-maximumbuild h2,
@@ -1475,6 +1489,11 @@ body.dark-mode .bluecolor{
     .nav-links li:hover .dropdown {
         display: block; /* Show dropdown on hover */
     }
+
+    .faq-title{
+        font-size: 25px;
+        font-family: 'Poppins';
+    }
 }
 
 
@@ -1623,6 +1642,9 @@ padding-top: 100px;
     .nav-links .dropdown {
         display: none !important; /* Always hide the dropdown on mobile/tablet */
     }
+
+    
+
 }
 
 /* Media Query for Mobile Screens (480px and below) */
@@ -1672,6 +1694,27 @@ padding-top: 100px;
     .about-content{
         gap: 70px;
     }
+
+    #testimonials{
+       width: 400px !important;
+        font-family: 'Poppins';
+        font-size: 20px !important;
+    }
+
+    .testimonial-item{
+        width: 100% !important;
+        margin-right: 10px !important;
+    }
+
+    .text-content{
+        width:82% !important;
+    }
+
+    .testimonial-list{
+        width: 100% !important;
+    }
+
+    
 }
 
 .scroll-up-arrow {
