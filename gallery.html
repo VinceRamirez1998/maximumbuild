@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Build</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+
+    .carousel-heading1 {
+        font-size: 2.5rem; /* Size of the heading */
+        font-weight: bold; /* Bold text */
+        text-align: center; /* Center align the text */
+        color: rgb(0, 0, 0);
+        margin: 20px 0; /* Vertical spacing */
+        z-index: 3; /* Ensure it's above other elements */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+        white-space: nowrap; /* Prevent text from breaking to a new line */
+        overflow: visible; /* Allow text to overflow */
+        display: inline-block; /* Make the container fit the text */
+        font-family: 'Poppins';
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+    
+    .service-area1 {
+        margin-bottom: 0px;
+    }
+    #service-areas{
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+
+    .styled-gallery {
+        font-size: 36px;
+        font-weight: bold;
+        color: #67e1f1; /* Red color for "Gallery Designs" */
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: transform 0.3s ease-in-out, color 0.3s ease;
+    }
+
+    .styled-gallery:hover {
+        color: #11ddf8; /* Dark color on hover */
+        transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+ /* Hero section styling */
+ .heroabout {
+        position: relative;
+        overflow: hidden;
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;  /* Center horizontally */
+        align-items: center;      /* Center vertically */
+        text-align: center;       /* Center the text inside */
+    }
+
+    /* Cinematic background video */
+    .bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure video covers the whole background */
+        filter: brightness(0.7) contrast(1.2) sepia(0.3); /* Cinematic color effect */
+        z-index: -1; /* Send the video behind the content */
+    }
+
+    /* Hero content styling */
+    .hero-about {
+        position: relative;
+        z-index: 1;
+        color: white;
+        font-size: 2rem;  /* Larger text for visibility */
+        padding: 20px;
+        max-width: 800px;  /* Optional: Limit text width for better readability */
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Subtle text shadow for readability */
+    }
+
+    /* Optional: Adjust the typography for the paragraph */
+    .hero-about p {
+        font-size: 2rem;
+        text-transform: uppercase; /* Add emphasis */
+        letter-spacing: 1px;
+        font-family: 'Poppins';
+    }
+
+    /* Dark overlay for more contrast */
+    .heroabout::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* Add a semi-transparent black overlay */
+        z-index: 0; /* Position the overlay below the content */
+    }
+            /* Scroll down arrow styling */
+        .scroll-down-arrow {
+            position: absolute;
+            bottom: 160px; /* Position arrow at the bottom of the container */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            font-size: 3rem; /* Size of the arrow */
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            animation: bounce 1.5s infinite; /* Apply bounce animation */
+        }
+
+        .arrow {
+            font-size: 2rem; /* Size of the arrow */
+        }
+
+        /* Bouncing animation for the arrow */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px); /* Move the arrow up */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+                /* Styling for the small top links section */
+        .top-links {
+            text-align: start; /* Center align the links */
+            font-size: .8rem;   /* Make the text smaller */
+            margin-top: 20px;    /* Add some space above */
+            margin-bottom: 20px; /* Add space below */
+            font-family: 'Poppins';
+        }
+
+        .top-links a {
+            color: #000000;            /* Set text color */
+            text-decoration: none;  /* Remove underlines */
+            padding: 0 10px;        /* Add horizontal spacing between links */
+            padding-left: 20px;
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .top-links a:hover {
+            color: #22283E; /* Change color on hover (Red) */
+        }
+
+        /* Make the links responsive */
+        @media (max-width: 768px) {
+            .top-links {
+                font-size: 0.7rem;  /* Further reduce font size on smaller screens */
+            }
+
+          
+           
+        }
+
+        @media (max-width: 480px) {
+            .carousel-heading1 {
+                font-size: 1.6rem !important;
+                font-family: 'Poppins';
+                font-weight: bold;  /* This makes the text bold */
+            }
+        }
+
+        
+
+
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <a href="index.html" class="logo"><img src="assets/logo.png" alt="Company Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">About Us</a>
+                    <!-- Dropdown for About Us -->
+                    <ul class="dropdown">
+                        <li><a href="our-values.html">Our Values</a></li>
+                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="services.html">Services</a>
+                
+                    <ul class="dropdown">
+                        <li><a href="renovation.html">Renovations</a></li>
+                        <li><a href="newhomes.html">New Homes</a></li>
+                        <li><a href="highrise.html">High Rise</a></li>
+                        <li><a href="extensions.html">Extensions</a></li>
+                        <li><a href="officefits.html">Office Fits</a></li>
+                        <li><a href="maintenance.html">Maintenance</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="toggle-container">
+                <input type="checkbox" id="mode-toggle" class="toggle-input">
+                <label for="mode-toggle" class="toggle-label">
+                    <span class="toggle-ball"></span>
+                    <i class="fas fa-sun icon sun-icon"></i>
+                    <i class="fas fa-moon icon moon-icon"></i>
+                </label>
+            </div>
+            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button2">Request Quotation</a>
+        </nav>
+    </header>
+    
+
+   
+    
+    
+    <div class="heroabout">
+        <video autoplay muted loop class="bg-video">
+            <source src="assets/gallery-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-about">
+            <p>Maximum Build <span class="styled-gallery">Gallery Designs</span></p>
+        </div>
+        <!-- Scroll down arrow -->
+        <a href="#service-areas" class="scroll-down-arrow">
+            <span class="arrow">&#8595;</span> <!-- Downward arrow symbol -->
+        </a>
+    </div>
+
+    
+    <section id="service-areas">
+
+        <section>
+            <h1" style="font-size: 42px;  text-transform: uppercase;" class="carousel-heading1">Our Projects</h1>
+        </section>
+        
+        <div class="service-links">
+            <div class="service-area">
+                <div class="service-content">
+                   <a href="renovation.html"><img src="assets/house.jpg" alt="Renovations"></a> 
+                    <h3 class="carousel-heading">Renovations</h3>
+                    <div class="description">We offer comprehensive renovation services for all types of properties.</div>
+                    <a href="renovation.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="newhomes.html"><img src="assets/house2.jpg" alt="New Homes"></a> 
+                    <h3 class="carousel-heading">New Homes</h3>
+                    <div class="description">Custom-built homes and duplexes tailored to your needs.</div>
+                    <a href="newhomes.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="highrise.html"><img src="assets/house.jpg" alt="High Rise"></a> 
+                    <h3 class="carousel-heading">High Rise</h3>
+                    <div class="description">Expertise in constructing high-rise buildings that stand out.</div>
+                    <a href="highrise.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="extensions.html"><img src="assets/house2.jpg" alt="Extensions"></a> 
+                    <h3 class="carousel-heading">Extensions</h3>
+                    <div class="description">Seamless extensions that enhance your living space.</div>
+                    <a href="extensions.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="officefits.html"><img src="assets/house.jpg" alt="Office Fit Outs"></a> 
+                    <h3 class="carousel-heading">Office Fits</h3>
+                    <div class="description">Transforming office spaces to boost productivity and aesthetics.</div>
+                    <a href="officefits.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="maintenance.html"><img src="assets/house.jpg" alt="Maintenance"></a> 
+                    <h3 class="carousel-heading">Maintenance</h3>
+                    <div class="description">Reliable maintenance services to keep your property in top condition.</div>
+                    <a href="maintenance.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+           
+        </div>
+        <div style="padding-bottom: 30px;" class="service-area1">
+            <h2 style="color:white" class="carousel-heading">Need a Gold Coast Builder?</h2>
+            <div style="text-align: center;" class="about-text">
+                <a>Contact our team today!</a>
+                <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button1">Request Quotation</a>
+            </div>
+        </div>
+    </section>
+
+ 
+    
+
+   
+    
+
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    <button class="scroll-up-arrow">&#8593;</button>
+
+
+   
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
+            <div class="footer-left">
+                <img src="assets/logo.png" alt="Company Logo" class="footer-logo">
+                <p>Phone: <a href="tel:0418 872 166">0418 872 166</a></p>
+                <p>Email: <a>tom@maximumbuild.com.au</a></p>
+                <p>Service Areas: <a><br>Gold Coast to Brisbane</a></br></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/maximumbuild1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+                    <a href="mailto:tom@maximumbuild.com.au" aria-label="Gmail"><i class="fas fa-envelope social-icon"></i></a>
+                    <a href="https://www.instagram.com/maximumbuild/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                </div>
+            </div>
+    
+            <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
+            <div class="footer-center">
+                <h2>Maximum Build Pty Ltd</h2>
+                <p>QBCC License: 150 149 22</p>
+                <div class="master-builders">
+                    <img src="assets/master-builders-logo.png" alt="Master Builders Logo" class="master-builders-logo">
+                </div>
+            </div>
+    
+            <!-- 3rd Grid: Right - Office Hours -->
+            <div class="footer-right">
+                <h3>Office Hours</h3>
+                <ul class="office-hours">
+                    <li><span class="day">Monday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Tuesday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Wednesday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Thursday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Friday</span><span class="time">8:30am - 3:00pm</span></li>
+                    <li><span class="day">Saturday</span><span class="time">Closed</span></li>
+                    <li><span class="day">Sunday</span><span class="time">Closed</span></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Horizontal Line -->
+        <hr class="footer-line">
+    
+        <!-- Copyright Notice -->
+        <div class="footer-bottom">
+            <p>© Maximum Build 2024. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    
+    
+    
+  
+    
+
+    <script src="script.js"></script>
+  
+
+  <script>
+    const toggleInput = document.getElementById('mode-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Toggle nav links on burger icon click
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Optional: close the menu when a link is clicked
+    navLinks.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+
+  </script>
+
+  <script>
+    // Get the button element
+const toggleButton = document.getElementById('mode-toggle');
+const body = document.body;
+
+// Check if dark mode is enabled in localStorage on page load
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+}
+
+// Toggle dark mode and save the preference
+toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // Save the preference to localStorage
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        localStorage.removeItem('dark-mode');
+    }
+});
+
+  </script>
+
+
+    
+</body>
+</html>
