@@ -1221,6 +1221,9 @@ body.dark-mode footer {
 body.dark-mode .carousel-heading{
 color:white;
 }
+body.dark-mode .carousel-heading1{
+    color:white;
+}
 
 body.dark-mode #reviews{
     color:white;
