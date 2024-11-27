@@ -1574,7 +1574,12 @@ padding-top: 100px;
     justify-content: space-between; /* Evenly distribute space between items */
     padding-left: 250px;
     padding-right: 250px;
+    padding-bottom:40px;
+    width: 1200px;
+    text-align: justify;
 }
+
+
 
 .benefit-item {
     display: flex;
@@ -1625,7 +1630,12 @@ padding-top: 100px;
     .benefits-list {
         padding-left: 20px;
         padding-right: 20px;
+        padding-bottom: 0;
+        width: auto;
+        text-align:start
     }
+
+    
     #tomsabout {
         display: flex;
         justify-content: center;
