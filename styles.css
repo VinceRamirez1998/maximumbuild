@@ -1030,7 +1030,7 @@ section {
 }
 
 .review-item {
-    flex: 0 0 33.33%; /* Each review takes up 1/3 of the space */
+    flex: 0 0 32.1%; /* Each review takes up 1/3 of the space */
     padding: 30px !important;
     box-sizing: border-box;
     text-align: center;
@@ -1041,7 +1041,6 @@ section {
 
 .review-item p {
     margin: 10px 0;
-    padding-right: 30px;
 
 }
 
