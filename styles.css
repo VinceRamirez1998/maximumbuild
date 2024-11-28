@@ -423,6 +423,7 @@ section {
         height: auto; /* Maintain aspect ratio */
         
     }
+    
 }
 
 @media (max-width: 768px){
@@ -516,6 +517,8 @@ section {
     align-items: center; /* Align items vertically */
     transition: transform 0.5s ease; /* Smooth transition */
     width: 100%;
+    height: 350px;
+    flex: 0 0 100%;
 }
 
 .review-item {
@@ -984,6 +987,7 @@ section {
     .carousel-item {
         flex: 0 0 50%; /* Two items per row on medium screens */
     }
+
 }
 
 @media (max-width: 480px) {
@@ -1012,23 +1016,33 @@ section {
 .reviews-carousel {
     position: relative;
     width: 100%;
+    max-width: 1200px; /* Safe zone width */
+    margin: 0 auto; /* Center the container */
     overflow: hidden; /* Hide content outside the container */
+    padding: 40px 0; /* Vertical padding for spacing */
 }
 
 .reviews-images {
     display: flex;
     transition: transform 0.5s ease; /* Smooth sliding */
     width: 100%; /* Ensure it spans the full width */
+    gap: 20px;
 }
 
 .review-item {
-    flex: 1 0 33.33%;
-    padding: 60px;
+    flex: 0 0 33.33%; /* Each review takes up 1/3 of the space */
+    padding: 30px !important;
     box-sizing: border-box;
     text-align: center;
+    border-radius: 10px; /* Optional rounded corners for reviews */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    background: #fff; /* White background for each item */
 }
+
 .review-item p {
     margin: 10px 0;
+    padding-right: 30px;
+
 }
 
 .review-item.active {
@@ -1053,9 +1067,9 @@ section {
     margin: 10px 0;
 }
 
-.arrow {
+.arrow2 {
     position: absolute;
-    top: 50%;
+    top: 68%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -1065,18 +1079,48 @@ section {
     font-size: 24px;
 }
 
-.arrow.left {
-    left: 0;
+.arrow2.left {
+    left: 10px;
 }
 
-.arrow.right {
-    right: 0;
+.arrow2.right {
+    right: 10px;
 }
 
-.arrow:disabled {
+.arrow2:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* Style for the right arrow button */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the button */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* White color for the arrow */
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Larger font for better visibility */
+    z-index: 10; /* Ensure the button is on top of the images */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+.arrow:disabled {
+    opacity: 0.5; /* Fade when disabled */
+    cursor: not-allowed; /* Change cursor to show it's not clickable */
+}
+
+/* Positioning for the right arrow specifically */
+.right {
+    right: 10px; /* Position the button on the right */
+}
+
 
 
 
@@ -1298,6 +1342,10 @@ body.dark-mode .faq-item{
 body.dark-mode .faq-title{
     color:white;
 }
+body.dark-mode .customer-name{
+    color: black;
+}
+
 
 
 #why-use-maximumbuild h2,
