@@ -396,6 +396,9 @@ section {
         font-weight: bold !important; 
         color: black;
     }
+
+
+    
 }
 
 @media (max-width: 480px) {
@@ -655,7 +658,8 @@ section {
 /* General Footer Styles */
 .footer {
     width: 100%;
-    background-color: #22283E;
+    /* background-color: #22283E; */
+    background-color: black;
     color: white;
     font-family: 'Poppins', sans-serif;
     padding: 20px 0;
@@ -678,7 +682,6 @@ section {
 /* Left Grid: Logo, Contact, Social Icons */
 .footer-left img {
     max-width: 220px;
-    /* margin-bottom: 15px; */
 }
 
 .footer-left p {
@@ -686,6 +689,7 @@ section {
     font-size: 1em;
     color:rgb(255, 255, 255);
     font-weight: bold;
+    text-decoration: none !important;
 }
 
 .footer-left a {
@@ -693,6 +697,7 @@ section {
     font-size: 1em;
     color: #ffffff;
     font-weight: normal;
+    text-decoration: none !important;
 }
 
 .social-icons {
@@ -737,7 +742,7 @@ section {
 /* Right Grid: Office Hours */
 .footer-right h3 {
     font-size: 1.5em;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
     text-align: center;
 }
 
@@ -766,8 +771,9 @@ section {
 }
 
 .office-hours .time {
-    text-align: right; /* Right-align the time for better spacing */
+    text-align: left; /* Right-align the time for better spacing */
     width: 150px; /* Fixed width for time to keep alignment */
+
 }
 
 /* Horizontal Line */
@@ -845,8 +851,14 @@ section {
 }
 
 @media (max-width: 480px) {
+
+    .footer-right h3 {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        text-align: center;
+    }
     .footer-left img {
-        max-width: 140px;
+        max-width: 200px;
     }
 
     .footer-center h2 {
