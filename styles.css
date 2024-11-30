@@ -1364,6 +1364,15 @@ body.dark-mode .customer-name{
     color: black;
 }
 
+body.dark-mode .see-more-link {
+    color: #707070; /* Change color on hover (Red) */
+}
+
+body.dark-mode .see-more-link:hover {
+    color: #00bcd4; /* Change color on hover (Red) */
+}
+
+
 
 
 #why-use-maximumbuild h2,
@@ -1864,6 +1873,19 @@ padding-top: 100px;
 .top-links a:hover {
     color: #22283E; /* Change color on hover (Red) */
 }
+
+.see-more-link {
+    color: gray; /* Matches the surrounding text color */
+    text-decoration: none; /* Adds subtle emphasis */
+    cursor: pointer; /* Indicates it's clickable */
+    font-size: 13px;
+}
+
+.see-more-link:hover {
+    color: #1d1d1d; /* Slight color change on hover for interactivity */
+}
+
+
 
 /* Make the links responsive */
 @media (max-width: 768px) {

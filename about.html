@@ -214,20 +214,28 @@
             <div class="about-content">
                 <div class="text-content">
                     <h1>About Maximum Build</h1>
-                    <!-- <p>Professional Gold Coast Builders</p> -->
-                    <!-- <p>
-                        <strong class="bluecolor">MaximumBuild</strong> was established by <strong class="bluecolor">Tom Slipper</strong> in <strong class="bluecolor">2013</strong>, a visionary with over 10 years of experience in the building industry. Specializing in high-quality custom homes and renovations, Tom has led MaximumBuild to become a trusted name in the Gold Coast region. With a team of skilled professionals, MaximumBuild has earned a reputation for delivering exceptional craftsmanship and innovative design solutions. Whether building new homes or transforming existing spaces, MaximumBuild is dedicated to turning clients' dreams into reality, with a focus on precision, sustainability, and outstanding customer service.
-                    </p> -->
-
+            
                     <p>
                         Established in 2015, <strong class="bluecolor">Maximum Build</strong> is a proud Australian family-owned building company dedicated to transforming visions into reality across the 
-                        <strong class="bluecolor">Gold Coast </strong>, <strong class="bluecolor">Brisbane </strong>, and <strong class="bluecolor">Tweed Coast</strong>. Our journey began with a heartfelt mission to restore trust in the building industry, driven by our experiences witnessing the impact of unethical practices on homeowners. We believe everyone deserves a home that reflects their dreams, crafted with care and integrity. 
+                        <strong class="bluecolor">Gold Coast</strong>, <strong class="bluecolor">Brisbane</strong>, and <strong class="bluecolor">Tweed Coast</strong>. Our journey began with a heartfelt mission to restore trust in the building industry, driven by our experiences witnessing the impact of unethical practices on homeowners. We believe everyone deserves a home that reflects their dreams, crafted with care and integrity. 
+                        <a href="javascript:void(0);" class="see-more-link">See more . . .</a>
+                      
                     </p>
+            
+                    <div class="collapse" id="moreAboutContent" style="display: none;">
+                        <p>
+                            We believe everyone deserves a home that reflects their dreams, crafted with care and integrity. We built our business foundations on family values—trust, integrity, and craftsmanship. We strive to create a transparent and reliable experience for our clients, ensuring that every project we undertake reflects our commitment to quality and fairness. By choosing Maximum Build, you are not just hiring a builder but partnering with a team that treats you like family.
+                        </p>
+                        <p>
+                            Our passion goes beyond merely building structures; it is about uplifting our community and creating homes that resonate with heart and soul. Join us on this journey to redefine the building experience—where your visions are met with ethical practices and exceptional craftsmanship. Let's build something extraordinary together!
+                        </p>
+                    </div>
+            
                     <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="learn-more-button">Contact Us</a>
                 </div>
                 <div class="image-content">
                     <img src="assets/tom.jpg" alt="Innovative Design" />
-                    <h2>Tom Slipper - Director</h2> <!-- CEO name below the image -->
+                    <h2>Tom Slipper - Director</h2>
                 </div>
             </div>
         </div>
@@ -293,7 +301,7 @@
             <div class="benefit-item">
                 <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
                 <div class="benefit-content">
-                    <h4>PERSONALIZED SERVICE</h4>
+                    <h4>PERSONALISED SERVICE</h4>
                     <p>We work closely with you throughout the renovation process to ensure your vision is brought to life exactly as you imagined. Your satisfaction is our top priority.</p>
                 </div>
             </div>
@@ -407,6 +415,24 @@ toggleButton.addEventListener('click', () => {
 });
 
   </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const seeMoreLink = document.querySelector('.see-more-link');
+        const moreContent = document.getElementById('moreAboutContent');
+
+        seeMoreLink.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the default action of the link
+            if (moreContent.style.display === 'none' || !moreContent.style.display) {
+                moreContent.style.display = 'block';
+                seeMoreLink.textContent = 'See less . . .'; // Change text to "See less"
+            } else {
+                moreContent.style.display = 'none';
+                seeMoreLink.textContent = 'See more . . .'; // Change text back to "See more"
+            }
+        });
+    });
+</script>
+    
 
 
     
