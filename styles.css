@@ -1077,6 +1077,7 @@ section {
     font-size: 1em; /* Standard font size */
     margin: 10px 0;
     color: #555; /* Gray color for statement */
+    font-family: 'Poppins';
 }
 
 .customer-rating {
