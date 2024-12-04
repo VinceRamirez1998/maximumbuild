@@ -33,18 +33,13 @@ header.scrolled nav ul li a {
     color: white; /* Change text color to white when the header is scrolled */
 }
 
-#menu-toggle .menu-toggle-line {
-    background-color: #22283E; /* Default color of the hamburger lines */
-    height: 4px; /* Height of the hamburger lines */
-    width: 100%; /* Full width of the hamburger icon */
-    transition: background-color 0.3s ease; /* Smooth transition */
+header.scrolled .menu-toggle div {
+    width: 25px; /* Width of burger lines */
+    height: 3px; /* Height of burger lines */
+    background: #ffffff; /* Default burger color for light mode */
+    margin: 4px 0; /* Space between lines */
+    transition: 0.3s; /* Smooth transition */
 }
-
-/* When the header is scrolled, change the color of the hamburger lines */
-header.scrolled #menu-toggle .menu-toggle-line {
-    background-color: white; /* Change to white when scrolled */
-}
-
 
 
 nav {
@@ -524,12 +519,15 @@ section {
     }
     
     .cta-button {
-        padding: 3px 16px; /* Adjust padding for mobile */
+        padding: 6px 16px; /* Adjust padding for mobile */
         font-size: 12px; /* Adjust the font size */
         margin-left: 10px; /* Space between title and button */
     }
 
-   
+    header.scrolled nav ul li a {
+        color: black; /* Change text color to white when the header is scrolled */
+    }
+
 }
 
 @media (max-width: 768px){
@@ -552,8 +550,9 @@ section {
 .cta-button2{
     background-color: #22283E;
     color: white;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
     text-decoration: none;
     border-radius: 25px;
     border: 2px solid #22283E;
@@ -600,7 +599,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 8px;
+    padding: 0 7px !important;
     z-index: 1;
     height: 33px;
 }
