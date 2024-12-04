@@ -178,3 +178,17 @@ handleScroll();
 
 
 
+///HEader
+// This script will add the 'scrolled' class to the header when the page is scrolled
+// Listen for scroll events
+window.onscroll = function() {
+    var header = document.querySelector('header'); // Select the header
+    var links = document.querySelectorAll('nav ul li a'); // Select all navigation links
+
+    // When the page is scrolled down
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled'); // Add the 'scrolled' class to the header
+    } else {
+        header.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
+    }
+};

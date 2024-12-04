@@ -8,10 +8,34 @@ body {
 }
 
 header {
-    /* background: #22283E;  */
-    background: #ffffff; /* Light header background */
+    background: #ffffff; /* Initial white background */
     color: black; /* Header text color */
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure the header stays on top of other content */
+    border-bottom: 1px solid #888484; /* Add a bottom border (light gray) */
+    height: 120px;
+    transition: background 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
+
+header.scrolled {
+    background: #00001a; /* Dark background when scrolled */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+nav ul li a {
+    color: black; /* Default text color (black) */
+    text-decoration: none; /* Optional: remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+header.scrolled nav ul li a {
+    color: white; /* Change text color to white when the header is scrolled */
+}
+
+
+
+
 
 nav {
     display: flex; /* Flexbox for navigation */
@@ -23,7 +47,7 @@ nav {
 }
 
 .logo img {
-    max-width: 150px; /* Control logo size */
+    max-width: 215px; /* Control logo size */
     height: auto; /* Maintain aspect ratio */
 }
 
@@ -70,14 +94,14 @@ nav {
 }
 
 .nav-links .dropdown li a:hover {
-    background-color: #22283E;
+    background-color: #00001a;
     color:white !important;
 }
 
 
 
 .nav-links a {
-    color: black !important; /* Link text color */
+    color: black; /* Link text color */
     text-decoration: none; /* Remove underline */
 }
 
@@ -580,7 +604,7 @@ section {
     box-sizing: border-box; /* Include padding/border in width calculation */
     overflow: hidden;
     color:white;
-    background-color: rgb(19, 18, 18); /* Change this to your desired background color */
+    background-color: #00001a; /* Change this to your desired background color */
     width: 100%; /* Ensure it takes the full width */
     text-align: center; /* Center align text if desired */
    
@@ -659,7 +683,7 @@ section {
 .footer {
     width: 100%;
     /* background-color: #22283E; */
-    background-color: black;
+    background-color: #00001a;
     color: white;
     font-family: 'Poppins', sans-serif;
     padding: 20px 0;
@@ -1277,9 +1301,13 @@ body.dark-mode .cta-button {
 }
 
 body.dark-mode footer {
-    background: #22283E; /* Dark footer background */
+    background: black; /* Dark footer background */
     color: white; /* Footer text color */
+    border-top: 1px solid #888; /* Light gray top border */
+    width: 1200px; /* Set the width of the footer */
+    margin: 0 auto; /* Center the footer */
 }
+
 
 body.dark-mode .carousel-heading{
 color:white;
@@ -1371,6 +1399,10 @@ body.dark-mode .see-more-link {
 
 body.dark-mode .see-more-link:hover {
     color: #00bcd4; /* Change color on hover (Red) */
+}
+
+body.dark-mode .service-area1{
+    background-color: #141414;
 }
 
 
