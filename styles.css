@@ -33,7 +33,17 @@ header.scrolled nav ul li a {
     color: white; /* Change text color to white when the header is scrolled */
 }
 
+#menu-toggle .menu-toggle-line {
+    background-color: #22283E; /* Default color of the hamburger lines */
+    height: 4px; /* Height of the hamburger lines */
+    width: 100%; /* Full width of the hamburger icon */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
 
+/* When the header is scrolled, change the color of the hamburger lines */
+header.scrolled #menu-toggle .menu-toggle-line {
+    background-color: white; /* Change to white when scrolled */
+}
 
 
 
@@ -199,18 +209,56 @@ nav {
     
 }
 
-/* Button styles */
+/* General button styling */
 .cta-button {
     background-color: #22283E; /* Darker background on hover */
-    color:white;
+    color: white;
     padding: 5px 12px; /* Adjust button padding */
     text-decoration: none; /* Remove underline */
     border-radius: 25px; /* Rounded corners */
     border: 2px solid #22283E;
-    margin-left: 5px; /* Space from the toggle */
     transition: background-color 0.3s; /* Smooth background transition */
     font-family: 'Poppins';
+    display: inline-block; /* Ensures the button fits the text size */
+    text-align: center; /* Centers the button text */
 }
+
+/* Container for title and button */
+.title-and-button {
+    display: flex; /* Aligns the title and button horizontally */
+    align-items: center; /* Vertically centers the button with the title */
+    gap: 10px; /* Space between title and button */
+}
+
+/* For mobile devices */
+@media screen and (max-width: 768px) {
+    .title-and-button {
+        flex-wrap: wrap; /* Allow the title and button to wrap onto new lines */
+        justify-content: center; /* Centers the title and button if they wrap */
+        gap: 15px; /* Add more space between elements */
+    }
+    
+    .cta-button {
+        padding: 3px 15px; /* Adjust padding for mobile */
+        font-size: 14px; /* Adjust the font size */
+        margin-left: 10px; /* Space between title and button */
+    }
+}
+
+/* For medium screen devices */
+@media screen and (max-width: 1024px) {
+    .title-and-button {
+        flex-wrap: wrap; /* Allow wrapping on medium screens as well */
+        gap: 10px;
+    }
+
+    .cta-button {
+        padding: 5px 16px; /* Adjust padding for medium screens */
+        font-size: 15px; /* Adjust font size */
+    }
+}
+
+
 
 .cta-button1 {
     background-color: #22283E; /* Darker background on hover */
@@ -420,9 +468,21 @@ section {
         font-weight: bold !important; 
         color: black;
     }
-
-
     
+    
+}
+
+/* Default font size for larger screens */
+.area-name {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* For mobile devices */
+@media screen and (max-width: 768px) {
+    .area-name {
+        font-size: 33px; /* Change font size to 33px on mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -432,6 +492,7 @@ section {
         font-weight: bold !important; 
         color: black;
     }
+    
 
     .about-text p {
         font-size: 1em; /* Adjust paragraph size for smaller screens */
@@ -457,7 +518,18 @@ section {
         width: 100%;
         gap: 30px !important;
     }
+
+    .area-name {
+        font-size: 24px; /* Change font size to 33px on mobile */
+    }
     
+    .cta-button {
+        padding: 3px 16px; /* Adjust padding for mobile */
+        font-size: 12px; /* Adjust the font size */
+        margin-left: 10px; /* Space between title and button */
+    }
+
+   
 }
 
 @media (max-width: 768px){
@@ -613,7 +685,7 @@ section {
     position: relative;
     text-align: center;
     border-radius: 8px; /* Optional: rounded corners */
-    padding: 20px; /* Add padding around content */
+    padding: 33px; /* Add padding around content */
     text-align: center; /* Center text in the content */
 }
 
@@ -675,6 +747,10 @@ section {
 
     .service-area img {
         width: 320px; /* Fixed width for images */
+    }
+
+    .mobile-logo{
+        display: none;
     }
 }
 
