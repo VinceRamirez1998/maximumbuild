@@ -635,6 +635,10 @@ section {
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 
 /* About content styles */
