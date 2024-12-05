@@ -1998,6 +1998,14 @@ padding-top: 100px;
 }
 
 
+#request-quote textarea {
+    max-width: 500px;
+    max-height: 100px;
+    min-width: 500px;
+    min-height: 100px;
+}
+
+
 
 
 
