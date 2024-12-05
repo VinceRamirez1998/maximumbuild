@@ -58,313 +58,188 @@
     </header>
 
     <style>
-        /* General Body */
-        body {
-            font-family: 'Poppins';
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #000000;
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        #about {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 40px;
-        }
-
-        #about h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #000000;
-        }
-
-        #about p {
-            font-size: 1.125rem;
-            color: #000000;
-            line-height: 1.8;
-        }
-
-        .renovation-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-height: 400px;
-        }
-
-        .about-image-container {
-            flex-basis: 45%;
-        }
-
-        /* Services Section */
-        #services {
-            padding: 60px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        #services h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #000000;
-        }
-
-        #services p {
-            font-size: 1.125rem;
-            color: #000000;
-            margin-bottom: 30px;
-        }
-
-        #services ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 1.1rem;
-            color: #000000;
-            margin-top: 20px;
-        }
-
-        #services ul li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        #services ul li::before {
-            content: '✔';
-            position: absolute;
-            left: 0;
-            color: #000000;
-            font-size: 18px;
-        }
-
-        .benefits-list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-left: 250px;
-            padding-right: 250px;
-            margin-bottom: 70px;
-        }
-        
-
-    
-/* Form Section Styles */
-#request-quote {
-    max-width: 600px;  /* Smaller width for the form container */
-    margin: 0 auto;
-    padding: 30px 20px;  /* Reduced padding for a more compact look */
-    background-color: #fff;
-    border-radius: 15px;  /* Slightly smaller border radius */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 50px;
-}
-
-#request-quote h2 {
-    font-size: 2rem;  /* Slightly smaller font size */
-    color: #000;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-#request-quote p {
-    font-size: 1rem;  /* Slightly smaller paragraph text */
-    color: #000;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-#request-quote .form-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */ 
-    gap: 15px;  /* Reduced gap between form fields */
-    margin: 0 auto;
-}
-
-#request-quote .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-#request-quote label {
-    font-size: 0.875rem;  /* Smaller label font size */
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 5px;
-    text-align: start;
-}
-
-#request-quote input, 
-#request-quote textarea {
-    width: 100%;  /* Make the input and textarea take up full width */
-    padding: 10px;  /* Reduced padding for more compact input fields */
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    font-size: 0.875rem;  /* Smaller font size */
-    margin-top: 5px;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-}
-
-#request-quote input {
-    height: 40px;  /* Reduced input height */
-}
-
-#request-quote textarea {
-    grid-column: span 2;  /* Make textarea span across both columns */
-    height: 120px;  /* Reduced height for a more compact form */
-}
-
-/* Button Styles */
-#request-quote .cta-button {
-    background-color: #22283E;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;  /* Full width for button */
-    border: none;
-    grid-column: span 2;  /* Ensure button spans both columns */
-    margin-top: 20px;  /* Space between button and form fields */
-}
-
-#request-quote .cta-button:hover {
-    background-color: #1d2b3a;
-}
-
-textarea {
-    font-family: 'Poppins';
-    max-width: 190px; /* Max width for large screens */
-    max-height: 150px; /* Max width for large screens */
-    min-height: 150px;
-    min-width: 190px;
-    width: 250px; /* Allow full width up to max-width */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+        /* Form Section Styles */
     #request-quote {
-        max-width: 100%;  /* Make the form full width on smaller screens */
-        padding: 20px;  /* Less padding for smaller screens */
+        max-width: 600px;  /* Smaller width for the form container */
+        margin: 0 auto;
+        padding: 30px 20px;  /* Reduced padding for a more compact look */
+        background-color: #fff;
+        border-radius: 15px;  /* Slightly smaller border radius */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 50px;
     }
-
+    
+    
+    #request-quote h2 {
+        font-size: 2rem;  /* Slightly smaller font size */
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    
+    #request-quote p {
+        font-size: 1rem;  /* Slightly smaller paragraph text */
+        color: #000;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
     #request-quote .form-wrapper {
-        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
-        width: 392px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 2 equal-width columns */ 
+        gap: 15px;  /* Reduced gap between form fields */
+        margin: 0 auto;
+        width: 500px;
     }
-
+    
+    #request-quote .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    
+    #request-quote label {
+        font-size: 0.875rem;  /* Smaller label font size */
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 5px;
+        text-align: start;
+    }
+    
     #request-quote input, 
     #request-quote textarea {
-        max-width: 100%;  /* Ensure form fields are full width */
+        width: 100%;  /* Make the input and textarea take up full width */
+        padding: 10px;  /* Reduced padding for more compact input fields */
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        font-size: 0.875rem;  /* Smaller font size */
+        margin-top: 5px;
+        background-color: #f9f9f9;
+        box-sizing: border-box;
     }
-
+    
+    #request-quote input {
+        height: 40px;  /* Reduced input height */
+    }
+    
+    #request-quote textarea {
+        grid-column: span 2;  /* Make textarea span across both columns */
+        height: 120px;  /* Reduced height for a more compact form */
+    }
+    
+    /* Button Styles */
     #request-quote .cta-button {
-        width: auto;
-        margin-top: 20px;
-    }
-
-    .benefits-list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-left: 0;
-            padding-right: 0;
-            margin-bottom: 70px;
-        }
-
-    .cta-button1{
         background-color: #22283E;
         color: white;
-        padding-left: 10px;
-        padding-right: 10px;
-        text-decoration: none;
-        border-radius: 25px;
-        border: 2px solid #22283E;
-        margin-left: 5px;
-        transition: background-color 0.3s;
-        font-family: 'Poppins';
-        font-size: 14px;
-        display: inline-block;
-        text-align: center;
-        line-height: 20px;
-        margin-top: 23px;
+        padding: 12px 25px;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;  /* Full width for button */
+        border: none;
+        grid-column: span 2;  /* Ensure button spans both columns */
+        margin-top: 20px;  /* Space between button and form fields */
     }
-
-    #request-quote label {
-    font-size: 0.875rem;  /* Smaller label font size */
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 5px;
-    text-align: start;
+    
+    #request-quote .cta-button:hover {
+        background-color: #1d2b3a;
     }
-
-    #request-quote{
-        padding: 0;
-    }
-
-    #request-quote p {
-    font-size: 1rem;
-    color: #000;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    line-height: 1.5;
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        #request-quote {
+            max-width: 100%;  /* Make the form full width on smaller screens */
+            padding: 20px;  /* Less padding for smaller screens */
         }
-
-    #request-quote .form-wrapper {
-        grid-template-columns: repeat(1, 1fr);
+    
+        #request-quote .form-wrapper {
+            grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
+            width: 392px;
+        }
+    
+        #request-quote input, 
+        #request-quote textarea {
+            max-width: 100%;  /* Ensure form fields are full width */
+        }
+    
+        #request-quote .cta-button {
+            width: auto;
+            margin-top: 20px;
+        }
+    
+        .benefits-list{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 70px;
+            }
+    
+        .cta-button1{
+            background-color: #22283E;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid #22283E;
+            margin-left: 5px;
+            transition: background-color 0.3s;
+            font-family: 'Poppins';
+            font-size: 14px;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            margin-top: 23px;
+        }
+    
+        #request-quote label {
+        font-size: 0.875rem;  /* Smaller label font size */
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 5px;
+        text-align: start;
+        }
+    
+        #request-quote{
+            padding: 0;
+        }
+    
+        #request-quote p {
+        font-size: 1rem;
+        color: #000;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 1.5;
+            }
+    
+        #request-quote .form-wrapper {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    
+        
     }
-
-    textarea {
-    font-family: 'Poppins';
-    max-width: 190px; /* Max width for large screens */
-    max-height: 150px; /* Max width for large screens */
-    min-height: 150px;
-    min-width: 190px;
-    width: 250px; /* Allow full width up to max-width */
-}
-
-}
-
-@media (max-width: 468px) {
-
-
-    #request-quote .form-wrapper {
-        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
-        width: 292px;
+    
+    
+    @media (max-width: 468px) {
+    
+    
+        #request-quote .form-wrapper {
+            grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
+            width: 292px;
+        }
+    
+        #request-quote h2  {
+           font-size: 1.5rem;
+        }
+    
+      
     }
-
-    #request-quote h2  {
-       font-size: 1.5rem;
-    }
-
-    textarea {
-    font-family: 'Poppins';
-    max-width: 190px; /* Max width for large screens */
-    max-height: 150px; /* Max width for large screens */
-    min-height: 150px;
-    min-width: 190px;
-    width: 250px; /* Allow full width up to max-width */
-}
-
-   
-}
-
-
-
     </style>
 
         <div class="hero2">
@@ -501,24 +376,25 @@ textarea {
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
                         </div>
-            
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
-                        </div>
-            
+        
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
                         </div>
             
                         <div class="form-group">
-                            <label for="suburb">Suburb</label>
-                            <input type="text" id="suburb" name="suburb" placeholder="Enter Your Suburb" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                        </div>
+        
+            
+                        <div class="form-group">
+                            <label for="date">Ideal start date</label>
+                            <input type="datetime-local" id="date" name="date" required>
                         </div>
         
                         <div class="form-group">
-                            <label for="address">Address</label>
+                            <label for="address">Project Address</label>
                             <textarea id="address" name="address" style="font-family: 'Poppins';" placeholder="Enter Your Full Address" rows="6" required></textarea>
                         </div>
             
@@ -605,34 +481,33 @@ textarea {
 
             // Collect form data from the form fields
             const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                suburb: document.getElementById('suburb').value,
-                address: document.getElementById('address').value,
-                message: document.getElementById('message').value,
-                date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
-            };
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            date: document.getElementById('date').value,
+            address: document.getElementById('address').value,
+            message: document.getElementById('message').value,
+            date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
+        };
 
-            // GraphQL mutation to create an item in Monday.com
-            const query = `
-                mutation {
-                    create_item(
-                        board_id: 1933350367,
-                        item_name: "${formData.name}",
-                        column_values: "{
-                            \\"text\\": \\"${formData.name}\\",
-                            \\"text2\\": \\"${formData.email}\\",
-                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                            \\"long_text\\": \\"${formData.address}\\",
-                            \\"dup__of_address\\": \\"${formData.suburb}\\",
-                            \\"date4\\": \\"${formData.date}\\",
-                            \\"long_text6\\": \\"${formData.message}\\"
-                        }"
-                    ) {
-                        id
-                    }
-                }`;
+        // GraphQL mutation to create an item in Monday.com
+        const query = `
+            mutation {
+                create_item(
+                    board_id: 1933350367,
+                    item_name: "${formData.name}",
+                    column_values: "{
+                        \\"text\\": \\"${formData.name}\\",
+                        \\"text2\\": \\"${formData.email}\\",
+                        \\"dup__of_email_address\\": \\"${formData.phone}\\",
+                        \\"long_text\\": \\"${formData.address}\\",
+                        \\"date4\\": \\"${formData.date}\\",
+                        \\"long_text6\\": \\"${formData.message}\\"
+                    }"
+                ) {
+                    id
+                }
+            }`;
 
             // Send request to your Vercel API endpoint (this assumes your backend is running at /api/submitForm)
             try {
