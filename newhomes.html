@@ -502,24 +502,25 @@ Dreaming of a new homes? Our expert team, from architects to builders, is dedica
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
                         </div>
-            
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
-                        </div>
-            
+        
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
                         </div>
             
                         <div class="form-group">
-                            <label for="suburb">Suburb</label>
-                            <input type="text" id="suburb" name="suburb" placeholder="Enter Your Suburb" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                        </div>
+        
+            
+                        <div class="form-group">
+                            <label for="date">Ideal start date</label>
+                            <input type="datetime-local" id="date" name="date" required>
                         </div>
         
                         <div class="form-group">
-                            <label for="address">Address</label>
+                            <label for="address">Project Address</label>
                             <textarea id="address" name="address" style="font-family: 'Poppins';" placeholder="Enter Your Full Address" rows="6" required></textarea>
                         </div>
             
@@ -607,11 +608,12 @@ Dreaming of a new homes? Our expert team, from architects to builders, is dedica
             event.preventDefault();
 
             // Collect form data from the form fields
+           // Collect form data from the form fields
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
                 email: document.getElementById('email').value,
-                suburb: document.getElementById('suburb').value,
+                date: document.getElementById('date').value,
                 address: document.getElementById('address').value,
                 message: document.getElementById('message').value,
                 date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
@@ -628,7 +630,6 @@ Dreaming of a new homes? Our expert team, from architects to builders, is dedica
                             \\"text2\\": \\"${formData.email}\\",
                             \\"dup__of_email_address\\": \\"${formData.phone}\\",
                             \\"long_text\\": \\"${formData.address}\\",
-                            \\"dup__of_address\\": \\"${formData.suburb}\\",
                             \\"date4\\": \\"${formData.date}\\",
                             \\"long_text6\\": \\"${formData.message}\\"
                         }"
