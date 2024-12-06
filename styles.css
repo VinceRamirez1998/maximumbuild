@@ -48,7 +48,8 @@ nav {
     align-items: center; /* Center items vertically */
     max-width: 1200px; /* Max width for navigation */
     margin: 0 auto; /* Center navigation */
-    padding: 0 20px; /* Side padding */
+    padding: 20px; /* Side padding */
+    padding-top: 25px;
 }
 
 .logo img {
@@ -1136,6 +1137,7 @@ html {
         margin: 0 auto; /* Center navigation */
         padding: 0 20px; /* Side padding */
         height: 100px;
+        padding-top: 15px;
     }
     
 }
