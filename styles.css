@@ -775,7 +775,7 @@ html {
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .footer-left, .footer-center, .footer-right {
@@ -785,6 +785,8 @@ html {
 /* Left Grid: Logo, Contact, Social Icons */
 .footer-left img {
     max-width: 220px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .footer-left p {
@@ -815,7 +817,7 @@ html {
 }
 
 .social-icon:hover {
-    color: #00bcd4; /* Hover color for icons */
+    color: #428BD2; /* Hover color for icons */
 }
 
 /* Center Grid: Company Info */
@@ -845,8 +847,9 @@ html {
 /* Right Grid: Office Hours */
 .footer-right h3 {
     font-size: 1.5em;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     text-align: center;
+    padding-top: 5px;
 }
 
 .office-hours {
@@ -858,6 +861,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 0; 
 }
 
 .office-hours li {
@@ -962,6 +966,8 @@ html {
     }
     .footer-left img {
         max-width: 200px;
+        padding-top: 30px;
+        padding-bottom: 20px;
     }
 
     .footer-center h2 {
@@ -1915,6 +1921,14 @@ padding-top: 100px;
 
     .testimonial-list{
         width: 100% !important;
+    }
+
+    body.dark-mode footer {
+        background: black; /* Dark footer background */
+        color: white; /* Footer text color */
+        border-top: 1px solid #888; /* Light gray top border */
+        width: auto !important; /* Set the width of the footer */
+        margin: 0 auto; /* Center the footer */
     }
 
     
