@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+     body {
+    background: #222;
+    font-family: "Fira Sans", sans-serif;
+    padding-right: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.gallery__strip {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Make sure it fills the full width */
+}
+
+.gallery__strip__wrapper {
+    flex: 0 0 33.33%; /* Each strip takes up one-third of the width */
+    padding: 1rem;
+    justify-content: flex-start;
+    background: #222;
+    border-right: 2px solid #333;
+    position: relative;
+}
+
+@media (min-width: 500px) {
+    .gallery__strip__wrapper {
+        flex: 0 0 33.33%; /* 3 items per row */
+    }
+}
+
+@media (min-width: 950px) {
+    .gallery {
+        height: 100vh;
+    }
+
+    .gallery__strip {
+        &.one {
+            animation: 60s move-it ease alternate infinite;
+            transform: translateY(2%);
+        }
+
+        &.three {
+            animation: 70s move-it ease alternate infinite;
+            transform: translateY(2%);
+        }
+
+        &.two {
+            animation: 58s move-it-2 ease alternate infinite;
+            transform: translateY(-50%);
+        }
+
+        &.four {
+            animation: 65s move-it-2 ease alternate infinite;
+            transform: translateY(-50%);
+        }
+        
+        /* Remove the hover state that pauses the animation */
+        &:hover {
+            animation-play-state: running; /* Ensure animation continues even on hover */
+        }
+
+        .gallery__strip__wrapper {
+            flex: 0 0 33.33%; /* 3 items per row */
+        }
+    }
+}
+
+.photo {
+    position: relative;
+    text-align: right;
+    padding-bottom: 3rem;
+    width: 100%; /* Ensure the photo takes up the full width of the container */
+}
+
+.photo__image img {
+    width: 100%; /* Make sure image fills its container */
+    height: auto; /* Keep the image aspect ratio intact */
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+}
+
+.photo__name {
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    margin-top: -25px;
+    transition: 0.4s ease-in-out 0.4s;
+    position: relative;
+    width: 100%;
+}
+
+/* Move hover styles outside of the animation rules */
+.photo:hover .photo__image img {
+    transform: translateX(0%);
+}
+
+.photo:hover .photo__name {
+    color: #fff;
+}
+
+@keyframes move-it {
+    0%, 90%, 100% {
+        transform: translateY(2%);
+    }
+    45% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes move-it-2 {
+    0%, 90%, 100% {
+        transform: translateY(-50%);
+    }
+    45% {
+        transform: translateY(5%);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery__strip__wrapper">
+            <div class="gallery__strip one">
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-kyoto.jpeg" alt="Kyoto">
+                    </div>
+                    <div class="photo__name">Kyoto</div>
+                </div>
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-austria.jpeg" alt="Halstatt">
+                    </div>
+                    <div class="photo__name">Halstatt</div>
+                </div>
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-peru.jpeg" alt="Peru">
+                    </div>
+                    <div class="photo__name">Peru</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery__strip__wrapper">
+            <div class="gallery__strip two">
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-italy.jpeg" alt="Italy">
+                    </div>
+                    <div class="photo__name">Italy</div>
+                </div>
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-osaka.jpeg" alt="Osaka">
+                    </div>
+                    <div class="photo__name">Osaka</div>
+                </div>
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-bali.jpeg" alt="Bali">
+                    </div>
+                    <div class="photo__name">Bali</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery__strip__wrapper">
+            <div class="gallery__strip three">
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-cusco.jpeg" alt="Cusco">
+                    </div>
+                    <div class="photo__name">Cusco</div>
+                </div>
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-rome.jpeg" alt="Rome">
+                    </div>
+                    <div class="photo__name">Rome</div>
+                </div>
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-paris.jpeg" alt="Paris">
+                    </div>
+                    <div class="photo__name">Paris</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery__strip__wrapper">
+            <div class="gallery__strip four">
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-vienna.jpg" alt="Vienna">
+                    </div>
+                    <div class="photo__name">Vienna</div>
+                </div>
+                <div class="photo">
+                    <div class="photo__image">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/gg-rome.jpeg" alt="Rome">
+                    </div>
+                    <div class="photo__name">Rome</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
