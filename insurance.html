@@ -155,6 +155,10 @@
             max-width: 100%;  /* Make the form full width on smaller screens */
             padding: 20px;  /* Less padding for smaller screens */
         }
+
+        .date-time{
+        width: 300px !important;
+        }
     
         #request-quote .form-wrapper {
             grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
@@ -391,7 +395,7 @@
             
                         <div class="form-group">
                             <label for="date">Ideal start date</label>
-                            <input type="datetime-local" id="date" name="date" required>
+                            <input class="date-time" type="datetime-local" id="date" name="date" required>
                         </div>
         
                         <div class="form-group">
