@@ -176,23 +176,6 @@
     #request-quote .form-wrapper {
         grid-template-columns: repeat(1, 1fr);
     }
-
-    .input-container {
-    position: relative;
-        }
-
-        .input-container input {
-            width: 100%;
-            padding-right: 30px; /* Space for the icon */
-        }
-
-        .input-container i {
-            position: absolute;
-            top: 50%;
-            right: 10px; /* Adjust as needed */
-            transform: translateY(-50%);
-            pointer-events: none; /* So the icon doesn't interfere with input interaction */
-        }
     
 
     
@@ -299,14 +282,10 @@
                 </div>
 
     
-                <div style="width: 300px;" class="form-group">
+                <div class="form-group">
                     <label for="date">Ideal start date</label>
-                    <div class="input-container">
-                        <input type="datetime-local" id="date" name="date" required>
-                        <i style="color: #000;" class="fas fa-calendar-alt"></i>
-                    </div>
+                    <input type="datetime-local" id="date" name="date" required>
                 </div>
-                
 
                 <div class="form-group">
                     <label for="address">Project Address</label>
