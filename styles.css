@@ -2043,26 +2043,6 @@ padding-top: 100px;
 
 
 
-.input-container {
-    position: relative;
-}
-
-.input-container input {
-    width: 100%;
-    padding-right: 30px; /* Space for the icon */
-}
-
-.input-container i {
-    position: absolute;
-    top: 50%;
-    right: 10px; /* Adjust as needed */
-    transform: translateY(-50%);
-    pointer-events: none; /* So the icon doesn't interfere with input interaction */
-}
-
-
-
-
 /* Make the links responsive */
 @media (max-width: 768px) {
     .top-links {
