@@ -186,11 +186,12 @@
 }
 
 #request-quote .form-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */ 
-    gap: 15px;  /* Reduced gap between form fields */
-    margin: 0 auto;
-}
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 2 equal-width columns */ 
+        gap: 15px;  /* Reduced gap between form fields */
+        margin: 0 auto;
+        width: 500px;
+    }
 
 #request-quote .form-group {
     display: flex;
@@ -336,9 +337,13 @@ textarea {
     min-height: 150px;
     min-width: 190px;
     width: 250px; /* Allow full width up to max-width */
-}
+    
+    }
+    .heading-part{
+            font-size: 27px !important;
+        }
 
-}
+    }
 
 @media (max-width: 468px) {
 
@@ -359,11 +364,12 @@ textarea {
     min-height: 150px;
     min-width: 190px;
     width: 250px; /* Allow full width up to max-width */
+    }
+   
 }
 
 
    
-}
 
 
 
@@ -419,7 +425,7 @@ textarea {
                     <h2 style="color:white; font-size: 30px; padding-top: 10px; " class="carousel-heading">Areas We Service</h2>
                     <div style="text-align: center;" class="about-text">
                         <p style="line-height: 0;">We operate in the following areas:</p>
-                        <p style="line-height: 0; font-size: 40px; font-weight: bold; padding-bottom: 30px;"><strong class="bluecolor">Gold Coast</strong> and <strong class="bluecolor">Brisbane</strong></p>
+                        <p class="heading-part" style="line-height: 0; font-size: 40px; font-weight: bold; padding-bottom: 30px;"><strong class="bluecolor">Gold Coast</strong> and <strong class="bluecolor">Brisbane</strong></p>
                     </div>
                 </div>
         
@@ -490,36 +496,38 @@ textarea {
                 </div>
             </div>
             
-            <section id="request-quote">
+             <section id="request-quote">
                 <h2>Get Started</h2>
-                <p>MaximumBuild: Renovating your home, your way.</p>
+                <p>MaximumBuild: Building your dream home, your way.</p>
+                <p style="padding-bottom: 10px;">Service Areas: Gold Coast to Brisbane</p>
                 <!-- <p>Transform your space with our expert team. Whether you’re looking to renovate your kitchen, bathroom, or entire home, MaximumBuild is here to help bring your vision to life. Contact us today for a free consultation and let’s start planning your next renovation!</p> -->
             
                 <!-- Form -->
-                <form action="submit_form.php" method="POST">
+                <form id="quote-form">
                     <div class="form-wrapper">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
                         </div>
-            
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
-                        </div>
-            
+        
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
                         </div>
             
                         <div class="form-group">
-                            <label for="suburb">Suburb</label>
-                            <input type="text" id="suburb" name="suburb" placeholder="Enter Your Suburb" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
                         </div>
-
+        
+            
                         <div class="form-group">
-                            <label for="address">Address</label>
+                            <label for="date">Ideal start date</label>
+                            <input type="datetime-local" id="date" name="date" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="address">Project Address</label>
                             <textarea id="address" name="address" style="font-family: 'Poppins';" placeholder="Enter Your Full Address" rows="6" required></textarea>
                         </div>
             

@@ -247,6 +247,11 @@ nav {
         font-size: 14px; /* Adjust the font size */
         margin-left: 10px; /* Space between title and button */
     }
+    .heading-part{
+        font-size: 27px !important;
+    
+
+    }
 }
 
 /* For medium screen devices */
