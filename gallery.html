@@ -177,9 +177,15 @@
 
         /* Make the links responsive */
         @media (max-width: 768px) {
+
+            .cta-button2{
+                height: 36px;
+            }
+           
             .top-links {
                 font-size: 0.7rem;  /* Further reduce font size on smaller screens */
             }
+            
                /* Styling links */
     .nav-links a {
         text-decoration: none; /* Remove underline */
@@ -221,12 +227,23 @@
             }
             .mobile-logo{
             display: none;
-         }
+            }
+            .nav-links li a{
+                margin-left: 5px;
+            }
+
+                .nav-links.active {
+                display: flex; /* Show links when active */
+                margin-top: 42px !important;
+                padding-top: 20px !important;
+            }
+         
         }
 
-        * {
-    box-sizing: border-box;
-}
+                * {
+            box-sizing: border-box;
+        }
+
 
 /* Base styles for the gallery */
 .gallery {
@@ -418,6 +435,7 @@ section {
     padding-bottom: 15px;
 }
 
+
         
 
 
@@ -425,52 +443,50 @@ section {
 
 </style>
 <body>
-    <header>
-        <nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <div class="menu-toggle" ></div>
-                <div class="menu-toggle"></div>
-                <div class="menu-toggle"></div>
-            </div>
-            <div class="mobile-logo">
-                <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="about.html">About Us</a>
-                 
-                    <ul class="dropdown">
-                        <li><a href="our-values.html">Our Values</a></li>
-                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </li>
-                <li><a href="services.html">Services</a>
-                
-                    <ul class="dropdown">
-                        <li><a href="renovation.html">Renovations</a></li>
-                        <li><a href="newhomes.html">New Homes</a></li>
-                        <li><a href="extensions.html">Extensions</a></li>
-                        <li><a href="office-fit-outs.html">Office Fit Outs</a></li>
-                        <li><a href="maintenance.html">Maintenance</a></li>
-                        <li><a href="insurance.html">Insurance</a></li>
-                    </ul>
-
-                </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
+    <nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="menu-toggle" ></div>
+            <div class="menu-toggle"></div>
+            <div class="menu-toggle"></div>
+        </div>
+        <div class="mobile-logo">
+            <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">About Us</a>
+             
+                <ul class="dropdown">
+                    <li><a href="our-values.html">Our Values</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </li>
+            <li><a href="services.html">Services</a>
             
-            <div class="toggle-container">
-                <input type="checkbox" id="mode-toggle" class="toggle-input">
-                <label for="mode-toggle" class="toggle-label">
-                    <span class="toggle-ball"></span>
-                    <i class="fas fa-sun icon sun-icon"></i>
-                    <i class="fas fa-moon icon moon-icon"></i>
-                </label>
-            </div>
-            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button2">Request Quotation</a>
-        </nav>
-    </header>
+                <ul class="dropdown">
+                    <li><a href="renovation.html">Renovations</a></li>
+                    <li><a href="newhomes.html">New Homes</a></li>
+                    <li><a href="extensions.html">Extensions</a></li>
+                    <li><a href="office-fit-outs.html">Office Fit Outs</a></li>
+                    <li><a href="maintenance.html">Maintenance</a></li>
+                    <li><a href="insurance.html">Insurance</a></li>
+                </ul>
+
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="toggle-container">
+            <input type="checkbox" id="mode-toggle" class="toggle-input">
+            <label for="mode-toggle" class="toggle-label">
+                <span class="toggle-ball"></span>
+                <i class="fas fa-sun icon sun-icon"></i>
+                <i class="fas fa-moon icon moon-icon"></i>
+            </label>
+        </div>
+        <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button2">Request Quotation</a>
+    </nav>
     
 
    

@@ -616,7 +616,7 @@ section {
 
 .nav-links.active {
     display: flex; /* Show links when active */
-    margin-top: 42px !important;
+    margin-top: 62px !important;
     padding-top: 20px !important;
 }
 
