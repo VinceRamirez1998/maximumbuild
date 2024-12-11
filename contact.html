@@ -118,9 +118,11 @@
         max-width: 100%;  /* Ensure form fields are full width */
     }
 
-    #request-quote .cta-button {
-        width: auto;
-        margin-top: 20px;
+       
+    .cta-button {
+        padding: 3px 15px; /* Adjust padding for mobile */
+        font-size: 14px; /* Adjust the font size */
+        margin-left: 10px; /* Space between title and button */
     }
 
     .benefits-list{
@@ -174,6 +176,7 @@
     #request-quote .form-wrapper {
         grid-template-columns: repeat(1, 1fr);
     }
+    
 
     
 }
@@ -198,16 +201,16 @@
     <header>
         <nav>
             <div class="menu-toggle" id="menu-toggle">
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="menu-toggle" ></div>
+                <div class="menu-toggle"></div>
+                <div class="menu-toggle"></div>
             </div>
-            <div>
+            <div class="mobile-logo">
                 <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="about.html">About Us</a>
-                    <!-- Dropdown for About Us -->
+                 
                     <ul class="dropdown">
                         <li><a href="our-values.html">Our Values</a></li>
                         <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -219,7 +222,6 @@
                     <ul class="dropdown">
                         <li><a href="renovation.html">Renovations</a></li>
                         <li><a href="newhomes.html">New Homes</a></li>
-                        <!-- <li><a href="highrise.html">High Rise</a></li> -->
                         <li><a href="extensions.html">Extensions</a></li>
                         <li><a href="office-fit-outs.html">Office Fit Outs</a></li>
                         <li><a href="maintenance.html">Maintenance</a></li>
@@ -230,6 +232,7 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
+            
             <div class="toggle-container">
                 <input type="checkbox" id="mode-toggle" class="toggle-input">
                 <label for="mode-toggle" class="toggle-label">

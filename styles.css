@@ -111,6 +111,14 @@ nav {
     text-decoration: none; /* Remove underline */
 }
 
+#request-quote textarea {
+    max-width: 500px;
+    max-height: 100px;
+    min-width: 500px;
+    min-height: 100px;
+}
+
+
 /* Hero section styles */
 .hero {
     position: relative; /* Position for child elements */
@@ -488,6 +496,7 @@ section {
         font-weight: bold !important; 
         color: black;
     }
+
     
 
     .about-text p {
@@ -742,6 +751,8 @@ html {
     .service-area {
         flex: 0 1 calc(50% - 20px); /* Two items per row on medium screens */
     }
+
+  
 }
 
 @media (max-width: 480px) {
@@ -956,6 +967,14 @@ html {
         position: relative; /* Ensure it's not constrained */
         justify-content: start;
     }
+
+    #request-quote textarea {
+        max-width: 300px !important;
+        max-height: 100px;
+        min-width: 300px !important;
+        min-height: 100px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1167,6 +1186,7 @@ html {
     border-radius: 10px; /* Optional rounded corners for reviews */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     background: #fff; /* White background for each item */
+    border: 1px solid black;
 }
 
 .review-item p {
@@ -1933,6 +1953,9 @@ padding-top: 100px;
         margin: 0 auto; /* Center the footer */
     }
 
+ 
+    
+
     
 }
 
@@ -2014,12 +2037,6 @@ padding-top: 100px;
 }
 
 
-#request-quote textarea {
-    max-width: 500px;
-    max-height: 100px;
-    min-width: 500px;
-    min-height: 100px;
-}
 
 
 
@@ -2030,4 +2047,6 @@ padding-top: 100px;
     .top-links {
         font-size: 0.7rem;  /* Further reduce font size on smaller screens */
     }
+
+ 
 }

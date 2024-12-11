@@ -127,8 +127,46 @@
             .top-links {
                 font-size: 0.7rem;  /* Further reduce font size on smaller screens */
             }
+               /* Styling links */
+            .nav-links a {
+                text-decoration: none; /* Remove underline */
+                color: #000; /* Default text color for light mode */
+                padding: 0.5rem 1rem; /* Padding for links */
+                display: block; /* Make the link fill the space */
+                border-radius: 5px; /* Rounded corners for links */
+                transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            }
 
-        }
+            .nav-links a:hover {
+                background-color: #292a2b; /* Background color on hover */
+                color: white !important; /* Text color on hover */
+            }
+
+            /* Dark mode styles for nav links */
+            body.dark-mode .nav-links {
+                background-color: #000000; /* Dark mode dropdown background */
+            }
+
+            body.dark-mode .nav-links a {
+                color: #fff; /* Text color for dark mode */
+            }
+
+            body.dark-mode .nav-links a:hover {
+                background-color: white; /* Darker blue for hover in dark mode */
+                color: black !important; /* Maintain white text */
+            }
+
+
+                }
+
+                @media (max-width: 468px) {
+                    
+
+                    .mobile-logo{
+                        display: none;
+                    }
+
+                }
 
 
 
@@ -137,16 +175,16 @@
     <header>
         <nav>
             <div class="menu-toggle" id="menu-toggle">
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="menu-toggle" ></div>
+                <div class="menu-toggle"></div>
+                <div class="menu-toggle"></div>
             </div>
-            <div>
+            <div class="mobile-logo">
                 <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="about.html">About Us</a>
-                    <!-- Dropdown for About Us -->
+                 
                     <ul class="dropdown">
                         <li><a href="our-values.html">Our Values</a></li>
                         <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -158,7 +196,6 @@
                     <ul class="dropdown">
                         <li><a href="renovation.html">Renovations</a></li>
                         <li><a href="newhomes.html">New Homes</a></li>
-                        <!-- <li><a href="highrise.html">High Rise</a></li> -->
                         <li><a href="extensions.html">Extensions</a></li>
                         <li><a href="office-fit-outs.html">Office Fit Outs</a></li>
                         <li><a href="maintenance.html">Maintenance</a></li>
@@ -169,6 +206,7 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
+            
             <div class="toggle-container">
                 <input type="checkbox" id="mode-toggle" class="toggle-input">
                 <label for="mode-toggle" class="toggle-label">

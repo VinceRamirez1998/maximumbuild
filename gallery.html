@@ -180,6 +180,34 @@
             .top-links {
                 font-size: 0.7rem;  /* Further reduce font size on smaller screens */
             }
+               /* Styling links */
+    .nav-links a {
+        text-decoration: none; /* Remove underline */
+        color: #000; /* Default text color for light mode */
+        padding: 0.5rem 1rem; /* Padding for links */
+        display: block; /* Make the link fill the space */
+        border-radius: 5px; /* Rounded corners for links */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    }
+
+    .nav-links a:hover {
+        background-color: #292a2b; /* Background color on hover */
+        color: white !important; /* Text color on hover */
+    }
+
+    /* Dark mode styles for nav links */
+    body.dark-mode .nav-links {
+        background-color: #000000; /* Dark mode dropdown background */
+    }
+
+    body.dark-mode .nav-links a {
+        color: #fff; /* Text color for dark mode */
+    }
+
+    body.dark-mode .nav-links a:hover {
+        background-color: white; /* Darker blue for hover in dark mode */
+        color: black !important; /* Maintain white text */
+    }
 
           
            
@@ -191,12 +219,16 @@
                 font-family: 'Poppins';
                 font-weight: bold;  /* This makes the text bold */
             }
+            .mobile-logo{
+            display: none;
+         }
         }
 
         * {
     box-sizing: border-box;
 }
 
+/* Base styles for the gallery */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -209,61 +241,143 @@
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    width: 100%; /* Make sure it fills the full width */
+    width: 100%; /* Ensure gallery takes full width */
 }
 
 .gallery__strip__wrapper {
-    flex: 0 0 33.33%; /* Each strip takes up one-third of the width */
-    padding: 1rem;
+    flex: 0 0 33.33%; /* Default 3 items per row on large screens */
+    padding: 2rem;
     justify-content: flex-start;
     background: #08071b;
     border-right: 2px solid #333;
     position: relative;
 }
 
-@media (min-width: 500px) {
-    .gallery__strip__wrapper {
-        flex: 0 0 33.33%; /* 3 items per row */
+/* Mobile Layout (flex-wrap: nowrap; 2 rows with 2 items per row) */
+@media (max-width: 950px) {
+    .gallery {
+        display: flex; /* Use flexbox layout on mobile */
+        flex-wrap: nowrap; /* Prevent wrapping to a new row */
+        justify-content: flex-start;
+        
     }
+
+    .gallery__strip__wrapper {
+        flex: 0 0 50%; /* Each item takes up 50% of the width (2 items per row) */
+        padding: 0; /* Remove padding */
+        height: 115vh !important;
+    }
+
+    /* Hide extra items: Only 4 items will be displayed (2 rows with 2 items per row) */
+    .gallery__strip__wrapper:nth-child(n+5) {
+        display: none !important; /* Hide items starting from the 5th item onwards */
+    }
+
+    /* Apply animation to each row with up-down effect */
+    .gallery__strip.one {
+        animation: move-it-up-down 5s ease alternate infinite;
+    }
+
+    .gallery__strip.two {
+        animation: move-it-up-down 8s ease alternate infinite;
+    }
+
+    .gallery__strip.three {
+        animation: move-it-up-down 4s ease alternate infinite;
+    }
+
+    .gallery__strip.four {
+        animation: move-it-up-down 12s ease alternate infinite;
+    }
+
+    /* Adjust text size for mobile */
+    .photo__name {
+        font-size: 20px !important;
+        letter-spacing: 1px;
+    }
+
+    /* Adjust photo image size for mobile */
+    .photo__image img {
+        width: 200px !important;
+        height: 241px !important;
+    }
+
+    .photo {
+    position: relative;
+    text-align: right;
+    padding-bottom: 3rem;
+    width: 92% !important; /* Ensure the photo takes up the full width of the container */
+}
 }
 
+/* Tablet and Desktop Layout (950px and above) */
 @media (min-width: 950px) {
     .gallery {
         height: 100vh;
     }
 
     .gallery__strip {
+        /* Maintain animations for desktop */
         &.one {
-            animation: 25s move-it ease alternate infinite;
+            animation: move-it 10s ease alternate infinite;
             transform: translateY(2%);
         }
 
         &.three {
-            animation: 20s move-it ease alternate infinite;
+            animation: move-it 10s ease alternate infinite;
             transform: translateY(2%);
         }
 
         &.two {
-            animation: 48s move-it-2 ease alternate infinite;
+            animation: move-it-2 30s ease alternate infinite;
             transform: translateY(-50%);
         }
 
         &.four {
-            animation: 15s move-it-2 ease alternate infinite;
+            animation: move-it-2 15s ease alternate infinite;
             transform: translateY(-50%);
         }
-        
+
         /* Remove the hover state that pauses the animation */
         &:hover {
             animation-play-state: running; /* Ensure animation continues even on hover */
         }
+    }
 
-        .gallery__strip__wrapper {
-            flex: 0 0 33.33%; /* 3 items per row */
-        }
+    .gallery__strip__wrapper {
+        flex: 0 0 33.33%; /* 3 items per row on tablet and desktop */
     }
 }
 
+/* Animation keyframes for up/down movement */
+@keyframes move-it-up-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px); /* Adjust how much up/down movement */
+    }
+}
+
+@keyframes move-it {
+    0%, 90%, 100% {
+        transform: translateY(2%);
+    }
+    45% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes move-it-2 {
+    0%, 90%, 100% {
+        transform: translateY(-50%);
+    }
+    45% {
+        transform: translateY(5%);
+    }
+}
+
+/* General photo styles */
 .photo {
     position: relative;
     text-align: right;
@@ -299,29 +413,10 @@
     color: #fff;
 }
 
-@keyframes move-it {
-    0%, 90%, 100% {
-        transform: translateY(2%);
-    }
-    45% {
-        transform: translateY(-50%);
-    }
-}
-
-@keyframes move-it-2 {
-    0%, 90%, 100% {
-        transform: translateY(-50%);
-    }
-    45% {
-        transform: translateY(5%);
-    }
-}
-
-section{
+section {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-
 
         
 
@@ -333,16 +428,16 @@ section{
     <header>
         <nav>
             <div class="menu-toggle" id="menu-toggle">
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="menu-toggle" ></div>
+                <div class="menu-toggle"></div>
+                <div class="menu-toggle"></div>
             </div>
-            <div>
+            <div class="mobile-logo">
                 <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="about.html">About Us</a>
-                    <!-- Dropdown for About Us -->
+                 
                     <ul class="dropdown">
                         <li><a href="our-values.html">Our Values</a></li>
                         <li><a href="why-choose-us.html">Why Choose Us</a></li>
@@ -354,7 +449,6 @@ section{
                     <ul class="dropdown">
                         <li><a href="renovation.html">Renovations</a></li>
                         <li><a href="newhomes.html">New Homes</a></li>
-                        <!-- <li><a href="highrise.html">High Rise</a></li> -->
                         <li><a href="extensions.html">Extensions</a></li>
                         <li><a href="office-fit-outs.html">Office Fit Outs</a></li>
                         <li><a href="maintenance.html">Maintenance</a></li>
@@ -362,9 +456,10 @@ section{
                     </ul>
 
                 </li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
+            
             <div class="toggle-container">
                 <input type="checkbox" id="mode-toggle" class="toggle-input">
                 <label for="mode-toggle" class="toggle-label">
@@ -406,21 +501,21 @@ section{
                 <div class="gallery__strip one">
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house.jpg" alt="Kyoto">
+                            <img src="assets/house.jpg" alt="Horizon">
                         </div>
-                        <div class="photo__name">Kyoto</div>
+                        <div class="photo__name">Horizon</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house7.jpg" alt="Halstatt">
+                            <img src="assets/house7.jpg" alt="Summit">
                         </div>
-                        <div class="photo__name">Halstatt</div>
+                        <div class="photo__name">Summit</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house8.jpg" alt="Peru">
+                            <img src="assets/house8.jpg" alt="Eclipse">
                         </div>
-                        <div class="photo__name">Peru</div>
+                        <div class="photo__name">Eclipse</div>
                     </div>
                 </div>
             </div>
@@ -429,21 +524,21 @@ section{
                 <div class="gallery__strip two">
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house9.jpg" alt="Italy">
+                            <img src="assets/house9.jpg" alt="Sanctuary">
                         </div>
-                        <div class="photo__name">Italy</div>
+                        <div class="photo__name">Sanctuary</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house10.jpg" alt="Osaka">
+                            <img src="assets/house10.jpg" alt="Zenith">
                         </div>
-                        <div class="photo__name">Osaka</div>
+                        <div class="photo__name">Zenith</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house2.jpg" alt="Bali">
+                            <img src="assets/house2.jpg" alt="Oasis">
                         </div>
-                        <div class="photo__name">Bali</div>
+                        <div class="photo__name">Oasis</div>
                     </div>
                 </div>
             </div>
@@ -452,27 +547,27 @@ section{
                 <div class="gallery__strip three">
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house.jpg" alt="Cusco">
+                            <img src="assets/house.jpg" alt="Crest">
                         </div>
-                        <div class="photo__name">Cusco</div>
+                        <div class="photo__name">Crest</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house8.jpg" alt="Rome">
+                            <img src="assets/house8.jpg" alt="Solace">
                         </div>
-                        <div class="photo__name">Rome</div>
+                        <div class="photo__name">Solace</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house4.jpg" alt="Paris">
+                            <img src="assets/house4.jpg" alt="Ember">
                         </div>
-                        <div class="photo__name">Paris</div>
+                        <div class="photo__name">Ember</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house7.jpg" alt="Rome">
+                            <img src="assets/house7.jpg" alt="Vantage">
                         </div>
-                        <div class="photo__name">Rome</div>
+                        <div class="photo__name">Vantage</div>
                     </div>
                 </div>
             </div>
@@ -481,15 +576,15 @@ section{
                 <div class="gallery__strip four">
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house5.jpg" alt="Vienna">
+                            <img src="assets/house5.webp" alt="Mirage">
                         </div>
-                        <div class="photo__name">Vienna</div>
+                        <div class="photo__name">Mirage</div>
                     </div>
                     <div class="photo">
                         <div class="photo__image">
-                            <img src="assets/house7.jpg" alt="Rome">
+                            <img src="assets/house7.jpg" alt="Royale">
                         </div>
-                        <div class="photo__name">Rome</div>
+                        <div class="photo__name">Royale</div>
                     </div>
                     
                 </div>
