@@ -1843,6 +1843,13 @@ padding-top: 100px;
         padding-bottom: 20px;
     }
     
+    .text-content {
+        flex: 1;
+        /* padding: 20px; */
+        font-family: 'Poppins';
+        padding-left: 0px !important;
+        padding-right: 0px;
+    }
     
     .benefit-item {
         width: calc(50% - 30px); /* Two items per row on tablets */
