@@ -2052,4 +2052,21 @@ padding-top: 100px;
     .review-item {
         border: none !important;
     }
+
+    .reviews-images {
+        display: flex !important;
+        transition: transform 0.5s ease;
+        width: 100%;
+        gap: 20px;
+        justify-content: space-evenly;
+        align-items: baseline;
+        height: auto;
+        }
+        .review-item {
+            flex: 0 0 100% !important;
+        }
+        .review-item p{
+            padding-right: 20px;
+            padding-left: 20px;
+        }
 }
