@@ -1842,11 +1842,12 @@ padding-top: 100px;
     #why-use-maximumbuild {
         padding-bottom: 20px;
     }
-    
+
+   
     .text-content {
     font-family: 'Poppins';
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     }
     
     .benefit-item {
