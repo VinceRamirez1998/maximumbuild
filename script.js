@@ -70,7 +70,7 @@ function showReviews() {
     const items2 = document.querySelectorAll('.review-item');
     const totalItems2 = items2.length;
     const itemsPerSlide = window.innerWidth <= 768 ? 1 : 3;  // 1 item per slide on mobile, 3 on desktop
-    const slideDistance = items2[0] ? items2[0].offsetWidth + 20 : 0;  // Width of each item plus a gap
+    const slideDistance = items2[0] ? items2[0].offsetWidth + 30 : 0;  // Width of each item plus a gap
 
     // Disable arrows if no items are available in the carousel
     if (totalItems2 === 0) {
