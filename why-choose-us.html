@@ -218,6 +218,39 @@ body.dark-mode .faq-item  {
     }
 }
 
+.breakoutbg{
+    width: 1200px;
+}
+.mobilebg {
+    display: none;
+  }
+
+  /* Show the mobile image and hide the desktop image on mobile screens */
+  @media (max-width: 767px) {
+    .breakoutbg {
+      display: none;
+    }
+
+    .mobilebg {
+      display: block;
+      margin-left: -18px;
+    }
+  }
+
+  /* Optionally, you can hide the mobile image on large screens */
+  @media (min-width: 768px) {
+    .mobilebg {
+      display: none;
+    }
+
+    .breakoutbg {
+      display: block;
+    }
+
+   
+  }
+
+
 
 </style>
 <body>
@@ -281,8 +314,12 @@ body.dark-mode .faq-item  {
                     <p>
                         We recognise that major renovations, extensions, or new home constructions are significant decisions. With numerous factors to consider, partnering with a reliable builder who can help you achieve a high-quality outcome is essential.
                     </p>
-                    <h1>Maximum Build Craftsmanship Guarantee:</h1>
-            <ul>
+                        <div>
+                            <img class="breakoutbg" src="assets/Breakout_bg2.jpg" alt="background">
+                            <img class="mobilebg" width="450px" src="assets/mobile_bg.jpg" alt="background">
+                       </div> 
+            <h1>Maximum Build Craftsmanship Guarantee:</h1>
+              <ul>
                 <li><strong class="bluecolor">1. Family-Owned Values</strong>: As an Australian family-owned business, we prioritise trust, integrity, and craftsmanship, ensuring personalised service and attention throughout your project.
                 </li>
                 <li><strong class="bluecolor">2. Exceptional Craftsmanship</strong>: From concept to completion, we build custom homes that match your vision.</li>

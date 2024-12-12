@@ -252,6 +252,8 @@ nav {
     
 
     }
+
+    
 }
 
 /* For medium screen devices */
@@ -1738,7 +1740,7 @@ body.dark-mode .service-area1{
     flex: 1;
     /* padding: 20px; */
     font-family: 'Poppins';
-    padding-left: 20px;
+    padding-left: 30px !important;
     padding-right: 20px;
 }
 
@@ -1944,6 +1946,7 @@ padding-top: 100px;
 
     .text-content{
         width:82% !important;
+
     }
 
     .testimonial-list{
@@ -2047,6 +2050,7 @@ padding-top: 100px;
 @media (max-width: 768px) {
     .top-links {
         font-size: 0.7rem;  /* Further reduce font size on smaller screens */
+        padding-left: 15px;
     }
 
     .review-item {
