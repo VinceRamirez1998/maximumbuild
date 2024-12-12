@@ -2050,7 +2050,6 @@ padding-top: 100px;
 @media (max-width: 768px) {
     .top-links {
         font-size: 0.7rem;  /* Further reduce font size on smaller screens */
-        padding-left: 15px;
     }
 
     .review-item {
