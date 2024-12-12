@@ -227,24 +227,29 @@ body.dark-mode .faq-item  {
 
   /* Show the mobile image and hide the desktop image on mobile screens */
   @media (max-width: 767px) {
+    body{
+        overflow-x: hidden;
+    }
     .breakoutbg {
       display: none;
     }
 
-    .mobilebg {
+    .mobilebg{
       display: block;
       object-fit: cover;
       width: 435px;
       height: 550px;
       margin-left: -5px;
     }
-  }
+  
+
 
   .text-content {
     font-family: 'Poppins';
     padding-left: 0px !important;
     padding-right: 0px !important;
     }
+}
   /* Optionally, you can hide the mobile image on large screens */
   @media (min-width: 768px) {
     .mobilebg {
