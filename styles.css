@@ -123,13 +123,14 @@ nav {
 .hero {
     position: relative; /* Position for child elements */
     text-align: center; /* Center text */
-    background-image: url('assets/house.jpg'); /* Background image */
+    background-image: url('assets/house8.webp'); /* Background image */
     background-size: cover; /* Cover entire section */
-    background-position: center; /* Center image */
-    height: 48vh; /* Full viewport height */
+    background-position: top center !important; /* Align the top of the image to the top of the section */
+    height: 68vh; /* Full viewport height */
     width: 100%; /* Full width */
     transition: filter 0.3s ease; /* Transition for the filter effect */
 }
+
 
 .hero2 {
     position: relative; /* Position for child elements */
