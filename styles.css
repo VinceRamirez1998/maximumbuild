@@ -707,6 +707,18 @@ html {
     text-align: center; /* Center align text if desired */
    
 }
+
+.service-area2 {
+    flex: 0 1 calc(33.33% - 20px); /* Adjust the width of each service area */
+    margin-bottom: 20px; /* Space below each service area */
+    box-sizing: border-box; /* Include padding/border in width calculation */
+    overflow: hidden;
+    color:white;
+    background-color: #00001a; /* Change this to your desired background color */
+    width: 100%; /* Ensure it takes the full width */
+    text-align: center; /* Center align text if desired */
+   
+}
 .service-content {
     position: relative;
     text-align: center;
@@ -1495,7 +1507,7 @@ body.dark-mode .top-links a{
 }
 
 body.dark-mode .bluecolor{
-    color:#00bcd4;
+    color: #00bcd4;
 }
 
 body.dark-mode #faq{
@@ -1526,6 +1538,13 @@ body.dark-mode .see-more-link:hover {
 body.dark-mode .service-area1{
     background-color: #000000;
 }
+
+body.dark-mode .whitecolor{
+color: white;
+}
+
+
+
 
 
 
