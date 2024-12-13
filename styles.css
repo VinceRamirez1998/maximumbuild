@@ -644,7 +644,7 @@ section {
 }
 
 .review-item {
-    flex: 0 0 100%;
+    flex: 0 1 100%;
     padding: 40px !important;
     box-sizing: border-box;
     text-align: center;
@@ -1144,18 +1144,12 @@ html {
     .carousel-item {
         flex: 0 0 50%; /* Two items per row on medium screens */
     }
-    .review-item{
-        flex: 0 0 100% !important;
-    }
+
 }
 
 @media (max-width: 480px) {
     .carousel-item {
         flex: 0 0 100%; /* One item per row on small screens */
-    }
-
-    .review-item{
-        flex: 0 0 100% !important;
     }
 
     .arrow {
