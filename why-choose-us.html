@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <style>
     /* General Body and Text */
@@ -130,6 +131,10 @@ section {
     font-family: 'Poppins' !important;
 }
 
+.scroll-up-arrow{
+    display: none !important;
+}
+
 /* Individual FAQ item */
 .faq-item {
     background-color: #00001a;
@@ -209,7 +214,9 @@ body.dark-mode .faq-item  {
     .faq-container {
         padding: 0 24px; /* sm:px-6 equivalent */
     }
-   
+    .scroll-up-arrow{
+    display: none !important;
+}
 }
 
 @media (min-width: 1024px) {
@@ -234,6 +241,10 @@ body.dark-mode .faq-item  {
       height: 550px;
       margin-left: -5px;
     }
+
+    .scroll-up-arrow{
+    display: none !important;
+}
 }
   /* Optionally, you can hide the mobile image on large screens */
   @media (min-width: 768px) {
@@ -252,7 +263,9 @@ body.dark-mode .faq-item  {
 
   @media (max-width: 375px) {
  
- 
+    .scroll-up-arrow{
+    display: none !important;
+}
     }
   @media (max-width: 767px) {
     body, html {
@@ -517,9 +530,7 @@ body.dark-mode .faq-item  {
         </div>
     </div>
     
-
-    <!-- Scroll-Up Button -->
-    <button class="scroll-up-arrow">&#8593;</button>
+ 
 
     <!-- Footer Section -->
      
@@ -620,6 +631,8 @@ body.dark-mode .faq-item  {
                 });
             });
         </script>
+
+        
         <script>
             // Get the button element
             const toggleButton = document.getElementById('mode-toggle');
@@ -643,76 +656,6 @@ body.dark-mode .faq-item  {
             });
         
           </script>
-          <script>
-            window.onscroll = function() {
-            var header = document.querySelector('header'); // Select the header
-            var links = document.querySelectorAll('nav ul li a'); // Select all navigation links
         
-            // When the page is scrolled down
-            if (window.scrollY > 0) {
-                header.classList.add('scrolled'); // Add the 'scrolled' class to the header
-            } else {
-                header.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
-            }
-        };
-        
-        </script>
-        <script>
-                        // SCROLL UP FUNCTION 
-            // Get the button element
-            const scrollUpButton = document.querySelector('.scroll-up-arrow');
-
-            // Function to handle scroll event
-            function handleScroll() {
-                const scrollPosition = window.scrollY + window.innerHeight;  // Current scroll position
-                const documentHeight = document.documentElement.scrollHeight;  // Total document height
-
-                // Check if we've scrolled 50% of the document height
-                if (scrollPosition >= documentHeight / 2) {
-                    // Show the scroll-up button if 50% of the page has been scrolled
-                    scrollUpButton.style.display = 'block';
-                } else {
-                    // Hide the scroll-up button if less than 50% of the page is scrolled
-                    scrollUpButton.style.display = 'none';
-                }
-            }
-
-            // Function to scroll to the top of the page
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'  // Smooth scroll effect
-                });
-            }
-
-            // Attach event listener to window scroll
-            window.addEventListener('scroll', handleScroll);
-
-            // Add click event to scroll-up button
-            scrollUpButton.addEventListener('click', scrollToTop);
-
-            // Initially run the scroll function in case page is already scrolled
-            handleScroll();
-
-
-
-
-            ///HEader
-            // This script will add the 'scrolled' class to the header when the page is scrolled
-            // Listen for scroll events
-            window.onscroll = function() {
-                var header = document.querySelector('header'); // Select the header
-                var links = document.querySelectorAll('nav ul li a'); // Select all navigation links
-
-                // When the page is scrolled down
-                if (window.scrollY > 0) {
-                    header.classList.add('scrolled'); // Add the 'scrolled' class to the header
-                } else {
-                    header.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
-                }
-            };
-
-        </script>
-         
     </body>
 </html>
