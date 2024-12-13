@@ -8,13 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hertine---personal-use" rel="stylesheet">
+                
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <style>
+@import url('https://fonts.cdnfonts.com/css/anastasia-scrip');
 
+
+    .customfont{
+        font-family: 'Anastasia Scrip', sans-serif;
+        font-weight: 400;
+        font-size: 70px;
+        letter-spacing: 0.1em;
+        color: #11ddf8;
+        line-height: 1;
+        padding-left: 5px;
+        
+                                                
+    }
     body.dark-mode footer {
         background: black;
         color: white !important;
@@ -109,6 +123,11 @@
         text-transform: uppercase; /* Add emphasis */
         letter-spacing: 1px;
         font-family: 'Poppins';
+        margin-bottom: -6px;
+    }
+
+    .hero-about span{
+        text-transform: none;
     }
 
     /* Dark overlay for more contrast */
@@ -517,7 +536,8 @@ section {
             Your browser does not support the video tag.
         </video>
         <div class="hero-about">
-            <p>Maximum Build <span class="styled-gallery">Design Gallery</span></p>
+            <p>Maximum Build </p>
+            <span class="customfont">Design Gallery</span>
         </div>
         <!-- Scroll down arrow -->
         <a href="#gallery-areas" class="scroll-down-arrow">
