@@ -644,7 +644,7 @@ section {
 }
 
 .review-item {
-    flex: 0 1 100%;
+    flex: 0 0 100%;
     padding: 40px !important;
     box-sizing: border-box;
     text-align: center;
@@ -1145,7 +1145,7 @@ html {
         flex: 0 0 50%; /* Two items per row on medium screens */
     }
     .review-item{
-        flex: 0 0 50% !important;
+        flex: 0 0 100% !important;
     }
 }
 
