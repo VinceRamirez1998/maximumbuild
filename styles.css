@@ -1152,6 +1152,10 @@ html {
         flex: 0 0 100%; /* One item per row on small screens */
     }
 
+    .review-item{
+        flex: 0 0 100% !important;
+    }
+
     .arrow {
         font-size: 20px; /* Smaller arrows on mobile */
         padding: 8px;
