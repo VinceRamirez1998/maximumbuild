@@ -1188,7 +1188,7 @@ html {
 }
 
 .review-item {
-    display: flex; /* Each review takes up 1/3 of the space */
+    display: block; /* Each review takes up 1/3 of the space */
     padding: 30px !important;
     box-sizing: border-box;
     text-align: center;
