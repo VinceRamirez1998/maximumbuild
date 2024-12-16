@@ -1798,7 +1798,7 @@ color: white;
 }
 
 .learn-more-button:hover {
-    background-color: #292a2b;
+    background-color: #292a2b !important;
 }
 
 .image-content h2 {

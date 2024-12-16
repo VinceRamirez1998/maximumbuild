@@ -123,6 +123,13 @@ body.dark-mode .headingsareas{
     color:black !important;
 }
 
+body.dark-mode .cta-button:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: white;
+    font-family: 'Poppins';
+    border: 2px solid white;
+}
+
 .hero {
     position: relative;
     height: 90vh; /* Full viewport height */
@@ -174,10 +181,19 @@ body.dark-mode .headingsareas{
 
 .cta-button:hover {
     background-color: transparent; /* Darker background on hover */
+    color: #22283E;
+    font-family: 'Poppins';
+    border: 2px solid #22283E;
+}
+
+#getstarted:hover {
+    background-color: #00001a; /* Darker background on hover */
     color: white;
     font-family: 'Poppins';
     border: 2px solid white;
 }
+    
+
 
 @media (max-width: 768px) {
     /* Flexbox centering for hero content */
@@ -299,7 +315,7 @@ body.dark-mode .headingsareas{
                 Innovative Design <p class="maximumimpact">Maximum Impact <span class="dot">.</span></p>
 
               </p>
-          <a href="/services.html" class="cta-button">Get Started</a>
+          <a href="/services.html" id="getstarted" class="cta-button">Get Started</a>
         </div>
       </div>
       
