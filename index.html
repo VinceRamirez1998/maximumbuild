@@ -40,6 +40,53 @@
         font-size: 18px !important;
         text-transform: uppercase;
     }
+
+    .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00001a; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader .circle {
+    position: relative;
+    border: 5px solid #ffffff;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    width: 100px; /* Circle size */
+    height: 100px;
+    animation: spin 2.5s linear infinite; /* Only the outer circle spins */
+}
+
+.loader .logo-container {
+    position: absolute; /* Keep logo fixed */
+    z-index: 10; /* Ensures the logo stays above the rotating circle */
+}
+
+.loader .logo-container img {
+    width: 50px; /* Adjust the logo size */
+    height: 50px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
 .about-content{
     align-items: center;
 }
@@ -227,6 +274,20 @@ body.dark-mode .headingsareas{
     </header>
     
     
+     <!-- Loading Screen -->
+     <div class="loader" id="loader">
+        <div class="circle">
+            <!-- The rotating circle (this rotates) -->
+        </div>
+        <div class="logo-container">
+            <img src="assets/maximumlogo.png" alt="Maximum Build Logo">
+        </div>
+    </div>
+    
+    
+    
+    
+
     <div class="hero">
         <video autoplay muted loop playsinline preload="metadata" class="video-bg" poster="assets/poster-image.jpg">
             <source src="assets/bg-for-index.mp4" type="video/mp4">
@@ -704,6 +765,15 @@ body.dark-mode .headingsareas{
     });
 
   </script>
+    <script>
+        // Hide the loader after 3 seconds and show the main content
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none'; // Hide the loader
+                document.body.style.overflow = 'auto'; // Allow scrolling again
+            }, 4000); // 3 seconds
+        });
+    </script>
 
     
 </body>
