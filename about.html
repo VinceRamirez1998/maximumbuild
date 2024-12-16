@@ -13,13 +13,43 @@
 <style></style>
 <style>
  /* Hero section styling */
+ @import url('https://fonts.cdnfonts.com/css/silence-rocken');
 
- @media (max-width: 480px) {
-    .about-content{
-        gap: 0px;
+ .hero:before {
+    content: '';
+    position: absolute; /* Cover entire hero */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 70%;
+}
+
+    .customfont{
+        font-family: 'Silence Rocken', sans-serif !important; 
+        font-weight: 600;
+        font-size: 70px !important;
+        letter-spacing: 0.1em;
+        color: #8DC0E5;
+        line-height: 1;
+        padding-left: 5px;
+        padding-bottom: 5px;                                
     }
-
- }
+    .dot {
+    color: #8DC0E5;
+    margin-left: -8px;
+    font-size: 1.5em; /* Makes the dot slightly larger for better alignment */
+    position: relative;
+    }
+    .maximumimpact{
+        display: inline-block;
+        padding-top: 10px;
+        font-family: 'Roboto' !important;
+        letter-spacing: 4px;
+        font-size: 32px !important;
+        text-transform: uppercase;
+    }
 
     .about-content{
         align-items: center;
@@ -29,6 +59,116 @@
         width: 500px;
         height: 500px;
     }
+    .hero {
+    position: relative;
+    height: 90vh; /* Full viewport height */
+    width: 100%;
+    overflow: hidden; /* Ensures video doesn't overflow */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-start; /* Align content to the top */
+    padding-top: 20px; /* Adds a bit of space from the top */
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire container */
+    z-index: -1; /* Places video behind content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Ensures text appears above the video */
+    text-align: center; /* Centers the text and button inside the hero-content */
+    color: white; /* Adjust text color for contrast */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: -2px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #22283E; /* Button background color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    font-size: .8rem;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: #22283E;
+    font-family: 'Poppins';
+    border: 2px solid #22283E;
+}
+#getstarted{
+    background-color: #00001a;
+    border: 2px solid white;
+}
+
+#getstarted:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: white;
+    font-family: 'Poppins';
+    border: 2px solid white;
+}
+    
+
+
+@media (max-width: 768px) {
+    /* Flexbox centering for hero content */
+    .hero-content {
+        position: relative;
+        z-index: 1; /* Ensures text appears above the video */
+        text-align: center; /* Center the text and button */
+        color: white; /* Text color */
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+        width: 100%;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .customfont {
+        font-size: 32px !important;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 7px 100px;
+        background-color: #22283E; /* Button background color */
+        color: white; /* Button text color */
+        text-decoration: none;
+        font-size: .7rem;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+    }
+}
+@media (max-width: 480px) {
+    .about-content{
+        gap: 0px;
+    }
+
+ }
+
 
  .heroabout {
         position: relative;
@@ -252,18 +392,19 @@
    
     
     
-    <div class="heroabout">
-        <video autoplay muted loop playsinline preload="auto" class="bg-video">
+    <div class="hero">
+        <video autoplay muted loop playsinline preload="metadata" class="video-bg">
             <source src="assets/bg_video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <p>Your browser does not support the video tag.</p>
         </video>
-        <div class="hero-about">
-            <p>Innovative Design, Maximum Impact.</p>
+        <div class="hero-content">
+            <p class="customfont">
+                Innovative Design <p class="maximumimpact">Maximum Impact <span class="dot">.</span></p>
+
+              </p>
+          <a href="/services.html" id="getstarted" class="cta-button">Get Started</a>
         </div>
-        <!-- Scroll down arrow -->
-        <a href="#learn-more" class="scroll-down-arrow">
-            <span class="arrow">&#8595;</span> <!-- Downward arrow symbol -->
-        </a>
+      </div>
     </div>
 
     
@@ -328,8 +469,12 @@
                 <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
                 <div class="benefit-content">
                     <h4>PROFESSIONAL</h4>
-                    <p>We have streamlined our processes to guarantee effective communication, constant updates, walkthroughs, and timely completion of your renovation/build. 
+                    <p>We have streamlined our processes to 
                     </p>
+                    <p style="text-align: left;">
+                    ensure effective communication, regular updates, detailed walkthroughs, and timely completion of your renovation project from start to finish.
+                    </p>
+                
                 </div>
             </div>
 
