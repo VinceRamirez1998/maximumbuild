@@ -135,7 +135,7 @@ nav {
 .hero2 {
     position: relative; /* Position for child elements */
     text-align: center; /* Center text */
-    background-image: url('assets/house2.jpg'); /* Background image */
+    background-image: url('assets/new6.jpg'); /* Background image */
     background-size: cover; /* Cover entire section */
     background-position: center; /* Center image */
     height: 48vh; /* Full viewport height */
@@ -177,7 +177,9 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(34, 40, 62, 0.5); /* Semi-transparent overlay */
+    background: black;
+    opacity: 45%;
+    /* background: rgba(34, 40, 62, 0.5);  */
     /* backdrop-filter: blur(5px); */
     z-index: 2; /* Behind text */
 }
@@ -229,6 +231,7 @@ nav {
     font-family: 'Poppins';
     display: inline-block; /* Ensures the button fits the text size */
     text-align: center; /* Centers the button text */
+    border: 2px solid white;
 }
 
 /* Container for title and button */
@@ -261,7 +264,12 @@ nav {
         display: none !important;
     }
    
-
+    .customfont{
+        font-size: 35px !important;
+    }
+    .maximumimpact{
+        font-size: 20px !important;
+    }
     
 }
 
@@ -1728,7 +1736,6 @@ color: white;
         background: #fff; /* Change burger color to white in dark mode */
     }
 
-   
   
 }
 
@@ -1751,6 +1758,11 @@ color: white;
     }
 }
 
+.carousel-heading-main{
+    font-size: 2.1rem;
+    margin-bottom: -20px;
+    padding-top: 20px;
+}
 
 /* TOMS */
 #tomsabout {
@@ -1914,6 +1926,11 @@ padding-top: 100px;
         display: none !important; /* Always hide the dropdown on mobile/tablet */
     }
 
+    .carousel-heading-main{
+        font-size: 1.3rem;
+        margin-top: -30px;
+        padding-bottom: 30px;
+    }
     
 
 }
@@ -2055,6 +2072,7 @@ padding-top: 100px;
         padding: 10px; /* Add padding or any adjustments */
         width: 90%; /* Make the benefits list take up less width */
     }
+
 }
 
 .top-links {
@@ -2116,4 +2134,6 @@ padding-top: 100px;
             padding-right: 20px;
             padding-left: 20px;
         }
+
+        
 }
