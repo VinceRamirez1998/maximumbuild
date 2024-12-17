@@ -3,219 +3,804 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
-    <style>
-        /* Base styles */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(20, 19, 36);
-            color: white;
-            text-align: center;
-        }
-
-        .maintenance-page {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        .logo {
-            max-width: 350px;
-            width: 100%;
-            margin-bottom: 30px;
-        }
-
-        .title {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            font-size: 1.3rem;
-            margin: 12px 0;
-        }
-
-        .highlighted-link {
-            color: #55bae2;
-            text-decoration: none;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .social-icon {
-            width: 30px;
-            height: 30px;
-        }
-
-        .spinner {
-            margin-top: 30px;
-            border: 6px solid #f3f3f3;
-            border-top: 6px solid rgb(85, 186, 226);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-        }
-
-        .footer {
-            margin-top: 40px;
-            font-size: 1rem;
-            opacity: 0.6;
-        }
-
-        /* Spinner animation */
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .logo {
-                max-width: 250px;
-            }
-
-            .title {
-                font-size: 3.5rem;
-            }
-
-            .subtitle {
-                font-size: 1.4rem;
-            }
-
-            .contact-info {
-                font-size: 1.2rem;
-            }
-
-            .social-icon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .spinner {
-                width: 70px;
-                height: 70px;
-                border: 5px solid #f3f3f3;
-                border-top: 5px solid rgb(85, 186, 226);
-            }
-
-            .footer {
-                font-size: 1rem;
-            }
-
-            .social-media {
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                max-width: 230px;
-            }
-
-            .title {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .contact-info {
-                font-size: 1rem;
-            }
-
-            .social-icon {
-                width: 45px;
-                height: 45px;
-            }
-
-            .spinner {
-                width: 50px;
-                height: 50px;
-                border: 5px solid #f3f3f3;
-                border-top: 5px solid rgb(85, 186, 226);
-            }
-
-            .footer {
-                font-size: 1rem;
-            }
-
-            .social-media {
-                justify-content: space-evenly;
-                width: 100%;
-            }
-        }
-    </style>
+    <title>Maximum Build</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="assets/maximumlogo.png" as="image">
+    <link rel="preload" href="assets/house8.webp" as="image" type="image/webp">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+
+@import url('https://fonts.cdnfonts.com/css/silence-rocken');
+
+
+    .customfont{
+        font-family: 'Silence Rocken', sans-serif !important; 
+        font-weight: 600;
+        font-size: 70px !important;
+        letter-spacing: 0.1em;
+        color: #8DC0E5;
+        line-height: 1;
+        padding-left: 5px;
+        padding-bottom: 5px;                                
+    }
+    .dot {
+    color: #8DC0E5;
+    margin-left: -8px;
+    font-size: 1.5em; /* Makes the dot slightly larger for better alignment */
+    position: relative;
+    }
+    .maximumimpact{
+        display: inline-block;
+        padding-top: 10px;
+        font-family: 'Roboto' !important;
+        letter-spacing: 4px;
+        font-size: 32px !important;
+        text-transform: uppercase;
+    }
+
+    .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00001a; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader .circle {
+    position: relative;
+    border: 5px solid #ffffff;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    width: 100px; /* Circle size */
+    height: 100px;
+    animation: spin 2.5s linear infinite; /* Only the outer circle spins */
+}
+
+.loader .logo-container {
+    position: absolute; /* Keep logo fixed */
+    z-index: 10; /* Ensures the logo stays above the rotating circle */
+}
+
+.loader .logo-container img {
+    width: 70px; /* Adjust the logo size */
+    height: 70px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+.about-content{
+    align-items: center;
+}
+
+#tomsabout{
+    padding-top: 0;
+}   
+.about-content{
+    padding-top: 0;
+}
+#service-areas{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.service-area1{
+    padding: 40px;
+}
+
+body.dark-mode .service-area2  {
+    background-color: #ffffff; /* White background */
+}
+
+body.dark-mode .carousel-heading{
+    color: white;
+}
+
+body.dark-mode .about-text p{
+    color:black !important;
+}
+
+body.dark-mode .headingsareas{
+    color:black !important;
+}
+
+body.dark-mode .cta-button:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: white;
+    font-family: 'Poppins';
+    border: 2px solid white;
+}
+
+.hero {
+    position: relative;
+    height: 90vh; /* Full viewport height */
+    width: 100%;
+    overflow: hidden; /* Ensures video doesn't overflow */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-start; /* Align content to the top */
+    padding-top: 20px; /* Adds a bit of space from the top */
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire container */
+    z-index: -1; /* Places video behind content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Ensures text appears above the video */
+    text-align: center; /* Centers the text and button inside the hero-content */
+    color: white; /* Adjust text color for contrast */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: -2px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #22283E; /* Button background color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    font-size: .8rem;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    margin-top: -5px;
+}
+
+.cta-button:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: #22283E;
+    font-family: 'Poppins';
+    border: 2px solid #22283E;
+}
+#getstarted{
+    background-color: #00001a;
+    border: 2px solid white;
+}
+
+#getstarted:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: white;
+    font-family: 'Poppins';
+    border: 2px solid white;
+}
+    
+
+
+@media (max-width: 768px) {
+    /* Flexbox centering for hero content */
+    .hero-content {
+        position: relative;
+        z-index: 1; /* Ensures text appears above the video */
+        text-align: center; /* Center the text and button */
+        color: white; /* Text color */
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+        width: 100%;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .customfont {
+        font-size: 32px !important;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 7px 100px;
+        background-color: #22283E; /* Button background color */
+        color: white; /* Button text color */
+        text-decoration: none;
+        font-size: .7rem;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+    }
+}
+
+   
+
+
+
+
+
+
+</style>
+
+<style>
+
+</style>
 <body>
-    <section class="maintenance-page">
-        <!-- Logo -->
-        <img src="https://static.wixstatic.com/media/432fd0_71a39417d7034cacbdc04b3891394a40~mv2.png" alt="Logo" class="logo" />
+    <header>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="menu-toggle" ></div>
+                <div class="menu-toggle"></div>
+                <div class="menu-toggle"></div>
+            </div>
+            <div class="mobile-logo">
+                <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">About Us</a>
+                 
+                    <ul class="dropdown">
+                        <li><a href="our-values.html">Our Values</a></li>
+                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="services.html">Services</a>
+                
+                    <ul class="dropdown">
+                        <li><a href="renovation.html">Renovations</a></li>
+                        <li><a href="newhomes.html">New Homes</a></li>
+                        <li><a href="extensions.html">Extensions</a></li>
+                        <li><a href="fit-outs.html">Fit Outs</a></li>
+                        <li><a href="maintenance.html">Maintenance</a></li>
+                        <li><a href="insurance.html">Insurance</a></li>
+                    </ul>
 
-        <!-- Main content -->
-        <div>
-            <h1 class="title">We'll be back soon!</h1>
-            <p class="subtitle">Our website is currently undergoing maintenance. We appreciate your patience!</p>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="toggle-container">
+                <input type="checkbox" id="mode-toggle" class="toggle-input">
+                <label for="mode-toggle" class="toggle-label">
+                    <span class="toggle-ball"></span>
+                    <i class="fas fa-sun icon sun-icon"></i>
+                    <i class="fas fa-moon icon moon-icon"></i>
+                </label>
+            </div>
+            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button2">Request Quotation</a>
+        </nav>
+    </header>
+    
+    
+     <!-- Loading Screen -->
+     <div class="loader" id="loader">
+        <div class="circle">
+            <!-- The rotating circle (this rotates) -->
+        </div>
+        <div class="logo-container">
+            <img src="assets/maximumbuild_logo.png" alt="Maximum Build Logo">
+        </div>
+    </div>
+    
+    
+    
+    
 
-            <!-- Contact Info -->
-            <p class="contact-info">You can contact us at:</p>
-            <p class="contact-info">Phone: <a href="tel:+61418872166" class="highlighted-link">0418 872 166</a></p>
-            <p class="contact-info">Email: <a href="mailto:tom@maximumbuild.com.au" class="highlighted-link">tom@maximumbuild.com.au</a></p>
+    <div class="hero">
+        <video autoplay muted loop playsinline preload="metadata" class="video-bg" poster="assets/poster-image.jpg">
+            <source src="assets/bg-for-index.mp4" type="video/mp4">
+            <p>Your browser does not support the video tag.</p>
+        </video>
+        <div class="hero-content">
+            <p class="customfont">
+                Innovative Design <p class="maximumimpact">Maximum Impact.</p>
+              </p>
+          <a href="/services.html" id="getstarted" class="cta-button">Get Started</a>
+        </div>
+      </div>
+      
+
+    <section id="service-areas">
+
+        <div class="service-area1">
+            <div style="text-align: center;" class="about-text">
+                <p style="line-height: 0; font-size: 40px; font-weight: bold; padding-bottom: 20px;">
+                    <span class="area-name"><strong class="whitecolor">MAXIMUM BUILD</strong></span>
+                </p>
+            </div>
         </div>
 
-        <!-- Social Media Links -->
-        <div class="social-media">
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/maximumbuild1" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="social-icon" />
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/maximumbuild/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram" class="social-icon" />
-            </a>
-            <!-- Email -->
-            <a href="mailto:tom@maximumbuild.com.au" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/640px-Gmail_icon_%282020%29.svg.png" alt="Email" class="social-icon" />
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/company/maximum-build/about/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-icon" />
-            </a>
-        </div>
-
-        <!-- Loading Animation: Spinner -->
-        <div class="spinner"></div>
-
-        <!-- Footer -->
-        <div class="footer">&copy; 2024 Maximum Build. All rights reserved.</div>
     </section>
+
+    <section id="tomsabout">
+        <div class="tomsabout">
+            <div class="about-content">
+                <div class="text-content">
+                    <h1>Maximum Build</h1>
+                    <p>
+                        Founded in 2015, <strong class="bluecolor">Maximum Build</strong> is an Australian family-owned building company proudly serving
+                        <strong class="bluecolor">Gold Coast </strong>and <strong class="bluecolor">Brisbane </strong>areas. Our journey began with a commitment to providing reliable and high-quality building services, shaped by our experiences in the industry. We understand the importance of trust and transparency and strive to uphold these values in every project we undertake. 
+                    </p>
+                    <a href="about.html" class="learn-more-button">Learn More</a>
+                </div>
+                <div class="image-content">
+                    <img src="assets/maximumlogo.png" alt="Innovative Design" class="maxi-logo" />
+                    <!-- <h2>Tom Slipper - Director</h2> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  
+    <section id="service-areas">
+        <div class="service-area2">
+            <h2 style="color:white; font-size: 30px; padding-top: 10px; " class="headingsareas">Areas We Service</h2>
+            <div style="text-align: center;" class="about-text">
+                <p style="line-height: 0;">We operate in the following areas:</p>
+                <p style="line-height: 0; font-size: 40px; font-weight: bold; padding-bottom: 30px;">
+                    <span class="area-name"><strong class="blackcolor">Gold Coast and</strong></span>
+                    <span class="area-name"><strong class="blackcolor">Brisbane</strong></span>
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <h1  id="services" class="carousel-heading">“Transforming Ideas into Reality.”</h1>
+        </section>
+        
+        <div class="service-links">
+            <div class="service-area">
+                <div class="service-content">
+                   <a href="renovation.html"><img src="assets/new1.jpg" alt="Renovations"></a> 
+                    <h3 class="carousel-heading">Renovations</h3>
+                    <div class="description">We offer comprehensive renovation services for all types of properties.</div>
+                    <a href="renovation.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="newhomes.html"><img src="assets/new2.jpg" alt="New Homes"></a> 
+                    <h3 class="carousel-heading">New Homes</h3>
+                    <div class="description">Custom-built homes and duplexes tailored to your needs.</div>
+                    <a href="newhomes.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="extensions.html"><img src="assets/new3.jpg" alt="Extensions"></a> 
+                    <h3 class="carousel-heading">Extensions</h3>
+                    <div class="description">Seamless extensions that enhance your living space.</div>
+                    <a href="extensions.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="fit-outs.html"><img src="assets/new7.jpg" alt="Fit Outs"></a> 
+                    <h3 class="carousel-heading">Fit Outs</h3>
+                    <div class="description">Transforming office spaces to boost productivity and aesthetics.</div>
+                    <a href="fit-outs.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="maintenance.html"><img src="assets/new5.jpg" alt="Maintenance"></a> 
+                    <h3 class="carousel-heading">Maintenance</h3>
+                    <div class="description">Reliable maintenance services to keep your property in top condition.</div>
+                    <a href="maintenance.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-area">
+                <div class="service-content">
+                    <a href="insurance.html"><img src="assets/new6.jpg" alt="Insurance"></a> 
+                    <h3 class="carousel-heading">Insurance</h3>
+                    <div class="description">Assisting with the often stressful repair and rebuilding process after unforeseen events.</div>
+                    <a href="insurance.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    
+    <section id="why-use-maximumbuild">
+        <div style="padding-bottom: 30px;" class="service-area1">
+            <h2 style="color:white" class="carousel-heading">Contact our Team</h2>
+            <div style="text-align: center;" class="about-text">
+                <!-- <a>Contact our team today!</a> -->
+                <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button1">Request Quotation</a>
+            </div>
+        </div>
+        <h3 style="padding-bottom: 40px;" class="carousel-heading">Why Use Maximum Build?</h3>
+        <div class="benefits-list">
+
+            <div class="benefit-item">
+                <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
+                <div class="benefit-content">
+                    <h4>PROFESSIONAL</h4>
+                    <p>We have streamlined our processes to 
+                    </p>
+                    <p style="text-align: left;">
+                    ensure effective communication, regular updates, detailed walkthroughs, and timely completion of your renovation project from start to finish.
+                    </p>
+                
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
+                <div class="benefit-content">
+                    <h4>EXPERIENCE</h4>
+                    <p>With over a decade of experience, you can trust Maximum Build to deliver quality craftsmanship while prioritising safety in every aspect of our projects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
+                <div class="benefit-content">
+                    <h4>INSURED</h4>
+                    <p>Maximum Build is a fully licenced and insured building company.</p>
+                    <p>QBCC QLD #150 149 22</p>
+                    <p>Master Builders #66149</p>
+                </div>
+            </div>
+         
+          
+            <div class="benefit-item">
+                <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
+                <div class="benefit-content">
+                    <h4>DESIGN</h4>
+                    <p>We use a highly specialised team who can create an amazing design for your renovation including an interior designer and estimator who can walk you through our one-of-a-kind showroom of interior fixtures and fittings.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
+                <div class="benefit-content">
+                    <h4>QUALITY</h4>
+                    <p>We take great pride in our exceptional craftsmanship and are passionate about delivering quality. Our team consists of highly skilled tradespeople dedicated to their craft and attentive to detail.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
+                <div class="benefit-content">
+                    <h4>PERSONALISED SERVICE</h4>
+                    <p>We work closely with you throughout the renovation process to ensure your vision is brought to life exactly as you imagined. Your satisfaction is our top priority.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ <div>
+    <div class="carousel">
+        <div style="padding-bottom: 30px; margin-top: 30px;" class="service-area1">
+            <h2 style="color: white;" class="carousel-heading">Design Gallery</h2>
+        </div>
+        <button class="arrow left" disabled>&#10094;</button>
+        <div class="carousel-images">
+            <div class="carousel-item">
+                <div class="card">
+                    <img style="height: 150px;" src="assets/new8.jpg" alt="Image 1">
+                    <h3 class="title">Horizon</h3>
+                    <p class="descriptions">Horizon by Maximum Build is a graciously designed home that blends modern living with functional elegance. Crafted for comfort and style, making it an ideal place to call home.
+
+                    </p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="assets/new2.jpg" alt="Image 2">
+                    <h3 class="title">Oasis</h3>
+                    <p class="descriptions">Oasis by Maximum Build offers a peaceful retreat with a focus on spacious living and quality craftsmanship. A perfect blend of style and practicality for those who value comfort and tranquility.</p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="assets/new3.jpg" alt="Image 3">
+                    <h3 class="title">Solace</h3>
+                    <p class="descriptions">Solace by Maximum Build is a contemporary home designed for relaxation and ease. With a focus on clean lines and practical living spaces, it offers a serene environment for modern lifestyles.</p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="assets/new4.jpg" alt="Image 1">
+                    <h3 class="title">Sanctuary</h3>
+                    <p class="descriptions">Sanctuary by Maximum Build provides a welcoming space where luxury meets simplicity. Designed with comfort in mind, it’s the perfect home for those seeking peace and relaxation.</p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="assets/new5.jpg" alt="Image 2">
+                    <h3 class="title">Crest</h3>
+                    <p class="descriptions">Crest by Maximum Build is a combine sophisticated design with functional living spaces. A home where style meets substance, perfect for those who appreciate elegance and modern living.</p>
+                    <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img style="height: 162px;" src="assets/new6.jpg" alt="Image 3">
+                    <h3 class="title">Vantage</h3>
+                    <p class="descriptions">Vantage by Maximum Build is a modern home that blends contemporary style with practical living. Thoughtful design and spacious interiors create a balanced, comfortable space for everyday life.
+
+                    </p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="assets/new7.jpg" alt="Image 1">
+                    <h3 class="title">Eclipse</h3>
+                    <p class="descriptions">Eclipse by Maximum Build features a sleek, modern design with a focus on creating a home that balances aesthetics and everyday functionality. Ideal for those seeking both style and comfort.</p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="assets/house.jpg" alt="Image 2">
+                    <h3 class="title">Ember</h3>
+                    <p class="descriptions">Ember by Maximum Build is a warm and inviting home that blends modern design with timeless appeal. Thoughtfully designed for comfort, it’s a place where life can truly be enjoyed.</p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="assets/house2.jpg" alt="Image 3">
+                    <h3 class="title">Zenith</h3>
+                    <p class="descriptions">Zenith by Maximum Build is a striking, offers a perfect balance of luxury and practicality. Designed for those who appreciate fine living, it’s a home that reaches new heights of elegance.</p>
+                  <a href="/gallery.html"><button class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+            
+            <!-- Additional carousel items can be added here -->
+        </div>
+        <button class="arrow right">&#10095;</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="reviews-carousel">
+        <div style="padding-bottom: 30px; margin-top: 30px;" class="service-area1">
+            <h2 class="carousel-heading" style="color: white;">Maximum Build Reviews</h2>
+            <p style="font-family: 'Poppins';">HEAR FROM OUR CLIENTS</p>
+        </div>
+    
+        <!-- Left Arrow -->
+        <button class="arrow2 left" disabled>&#10094;</button>
+    
+        <!-- Reviews Container -->
+        <div class="reviews-images">
+            <div class="review-item">
+                <p class="customer-name">“Glenn Goodman”</p>
+                <p class="customer-statement">Tom from Maximum Build took my rental bathroom job by the horns and organised everything from demolition of the old bathroom, rebuilding rotten floor and wall, organised the tiler, the plumber, the electrician, etc. Being a rental property, and being a property that I could not have regular access to, I am very happy with Tom and how he conducted the renovation. He's a nice easy going guy and kept me in the loop at all times with pictures and videos and took the initiative to just get the job done. I have another bathroom coming up soon for a renovation, and I will be sure to call Tom. Great work Tom and Thanks!</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Michelle Patterson”</p>
+                <p class="customer-statement">My partner and I were first-time renovators, and after several expensive quotes from unhelpful builders, finding Tom from Maximum Build was a God send. Tom explained everything in a way we could understand and worked alongside us to create our dream home. Nothing was ever too much trouble, and he even helped us arrange other trades and liaise with them on our behalf. His pricing was affordable, and the quality of work was fantastic. We would not have had the beautiful home we have now if it weren't for Tom, and I would absolutely recommend him.</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Drew Hamilton”</p>
+                <p class="customer-statement">I had a home built by Tom and Maximum Build. I can't recommend Tom highly enough. His work quality is exceptional. His communication was great. I would happily recommend Tom and the team to undertake your next project.</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Andrew Pulse”</p>
+                <p class="customer-statement">I give 10 stars. Tom and his team built a second office for us, and these guys are fantastic.  On time, great work across all trades and a fair price, highly recommended!</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Debi Scott”</p>
+                <p class="customer-statement">Professional, quality builder - highly recommended! Built our granny flat within budget and time frame - Tom went over and above to provide an excellent outcome on a tricky block with many challenges.  Reliable and experienced - couldn’t be happier!</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Richard & Alanna”</p>
+                <p class="customer-statement">Working with Tom Slipper and Maximum Build on our beachfront apartment renovation was an incredible experience. The transformation exceeded our expectations, with craftsmanship and attention to detail that continue to impress. 
+                    Tom’s clear communication and planning made the process stress-free, balancing our vision with cost-effectiveness. Renovating in an apartment complex posed challenges, but Tom’s team minimised disruptions and managed neighbour communications seamlessly.
+                    What sets Maximum Build apart is their commitment to quality and clients. Tom stands by his work, addressing even minor details with care. We wholeheartedly recommend Tom and his team for anyone seeking a reliable, skilled builder.
+                    </p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Harrison King”</p>
+                <p class="customer-statement">The team was professional and attentive. Great results!</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Charlotte Gray”</p>
+                <p class="customer-statement">I love my new space! They did an amazing job.</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Isaac White”</p>
+                <p class="customer-statement">Quick, efficient, and the quality is top-notch!</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Lily Carter”</p>
+                <p class="customer-statement">A fantastic experience from start to finish. Highly recommend!</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Jackie Walker”</p>
+                <p class="customer-statement">This service was outstanding! I couldn't be happier with the results.</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            <div class="review-item">
+                <p class="customer-name">“Finn Edwards”</p>
+                <p class="customer-statement">A fantastic experience from start to finish. Highly recommend!</p>
+                <p class="customer-rating">★★★★★</p>
+            </div>
+            
+        </div>
+    
+        <!-- Right Arrow -->
+        <button class="arrow2 right">&#10095;</button>
+    </div>
+
+    
+    
+    
+    
+    <button class="scroll-up-arrow">&#8593;</button>
+
+
+    <section id="contact">
+        <a style="margin-top: 20px;" href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button">Request a Quotation</a>
+    </section>
+
+     
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
+            <div class="footer-left">
+                <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
+                <p>Phone <br><a href="tel:0418 872 166">0418 872 166</a></br></p>
+                <p>Email <a><br>tom@maximumbuild.com.au </a></br></p>
+                <p>Service Areas <a><br>Gold Coast & Brisbane </a></br></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/maximumbuild1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+                    <a href="mailto:tom@maximumbuild.com.au" aria-label="Gmail"><i class="fas fa-envelope social-icon"></i></a>
+                    <a href="https://www.instagram.com/maximumbuild/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                    <a href="https://www.linkedin.com/company/maximum-build/about/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin social-icon"></i></a>
+                </div>
+            </div>
+    
+            <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
+            <div class="footer-center">
+                <h2 style="margin-left: 10px;">Maximum Build</h2>
+                <ul style="text-align: left;">
+                    <li>QBCC License #150 149 22</li>
+                    <li>Master Builders QLD  #66149</li>
+                </ul>
+                <div class="master-builders">
+                    <img src="assets/MBA_ProudMember_Logo.png" alt="Master Builders Logo" class="master-builders-logo">
+                </div>
+            </div>
+    
+            <!-- 3rd Grid: Right - Office Hours -->
+            <div class="footer-right">
+                <h3>Office Hours</h3>
+                <ul class="office-hours">
+                    <li><span class="day">Monday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Tuesday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Wednesday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Thursday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Friday</span><span class="time">8:30am - 4:00pm</span></li>
+                    <li><span class="day">Saturday</span><span class="time">Closed</span></li>
+                    <li><span class="day">Sunday</span><span class="time">Closed</span></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Horizontal Line -->
+        <hr class="footer-line">
+    
+        <!-- Copyright Notice -->
+        <div class="footer-bottom">
+            <p>© Maximum Build 2024. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+
+    <script src="script.js"></script>
+ 
+
+  <script>
+    const toggleInput = document.getElementById('mode-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Toggle nav links on burger icon click
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Optional: close the menu when a link is clicked
+    navLinks.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+
+  </script>
+  <script>
+    // Get the button element
+    const toggleButton = document.getElementById('mode-toggle');
+    const body = document.body;
+
+    // Check if dark mode is enabled in localStorage on page load
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    // Toggle dark mode and save the preference
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        // Save the preference to localStorage
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            localStorage.removeItem('dark-mode');
+        }
+    });
+
+  </script>
+    <script>
+        // Hide the loader after 3 seconds and show the main content
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none'; // Hide the loader
+                document.body.style.overflow = 'auto'; // Allow scrolling again
+            }, 4000); // 3 seconds
+        });
+    </script>
+
+    
 </body>
 </html>
