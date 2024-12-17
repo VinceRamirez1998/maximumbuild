@@ -1874,6 +1874,10 @@ padding-top: 100px;
     flex-direction: column; /* Stack title and description vertically */
 }
 
+.benefit-content p{
+    text-align: left !important;
+}
+
 .benefit-item h4 {
     margin: 0; /* Remove default margin */
     font-family: 'Poppins', sans-serif;
