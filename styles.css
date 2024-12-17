@@ -221,17 +221,18 @@ nav {
 
 /* General button styling */
 .cta-button {
-    background-color: #22283E; /* Darker background on hover */
+    background-color: #22283E; /* Background color */
     color: white;
-    padding: 5px 12px; /* Adjust button padding */
+    padding: 10px 20px; /* Adjust button padding for better spacing */
     text-decoration: none; /* Remove underline */
     border-radius: 25px; /* Rounded corners */
-    border: 2px solid #22283E;
-    transition: background-color 0.3s; /* Smooth background transition */
-    font-family: 'Poppins';
-    display: inline-block; /* Ensures the button fits the text size */
-    text-align: center; /* Centers the button text */
-    border: 2px solid white;
+    border: 2px solid #22283E; /* Dark border */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    font-family: 'Poppins'; /* Font family */
+    display: inline-block; /* Button size adjusts to text */
+    text-align: center; /* Centers button text */
+    border: 2px solid white; /* White border for the button */
+    margin-top: 15px; /* Space between the content and button */
 }
 
 /* Container for title and button */
@@ -699,13 +700,17 @@ html {
 
 /* Service area styles */
 .service-area {
-    flex: 0 1 calc(33.33% - 20px); /* Adjust the width of each service area */
+    flex: 0 1 calc(33.33% - 20px); /* Adjust width of each service area */
     margin-bottom: 20px; /* Space below each service area */
-    box-sizing: border-box; /* Include padding/border in width calculation */
-    overflow: hidden;
-    color:white;
-   
+    box-sizing: border-box; /* Ensure padding/border are included in width */
+    color: white; /* Text color */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align elements to the top */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
 }
+
 
 .service-area1 {
     flex: 0 1 calc(33.33% - 20px); /* Adjust the width of each service area */
@@ -733,9 +738,14 @@ html {
 .service-content {
     position: relative;
     text-align: center;
-    border-radius: 8px; /* Optional: rounded corners */
-    padding: 33px; /* Add padding around content */
-    text-align: center; /* Center text in the content */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Add padding around content */
+    text-align: center; /* Center the text inside */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center content */
+    height: 100%;
 }
 
 
