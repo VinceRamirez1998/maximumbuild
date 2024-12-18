@@ -26,6 +26,7 @@
   padding-bottom: 60px;
 }
 
+
 /* Hide all images by default */
 .slide {
   display: none;
@@ -77,7 +78,7 @@
 
 
 /* Default image styling */
-img {
+.slide-images img {
   width: 100%; /* Ensure the image stretches to fit container's width */
   height: 350px; /* Fixed height of 350px */
   object-fit: cover; /* Ensure the image covers the container without distortion */
@@ -92,7 +93,7 @@ img {
   }
 
   /* Make images cover the full container height on mobile */
-  img {
+  .slide-images img {
     width: 100%; /* Full width of the container */
     height: 100%; /* Ensure the image fills the height of the container */
     object-fit: cover; /* Make sure the image covers the container without distortion */
@@ -838,7 +839,7 @@ section {
                     <li>Master Builders QLD  #66149</li>
                 </ul>
                 <div class="master-builders">
-                    <img src="assets/MBA_ProudMember_Logo.png" alt="Master Builders Logo" class="master-builders-logo">
+                    <img src="assets/MBA_ProudMember_Logo.png" alt="Master Builders Logo" id="master-logo" class="master-builders-logo">
                 </div>
             </div>
     
