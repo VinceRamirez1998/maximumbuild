@@ -61,6 +61,48 @@
     <style>
            @import url('https://fonts.cdnfonts.com/css/silence-rocken');
 
+
+           body.dark-mode #why-use-maximumbuild { 
+                background-color: black; /* Change color on hover (Red) */
+            }
+
+            body.dark-mode .benefit-section{
+            background-color: white !important;
+            }
+
+            body.dark-mode .insurance-service{
+                background-color: white !important;
+                color: black !important;
+            }
+
+            body.dark-mode #title-carousel{
+                color:black !important;
+            }
+
+            
+
+        
+
+           .footer-left p {
+            margin: 8px 0;
+            font-size: 1em;
+            color:rgb(255, 255, 255) !important;
+            font-weight: bold;
+            text-decoration: none !important;
+        }
+
+           #why-use-maximumbuild{
+            padding-bottom: 0;
+           }
+
+           .footer-center h2{
+            color: white !important;
+           }
+
+           .footer-right h3{
+            color: white !important;
+           }
+
            .hero2 {
         position: relative; /* Position for child elements */
         text-align: center; /* Center text */
@@ -327,6 +369,8 @@ border: 2px solid #22283E;
     }
     </style>
 
+    
+
         <div class="hero2">
             <div class="hero-content2">
                 <p class="customfont">
@@ -365,7 +409,7 @@ border: 2px solid #22283E;
                 </div>
             </section>
 
-            <section id="why-use-maximumbuild">
+            <section style="padding-bottom: 0;">
                 <div style="padding-bottom: 30px;" class="service-area1">
                     <h2 style="color:white" class="carousel-heading"> Need a builder to assist with an Insurance claim?                    </h2>
                     <div style="text-align: center;" class="about-text">
@@ -373,7 +417,8 @@ border: 2px solid #22283E;
                         <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button1">Request Quotation</a>
                     </div>
                 </div>
-                <h3 style="padding-bottom: 40px;" class="carousel-heading">Our Insurance Services</h3>
+              <section class="insurance-service">
+                <h3 style="padding-bottom: 40px;" id="title-carousel" class="carousel-heading">Our Insurance Services</h3>
                 <div class="benefits-list">
                     <div class="benefit-item">
                         <img src="assets/checked.png" alt="Check Icon" class="check-icon" />
@@ -397,6 +442,7 @@ border: 2px solid #22283E;
                         </div>
                     </div>
                 </div>
+             </section>
                 
                 
             <div style="padding-bottom: 30px; margin-bottom: 50px;" class="service-area1">
@@ -517,6 +563,7 @@ border: 2px solid #22283E;
                         <p>© Maximum Build 2024. All rights reserved.</p>
                     </div>
                 </footer>
+
 
         <script src="script.js"></script>
         <script>
