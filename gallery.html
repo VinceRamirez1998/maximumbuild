@@ -16,6 +16,105 @@
 
 <style>
 @import url('https://fonts.cdnfonts.com/css/silence-rocken');
+/* Slideshow container */
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 65%; /* Set to the desired width */
+  height: auto; /* Fixed container height */
+  overflow: hidden; /* Hide any overflow if necessary */
+  padding-bottom: 60px;
+}
+
+/* Hide all images by default */
+.slide {
+  display: none;
+}
+
+.slide img {
+  height: 450px !important; /* Override specific image height */
+}
+
+/* Add a fade effect */
+.fade {
+  animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Navigation arrows */
+.moveleft, .moveright {
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+}
+
+.moveleft {
+  left: 0;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.moveright {
+  right: 0;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.slide-images{
+    border-radius: 36px;
+  }
+
+
+/* Default image styling */
+img {
+  width: 100%; /* Ensure the image stretches to fit container's width */
+  height: 350px; /* Fixed height of 350px */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  transition: all 3s ease-in-out; /* Smooth transition for all changes */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .slideshow-container {
+    width: 100%; /* Make the container full width on mobile */
+    height: 550px; /* Adjust the height as needed */
+  }
+
+  /* Make images cover the full container height on mobile */
+  img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Ensure the image fills the height of the container */
+    object-fit: cover; /* Make sure the image covers the container without distortion */
+  }
+
+  /* Show navigation arrows on mobile */
+  .moveleft, .moveright {
+    display: block; /* Make navigation arrows visible on mobile */
+  }
+
+  .slide-images{
+    border-radius: 0px;
+  }
+
+  .slideshow-container{
+    height: 446px;
+  }
+
+ 
+}
+
+
 
 
 .customfont{
@@ -544,7 +643,7 @@ section {
     
     <div class="heroabout">
         <video autoplay muted loop playsinline preload="auto" class="bg-video">
-            <source src="assets/gallery-video.mp4" type="video/mp4">
+            <source src="assets/maximumbg.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-about">
@@ -563,7 +662,7 @@ section {
             <h1" style="font-size: 42px;  text-transform: uppercase;" class="carousel-heading1">Our Projects</h1>
         </section>
         
-        <div id="gallery-areas" class="gallery">
+        <!-- <div id="gallery-areas" class="gallery">
             <div class="gallery__strip__wrapper">
                 <div class="gallery__strip one">
                     <div class="photo">
@@ -676,6 +775,36 @@ section {
                    
                 </div>
             </div>
+        </div> -->
+
+        <div class="slideshow-container">
+            <!-- Slides -->
+        
+            <div class="slide fade">
+                <img class="slide-images" src="assets/new6.jpg" alt="Slide 1">
+            </div>
+            <div class="slide fade">
+                <img class="slide-images" src="assets/new7.jpg" alt="Slide 1">
+            </div>
+            <div class="slide fade">
+                <img class="slide-images" src="assets/new8.jpg" alt="Slide 1">
+            </div>
+            <div class="slide fade">
+                <img class="slide-images" src="assets/new5.jpg" alt="Slide 1">
+            </div>
+            <div class="slide fade">
+                <img class="slide-images" src="assets/new2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide fade">
+                <img class="slide-images" src="assets/new3.jpg" alt="Slide 3">
+            </div>
+            <div class="slide fade">
+                <img class="slide-images" src="assets/new4.jpg" alt="Slide 1">
+            </div>
+    
+            <!-- Navigation arrows -->
+            <a  class="moveleft" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="moveright" onclick="plusSlides(1)">&#10095;</a>
         </div>
 
  
@@ -801,6 +930,44 @@ toggleButton.addEventListener('click', () => {
         header.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
     }
 };
+
+</script>
+<script>
+let slideIndex = 0;
+
+// Function to show the slides
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    if (slideIndex >= slides.length) {
+        slideIndex = 0; // Reset to first slide when reaching the end
+    }
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1; // Loop to the last slide when going backward
+    }
+    
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    // Show the current slide
+    slides[slideIndex].style.display = "block";
+}
+
+// Function to change slide based on navigation (arrows)
+function plusSlides(n) {
+    slideIndex += n; // Update the slide index
+    showSlides(); // Show the new slide
+}
+
+// Set up automatic slide transition every 3 seconds
+setInterval(function() {
+    plusSlides(1); // Move to the next slide every 3 seconds
+}, 3000); // 3000 milliseconds = 3 seconds
+
+// Initialize the slideshow by showing the first slide
+showSlides();
+
 
 </script>
 </body>

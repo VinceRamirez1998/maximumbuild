@@ -192,3 +192,4 @@ window.onscroll = function() {
         header.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
     }
 };
+
