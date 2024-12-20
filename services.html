@@ -336,6 +336,128 @@ textarea {
     width: 250px; /* Allow full width up to max-width */
 }
 
+.hero {
+    position: relative;
+    height: 90vh; /* Full viewport height */
+    width: 100%;
+    overflow: hidden; /* Ensures video doesn't overflow */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-start; /* Align content to the top */
+    padding-top: 20px; /* Adds a bit of space from the top */
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire container */
+    z-index: -1; /* Places video behind content */
+}
+
+.bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill !important; /* Ensure video covers the whole background */
+        z-index: -1; /* Send the video behind the content */
+    }
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Ensures text appears above the video */
+    text-align: center; /* Centers the text and button inside the hero-content */
+    color: white; /* Adjust text color for contrast */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%;
+}
+
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: -2px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #22283E; /* Button background color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    font-size: .8rem;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    margin-top: -5px;
+}
+
+.cta-button:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: #22283E;
+    font-family: 'Poppins';
+    border: 2px solid #22283E;
+}
+#getstarted{
+    background-color: #00001a;
+    border: 2px solid white;
+}
+
+#getstarted:hover {
+    background-color: transparent; /* Darker background on hover */
+    color: white;
+    font-family: 'Poppins';
+    border: 2px solid white;
+}
+    
+
+
+@media (max-width: 768px) {
+    /* Flexbox centering for hero content */
+    .hero-content {
+        position: relative;
+        z-index: 1; /* Ensures text appears above the video */
+        text-align: center; /* Center the text and button */
+        color: white; /* Text color */
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+        width: 100%;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .customfont {
+        font-size: 32px !important;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 7px 100px;
+        background-color: #22283E; /* Button background color */
+        color: white; /* Button text color */
+        text-decoration: none;
+        font-size: .7rem;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+    }
+
+    .maximumimpact{
+        font-size: 20px !important;
+    }
+
+   
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     #request-quote {
@@ -469,14 +591,18 @@ textarea {
 
     </style>
 
-        <div class="hero2">
-            <div class="hero-content2">
-                <p class="customfont">
-                    Innovative Design <p class="maximumimpact">Maximum Impact.</p>
-                </p>
-                <button class="cta-button" id="getStartedButton">Get Started</button>
+            <div class="hero">
+                <video autoplay muted loop playsinline preload="metadata"  id="videoSource" class="bg-video" poster="assets/poster-maximum.jpg">
+                    <source src="assets/maximumbuildvideo.mp4" type="video/mp4">
+                    <p>Your browser does not support the video tag.</p>
+                </video>
+                <div class="hero-content">
+                    <p class="customfont">
+                        Innovative Design <p class="maximumimpact">Maximum Impact.</p>
+                    </p>
+                    <button class="cta-button" id="getStartedButton">Get Started</button>
+                </div>
             </div>
-        </div>
         
         <!-- Main Content -->
     
@@ -532,7 +658,7 @@ textarea {
                 <div class="service-links">
                     <div class="service-area">
                         <div class="service-content">
-                           <a href="renovation.html"><img src="assets/new1.jpg" alt="Renovations"></a> 
+                            <a href="renovation.html"><img src="assets/rennovations.jpg" alt="Renovations"></a> 
                             <h3 class="carousel-heading">Renovations</h3>
                             <div class="description">We offer comprehensive renovation services for all types of properties.</div>
                             <a href="renovation.html" class="cta-button">Learn More</a>
@@ -540,7 +666,7 @@ textarea {
                     </div>
                     <div class="service-area">
                         <div class="service-content">
-                            <a href="newhomes.html"><img src="assets/new2.jpg" alt="New Homes"></a> 
+                            <a href="newhomes.html"><img src="assets/gallerypage/newhomes.jpg" alt="New Homes"></a> 
                             <h3 class="carousel-heading">New Homes</h3>
                             <div class="description">Custom-built homes and duplexes tailored to your needs.</div>
                             <a href="newhomes.html" class="cta-button">Learn More</a>
@@ -549,7 +675,7 @@ textarea {
         
                     <div class="service-area">
                         <div class="service-content">
-                            <a href="extensions.html"><img src="assets/new3.jpg" alt="Extensions"></a> 
+                            <a href="extensions.html"><img src="assets/extension3.jpg" alt="Extensions"></a> 
                             <h3 class="carousel-heading">Extensions</h3>
                             <div class="description">Seamless extensions that enhance your living space.</div>
                             <a href="extensions.html" class="cta-button">Learn More</a>
@@ -557,7 +683,7 @@ textarea {
                     </div>
                     <div class="service-area">
                         <div class="service-content">
-                            <a href="fit-outs.html"><img src="assets/new7.jpg" alt="Fit Outs"></a> 
+                            <a href="fit-outs.html"><img src="assets/fitouts.jpg" alt="Fit Outs"></a> 
                             <h3 class="carousel-heading">Fit Outs</h3>
                             <div class="description">Transforming office spaces to boost productivity and aesthetics.</div>
                             <a href="fit-outs.html" class="cta-button">Learn More</a>
@@ -566,7 +692,7 @@ textarea {
         
                     <div class="service-area">
                         <div class="service-content">
-                            <a href="maintenance.html"><img src="assets/new5.jpg" alt="Maintenance"></a> 
+                            <a href="maintenance.html"><img src="assets/gallerypage/maintenance1.jpg" alt="Maintenance"></a> 
                             <h3 class="carousel-heading">Maintenance</h3>
                             <div class="description">Reliable maintenance services to keep your property in top condition.</div>
                             <a href="maintenance.html" class="cta-button">Learn More</a>
@@ -574,7 +700,7 @@ textarea {
                     </div>
                     <div class="service-area">
                         <div class="service-content">
-                            <a href="insurance.html"><img src="assets/new6.jpg" alt="Insurance"></a> 
+                            <a href="insurance.html"><img src="assets/insurance3.jpg" alt="Insurance"></a> 
                             <h3 class="carousel-heading">Insurance</h3>
                             <div class="description">Assisting with the often stressful repair and rebuilding process after unforeseen events.</div>
                             <a href="insurance.html" class="cta-button">Learn More</a>
@@ -780,6 +906,22 @@ textarea {
             }
         };
         
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const video = document.querySelector('.bg-video');
+                const videoSource = document.getElementById('videoSource');
+                
+                if (window.matchMedia('(max-width: 768px)').matches) {
+                    // Mobile
+                    videoSource.src = 'assets/maximumbg.mp4';
+                } else {
+                    // Desktop
+                    videoSource.src = 'assets/maximumbuildvideo.mp4';
+                }
+        
+                video.load(); // Reload video with new source
+            });
         </script>
         
     </body>
