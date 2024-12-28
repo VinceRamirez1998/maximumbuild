@@ -433,8 +433,9 @@
     
 
     <script src="script.js"></script>
-    <script>
-  const form = document.getElementById('quote-form');
+<script>
+
+const form = document.getElementById('quote-form');
 const modal = document.getElementById('thankYouModal');
 const closeModal = document.querySelector('.close');
 
@@ -483,6 +484,7 @@ form.addEventListener('submit', async function(event) {
 
         if (result.success) {
             modal.style.display = "block";
+            disableScroll();
             form.reset(); // Reset the form after successful submission
         } else {
             alert('There was an error. Please try again later.');
@@ -505,7 +507,7 @@ window.addEventListener('click', function(event) {
     }
 });
 
-    </script>
+</script>
 
   <script>
     const toggleInput = document.getElementById('mode-toggle');
