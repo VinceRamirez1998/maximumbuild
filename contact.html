@@ -484,7 +484,6 @@ form.addEventListener('submit', async function(event) {
 
         if (result.success) {
             modal.style.display = "block";
-            disableScroll();
             form.reset(); // Reset the form after successful submission
         } else {
             alert('There was an error. Please try again later.');
