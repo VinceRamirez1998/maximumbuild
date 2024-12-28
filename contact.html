@@ -11,17 +11,17 @@
 </head>
 
 <style>
-    .modal {
+  .modal {
     display: none; /* Hidden by default */
-    position: fixed; 
+    position: fixed;
     z-index: 1; /* On top */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    backdrop-filter: blur(5px); /* Blurs the background */
 }
 
 .modal-content {
@@ -48,6 +48,7 @@
     color: black;
     text-decoration: none;
 }
+
     /* Form Section Styles */
 #request-quote {
     max-width: 600px;  /* Smaller width for the form container */
@@ -420,15 +421,14 @@
 
     <script src="script.js"></script>
     <script>
-   
-const form = document.getElementById('quote-form');
+  const form = document.getElementById('quote-form');
 const modal = document.getElementById('thankYouModal');
 const closeModal = document.querySelector('.close');
 
+// Form submission logic
 form.addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    // Collect form data from the form fields
     const formData = {
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value,
@@ -436,10 +436,9 @@ form.addEventListener('submit', async function(event) {
         date: document.getElementById('date').value,
         address: document.getElementById('address').value,
         message: document.getElementById('message').value,
-        date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
+        date: new Date().toISOString().split('T')[0], // Current date in YYYY-MM-DD format
     };
 
-    // GraphQL mutation to create an item in Monday.com
     const query = `
         mutation {
             create_item(
@@ -449,7 +448,7 @@ form.addEventListener('submit', async function(event) {
                     \\"text\\": \\"${formData.name}\\",
                     \\"text2\\": \\"${formData.email}\\",
                     \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                      \\"long_text\\": \\"${formData.address}\\",
+                    \\"long_text\\": \\"${formData.address}\\",
                     \\"date4\\": \\"${formData.date}\\",
                     \\"long_text6\\": \\"${formData.message}\\"
                 }"
@@ -458,7 +457,6 @@ form.addEventListener('submit', async function(event) {
             }
         }`;
 
-    // Send request to your Vercel API endpoint (this assumes your backend is running at /api/submitForm)
     try {
         const response = await fetch('/api/submitForm', {
             method: 'POST',
@@ -472,7 +470,7 @@ form.addEventListener('submit', async function(event) {
 
         if (result.success) {
             modal.style.display = "block";
-            form.reset();  // Optionally reset the form after successful submission
+            form.reset(); // Reset the form after successful submission
         } else {
             alert('There was an error. Please try again later.');
         }
@@ -481,6 +479,19 @@ form.addEventListener('submit', async function(event) {
         console.error(error);
     }
 });
+
+// Close button functionality
+closeModal.addEventListener('click', function() {
+    modal.style.display = "none";
+});
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
     </script>
 
   <script>
