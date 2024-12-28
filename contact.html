@@ -11,6 +11,44 @@
 </head>
 
 <style>
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; /* On top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
     /* Form Section Styles */
 #request-quote {
     max-width: 600px;  /* Smaller width for the form container */
@@ -312,6 +350,15 @@
         <p>If you prefer, you can call us directly at <strong>0418 872 166</strong> to discuss your project.</p>
     </section>
 
+            <!-- Modal -->
+        <div id="thankYouModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Thank you for contacting us! Maximum Build will reply to you shortly.</p>
+            </div>
+        </div>
+
+
   
     <footer class="footer">
         <div class="footer-content">
@@ -373,6 +420,34 @@
     
 
     <script src="script.js"></script>
+
+    <script>
+        const modal = document.getElementById('thankYouModal');
+        const closeModal = document.querySelector('.close');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            // Show the modal
+            modal.style.display = "block";
+        
+            // Reset the form
+            form.reset();
+        });
+        
+        // Close modal when the user clicks the "X"
+        closeModal.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+        
+        // Close modal when the user clicks outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+        </script>
+        
     <script>
    
 const form = document.getElementById('quote-form');
