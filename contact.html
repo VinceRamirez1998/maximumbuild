@@ -22,11 +22,13 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
     backdrop-filter: blur(10px); /* Blurs the background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
 }
 
 .modal-content {
     background-color: #428BD2;
-    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 35%; /* Default for larger screens */
@@ -56,14 +58,15 @@
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .modal-content {
-        width: 60%; /* Adjust width for tablets and smaller screens */
+        width: 60%; /* Adjust width for tablets */
     }
 }
 
 @media screen and (max-width: 480px) {
     .modal-content {
+        padding: 10px; /* Reduce padding for smaller screens */
         width: 90%; /* Full width for mobile devices */
-        margin: 10% auto; /* Adjust margin for mobile */
+        height: auto; /* Adjust height dynamically */
     }
 
     .close {
@@ -71,7 +74,7 @@
     }
 
     .modal-content p {
-        font-size: 16px; /* Adjust text size for readability on mobile */
+        font-size: 16px; /* Adjust text size for readability */
     }
 }
 
