@@ -24,45 +24,6 @@
     margin-bottom: 50px;
 }
 
-/* Modal styles */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
-
 
 #request-quote h2 {
     font-size: 2rem;  /* Slightly smaller font size */
@@ -139,8 +100,6 @@
 #request-quote .cta-button:hover {
     background-color: #1d2b3a;
 }
-
-
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -353,15 +312,6 @@
         <p>If you prefer, you can call us directly at <strong>0418 872 166</strong> to discuss your project.</p>
     </section>
 
-    <div id="success-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-modal" class="close">&times;</span>
-            <h2>Thank You!</h2>
-            <p>Thank you for contacting us! Maximum Build will reply to you shortly.</p>
-        </div>
-    </div>
-    
-
   
     <footer class="footer">
         <div class="footer-content">
@@ -424,71 +374,66 @@
 
     <script src="script.js"></script>
     <script>
-        const form = document.getElementById('quote-form');
-        const modal = document.getElementById('success-modal');
-        const closeModal = document.getElementById('close-modal');
-        
-        form.addEventListener('submit', async function (event) {
-            event.preventDefault();
-        
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                date: document.getElementById('date').value,
-                address: document.getElementById('address').value,
-                message: document.getElementById('message').value,
-            };
-        
-            const query = `
-                mutation {
-                    create_item(
-                        board_id: 1933350367,
-                        item_name: "${formData.name}",
-                        column_values: "{
-                            \\"text\\": \\"${formData.name}\\",
-                            \\"text2\\": \\"${formData.email}\\",
-                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                            \\"long_text\\": \\"${formData.address}\\",
-                            \\"date4\\": \\"${formData.date}\\",
-                            \\"long_text6\\": \\"${formData.message}\\"
-                        }"
-                    ) {
-                        id
-                    }
-                }`;
-        
-            try {
-                const response = await fetch('/api/submitForm', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ query }),
-                });
-        
-                const result = await response.json();
-        
-                if (result.success) {
-                    form.reset();
-                    modal.style.display = 'block'; // Show modal
-                } else {
-                    alert('There was an error. Please try again later.');
-                }
-            } catch (error) {
-                alert('There was an error. Please try again later.');
+   
+const form = document.getElementById('quote-form');
+
+form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    // Collect form data from the form fields
+    const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        date: document.getElementById('date').value,
+        address: document.getElementById('address').value,
+        message: document.getElementById('message').value,
+        date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
+    };
+
+    // GraphQL mutation to create an item in Monday.com
+    const query = `
+        mutation {
+            create_item(
+                board_id: 1933350367,
+                item_name: "${formData.name}",
+                column_values: "{
+                    \\"text\\": \\"${formData.name}\\",
+                    \\"text2\\": \\"${formData.email}\\",
+                    \\"dup__of_email_address\\": \\"${formData.phone}\\",
+                      \\"long_text\\": \\"${formData.address}\\",
+                    \\"date4\\": \\"${formData.date}\\",
+                    \\"long_text6\\": \\"${formData.message}\\"
+                }"
+            ) {
+                id
             }
+        }`;
+
+    // Send request to your Vercel API endpoint (this assumes your backend is running at /api/submitForm)
+    try {
+        const response = await fetch('/api/submitForm', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query }),
         });
-        
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none'; // Hide modal
-        });
-        
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none'; // Close modal on outside click
-            }
-        });
-        </script>
-        
+
+        const result = await response.json();
+
+        if (result.success) {
+            alert('Your submission has been successfully sent!');
+            form.reset();  // Optionally reset the form after successful submission
+        } else {
+            alert('There was an error. Please try again later.');
+        }
+    } catch (error) {
+        alert('There was an error sending your data. Please try again later.');
+        console.error(error);
+    }
+});
+    </script>
 
   <script>
     const toggleInput = document.getElementById('mode-toggle');
