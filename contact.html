@@ -12,7 +12,7 @@
 
 <style>
   .modal {
-    display: none; /* Hidden by default */
+    display: none !important; /* Hidden by default */
     position: fixed;
     z-index: 1; /* On top */
     left: 0;
@@ -455,6 +455,9 @@
 const modal = document.getElementById('thankYouModal');
 const closeModal = document.querySelector('.close');
 
+modal.style.display = 'none';
+
+
 // Form submission logic
 form.addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -499,7 +502,7 @@ form.addEventListener('submit', async function(event) {
         const result = await response.json();
 
         if (result.success) {
-            modal.style.display = "block";
+            modal.style.display = "flex";
             form.reset(); // Reset the form after successful submission
         } else {
             alert('There was an error. Please try again later.');
