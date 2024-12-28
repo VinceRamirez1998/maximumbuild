@@ -502,6 +502,14 @@
                         </div>
                     </div>
                 </form>
+
+                    <!-- form modal pop up -->
+                    <div id="thankYouModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>Thank you for contacting us! Maximum Build will reply to you shortly.</p>
+                        </div>
+                    </div>
             
                 <p>If you prefer, you can call us directly at <strong>0418 872 166</strong> to discuss your project.</p>
             </section>
@@ -566,67 +574,79 @@
         <script src="script.js"></script>
 
         <script>
+
             const form = document.getElementById('quote-form');
-
-        form.addEventListener('submit', async function(event) {
-            event.preventDefault();
-
-            // Collect form data from the form fields
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                date: document.getElementById('date').value,
-                address: document.getElementById('address').value,
-                message: document.getElementById('message').value,
-                date: new Date().toISOString().split('T')[0],  // Current date in YYYY-MM-DD format
-            };
-
+            const modal = document.getElementById('thankYouModal');
+            const closeModal = document.querySelector('.close');
             
-
-            // GraphQL mutation to create an item in Monday.com
-            const query = `
+            // Form submission logic
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault();
+            
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    date: document.getElementById('date').value,
+                    address: document.getElementById('address').value,
+                    message: document.getElementById('message').value,
+                    date: new Date().toISOString().split('T')[0], // Current date in YYYY-MM-DD format
+                };
+            
+                const query = `
                     mutation {
-                    create_item(
-                        board_id: 1933350367,
-                        item_name: "${formData.name}",
-                        column_values: "{
-                            \\"text\\": \\"${formData.name}\\",
-                            \\"text2\\": \\"${formData.email}\\",
-                            \\"dup__of_email_address\\": \\"${formData.phone}\\",
-                            \\"long_text\\": \\"${formData.address}\\",
-                            \\"date4\\": \\"${formData.date}\\",
-                            \\"long_text6\\": \\"${formData.message}\\"
-                        }"
-                    ) {
-                        id
+                        create_item(
+                            board_id: 1933350367,
+                            item_name: "${formData.name}",
+                            column_values: "{
+                                \\"text\\": \\"${formData.name}\\",
+                                \\"text2\\": \\"${formData.email}\\",
+                                \\"dup__of_email_address\\": \\"${formData.phone}\\",
+                                \\"long_text\\": \\"${formData.address}\\",
+                                \\"date4\\": \\"${formData.date}\\",
+                                \\"long_text6\\": \\"${formData.message}\\"
+                            }"
+                        ) {
+                            id
+                        }
+                    }`;
+            
+                try {
+                    const response = await fetch('/api/submitForm', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ query }),
+                    });
+            
+                    const result = await response.json();
+            
+                    if (result.success) {
+                        modal.style.display = "block";
+                        form.reset(); // Reset the form after successful submission
+                    } else {
+                        alert('There was an error. Please try again later.');
                     }
-                }`;
-
-            // Send request to your Vercel API endpoint (this assumes your backend is running at /api/submitForm)
-            try {
-                const response = await fetch('/api/submitForm', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ query }),
-                });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    alert('Your submission has been successfully sent!');
-                    form.reset();  // Optionally reset the form after successful submission
-                } else {
-                    alert('There was an error. Please try again later.');
+                } catch (error) {
+                    alert('There was an error sending your data. Please try again later.');
+                    console.error(error);
                 }
-            } catch (error) {
-                alert('There was an error sending your data. Please try again later.');
-                console.error(error);
-            }
-        });
-    </script>
+            });
+            
+            // Close button functionality
+            closeModal.addEventListener('click', function() {
+                modal.style.display = "none";
+            });
+            
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+            
+            </script>
       
         <script>
             const menuToggle = document.getElementById('menu-toggle');
