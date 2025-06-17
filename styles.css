@@ -2119,6 +2119,16 @@ body.dark-mode .whitecolor {
     margin-top: 80%;
   }
 }
+.privacy-policy {
+  color: #8dbfe6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.privacy-policy:hover {
+  text-decoration: underline;
+}
 
 .booking-banner {
   background: url("assets/cta-bg3.png") no-repeat center center;
