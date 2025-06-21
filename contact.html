@@ -1,443 +1,524 @@
 <html lang="en">
-    <head>
-           <!--  Google Analytics -->
-           <script async src="https://www.googletagmanager.com/gtag/js?id=G-134Q08WMTY"></script>
-           <script>
-             window.dataLayer = window.dataLayer || [];
-             function gtag(){dataLayer.push(arguments);}
-             gtag('js', new Date());
-             gtag('config', 'G-134Q08WMTY');
-           </script>
-           
-        <!-- Meta Basics -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Maximum Build is your trusted home building and renovation expert. We specialise in renovations, new homes, high rises, extensions, office fits, and maintenance." />
-        <meta name="author" content="Maximum Build" />
-        <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="52YFa7x21GbSpVtYdheTi9BXpieTgaEliF9ib-fWOEw" />
-        <link rel="canonical" href="https://www.maximumbuild.com.au/" />
-      
-        <!-- Title -->
-        <title>Gold Coast Builders | Maximum Build - Home Building & Renovation Experts</title>
-      
-        <!-- Fonts and Icons -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-      
-        <!-- ✅ Favicon (update to actual path) -->
-        <link rel="icon" type="image/png" href="/favicon.png" type="image/png" sizes="48x48" />
-      
-        <!-- Styles -->
-        <link rel="stylesheet" href="styles.css" />
-      
-        <!-- ✅ Open Graph for Facebook/LinkedIn -->
-        <meta property="og:title" content="Gold Coast Builders | Maximum Build" />
-        <meta property="og:description" content="Looking for trusted Gold Coast builders? Maximum Build specialises in custom homes and renovations. Get a free quote today." />
-        <meta property="og:url" content="https://www.maximumbuild.com.au/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png" />
-      
-        <!-- ✅ Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Gold Coast Builders | Maximum Build" />
-        <meta name="twitter:description" content="Maximum Build offers custom home building and renovation services across the Gold Coast." />
-        <meta name="twitter:image" content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png" />
-      </head>
+  <head>
+    <!--  Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-134Q08WMTY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-134Q08WMTY");
+    </script>
 
-<style>
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1; /* lesgoo */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
-    backdrop-filter: blur(10px); /* Blurs the background */
-}
+    <!-- Meta Basics -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Maximum Build is your trusted home building and renovation expert. We specialise in renovations, new homes, high rises, extensions, office fits, and maintenance."
+    />
+    <meta name="author" content="Maximum Build" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="52YFa7x21GbSpVtYdheTi9BXpieTgaEliF9ib-fWOEw"
+    />
+    <link rel="canonical" href="https://www.maximumbuild.com.au/" />
 
-.modal-content {
-    background-color: #428BD2;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 35%; /* Could be more or less, depending on screen size */
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
-}
+    <!-- Title -->
+    <title>
+      Gold Coast Builders | Maximum Build - Home Building & Renovation Experts
+    </title>
 
-.modal-content p{
-    color: white !important;
-}
+    <!-- Fonts and Icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
+    <!-- ✅ Favicon (update to actual path) -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png"
+      type="image/png"
+      sizes="48x48"
+    />
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
 
-@media (max-width: 468px) {
+    <!-- ✅ Open Graph for Facebook/LinkedIn -->
+    <meta property="og:title" content="Gold Coast Builders | Maximum Build" />
+    <meta
+      property="og:description"
+      content="Looking for trusted Gold Coast builders? Maximum Build specialises in custom homes and renovations. Get a free quote today."
+    />
+    <meta property="og:url" content="https://www.maximumbuild.com.au/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png"
+    />
 
-    .modal-content{
-        width: 75%;
-        margin-top:80%;
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gold Coast Builders | Maximum Build" />
+    <meta
+      name="twitter:description"
+      content="Maximum Build offers custom home building and renovation services across the Gold Coast."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png"
+    />
+  </head>
 
+  <style>
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1; /* lesgoo */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+      backdrop-filter: blur(10px); /* Blurs the background */
     }
-}
+
+    .modal-content {
+      background-color: #428bd2;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 35%; /* Could be more or less, depending on screen size */
+      text-align: center;
+      border-radius: 10px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .modal-content p {
+      color: white !important;
+    }
+
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+
+    @media (max-width: 468px) {
+      .modal-content {
+        width: 75%;
+        margin-top: 80%;
+      }
+    }
 
     /* Form Section Styles */
-#request-quote {
-    max-width: 600px;  /* Smaller width for the form container */
-    margin: 0 auto;
-    padding: 30px 20px;  /* Reduced padding for a more compact look */
-    background-color: #fff;
-    border-radius: 15px;  /* Slightly smaller border radius */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 50px;
-}
-
-
-#request-quote h2 {
-    font-size: 2rem;  /* Slightly smaller font size */
-    color: #000;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-#request-quote p {
-    font-size: 1rem;  /* Slightly smaller paragraph text */
-    color: #000;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-#request-quote .form-wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 2 equal-width columns */ 
-    gap: 15px;  /* Reduced gap between form fields */
-    margin: 0 auto;
-    width: 500px;
-}
-
-#request-quote .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-#request-quote label {
-    font-size: 0.875rem;  /* Smaller label font size */
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 5px;
-    text-align: start;
-}
-
-#request-quote input, 
-#request-quote textarea {
-    width: 100%;  /* Make the input and textarea take up full width */
-    padding: 10px;  /* Reduced padding for more compact input fields */
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    font-size: 0.875rem;  /* Smaller font size */
-    margin-top: 5px;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-}
-
-#request-quote input {
-    height: 40px;  /* Reduced input height */
-}
-
-#request-quote textarea {
-    grid-column: span 2;  /* Make textarea span across both columns */
-    height: 120px;  /* Reduced height for a more compact form */
-}
-
-/* Button Styles */
-#request-quote .cta-button {
-    background-color: #22283E;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;  /* Full width for button */
-    border: none;
-    grid-column: span 2;  /* Ensure button spans both columns */
-    margin-top: 20px;  /* Space between button and form fields */
-}
-
-#request-quote .cta-button:hover {
-    background-color: #1d2b3a;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
     #request-quote {
-        max-width: 100%;  /* Make the form full width on smaller screens */
-        padding: 20px;  /* Less padding for smaller screens */
+      max-width: 600px; /* Smaller width for the form container */
+      margin: 0 auto;
+      padding: 30px 20px; /* Reduced padding for a more compact look */
+      background-color: #fff;
+      border-radius: 15px; /* Slightly smaller border radius */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 50px;
+    }
+
+    #request-quote h2 {
+      font-size: 2rem; /* Slightly smaller font size */
+      color: #000;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    #request-quote p {
+      font-size: 1rem; /* Slightly smaller paragraph text */
+      color: #000;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
     #request-quote .form-wrapper {
-        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
-        width: 392px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); /* 2 equal-width columns */
+      gap: 15px; /* Reduced gap between form fields */
+      margin: 0 auto;
+      width: 500px;
     }
 
-    #request-quote input, 
+    #request-quote .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    #request-quote label {
+      font-size: 0.875rem; /* Smaller label font size */
+      font-weight: 500;
+      color: #000;
+      margin-bottom: 5px;
+      text-align: start;
+    }
+
+    #request-quote input,
     #request-quote textarea {
-        max-width: 100%;  /* Ensure form fields are full width */
+      width: 100%; /* Make the input and textarea take up full width */
+      padding: 10px; /* Reduced padding for more compact input fields */
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 0.875rem; /* Smaller font size */
+      margin-top: 5px;
+      background-color: #f9f9f9;
+      box-sizing: border-box;
     }
 
-       
-    .cta-button {
+    #request-quote input {
+      height: 40px; /* Reduced input height */
+    }
+
+    #request-quote textarea {
+      grid-column: span 2; /* Make textarea span across both columns */
+      height: 120px; /* Reduced height for a more compact form */
+    }
+
+    /* Button Styles */
+    #request-quote .cta-button {
+      background-color: #22283e;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%; /* Full width for button */
+      border: none;
+      grid-column: span 2; /* Ensure button spans both columns */
+      margin-top: 20px; /* Space between button and form fields */
+    }
+
+    #request-quote .cta-button:hover {
+      background-color: #1d2b3a;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      #request-quote {
+        max-width: 100%; /* Make the form full width on smaller screens */
+        padding: 20px; /* Less padding for smaller screens */
+      }
+
+      #request-quote .form-wrapper {
+        grid-template-columns: 1fr; /* Stack form elements in 1 column on small screens */
+        width: 392px;
+      }
+
+      #request-quote input,
+      #request-quote textarea {
+        max-width: 100%; /* Ensure form fields are full width */
+      }
+
+      .cta-button {
         padding: 3px 15px; /* Adjust padding for mobile */
         font-size: 14px; /* Adjust the font size */
         margin-left: 10px; /* Space between title and button */
-    }
+      }
 
-    .date-time{
+      .date-time {
         width: 300px !important;
-    }
+      }
 
-    .benefits-list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-left: 0;
-            padding-right: 0;
-            margin-bottom: 70px;
-        }
+      .benefits-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 70px;
+      }
 
-    .cta-button1{
-        background-color: #22283E;
+      .cta-button1 {
+        background-color: #22283e;
         color: white;
         padding-left: 10px;
         padding-right: 10px;
         text-decoration: none;
         border-radius: 25px;
-        border: 2px solid #22283E;
+        border: 2px solid #22283e;
         margin-left: 5px;
         transition: background-color 0.3s;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-size: 14px;
         display: inline-block;
         text-align: center;
         line-height: 20px;
         margin-top: 23px;
-    }
+      }
 
-    #request-quote label {
-    font-size: 0.875rem;  /* Smaller label font size */
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 5px;
-    text-align: start;
-    }
+      #request-quote label {
+        font-size: 0.875rem; /* Smaller label font size */
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 5px;
+        text-align: start;
+      }
 
-    #request-quote{
+      #request-quote {
         padding: 0;
-    }
+      }
 
-    #request-quote p {
-    font-size: 1rem;
-    color: #000;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    line-height: 1.5;
-        }
+      #request-quote p {
+        font-size: 1rem;
+        color: #000;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 1.5;
+      }
 
-    #request-quote .form-wrapper {
+      #request-quote .form-wrapper {
         grid-template-columns: repeat(1, 1fr);
+      }
     }
-    
 
-    
-}
-
-
-@media (max-width: 468px) {
-
-
-    #request-quote .form-wrapper {
-        grid-template-columns: 1fr;  /* Stack form elements in 1 column on small screens */
+    @media (max-width: 468px) {
+      #request-quote .form-wrapper {
+        grid-template-columns: 1fr; /* Stack form elements in 1 column on small screens */
         width: 292px;
-    }
+      }
 
-    #request-quote h2  {
-       font-size: 1.5rem;
+      #request-quote h2 {
+        font-size: 1.5rem;
+      }
     }
-
-  
-}
-</style>
-<body>
+  </style>
+  <body>
     <header>
-        <nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <div class="menu-toggle" ></div>
-                <div class="menu-toggle"></div>
-                <div class="menu-toggle"></div>
-            </div>
-            <div class="mobile-logo">
-                <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="about.html">About Us</a>
-                 
-                    <ul class="dropdown">
-                        <li><a href="our-values.html">Our Values</a></li>
-                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </li>
-                <li><a href="services.html">Services</a>
-                
-                    <ul class="dropdown">
-                        <li><a href="renovation.html">Renovations</a></li>
-                        <li><a href="newhomes.html">New Homes</a></li>
-                        <li><a href="extensions.html">Extensions</a></li>
-                        <li><a href="fit-outs.html">Fit Outs</a></li>
-                        <li><a href="maintenance.html">Maintenance</a></li>
-                        <li><a href="insurance.html">Insurance</a></li>
-                    </ul>
+      <nav>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="menu-toggle"></div>
+          <div class="menu-toggle"></div>
+          <div class="menu-toggle"></div>
+        </div>
+        <div class="mobile-logo">
+          <a href="index.html" class="logo"
+            ><img src="assets/main_logo.png" alt="Company Logo"
+          /></a>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="about.html">About Us</a>
 
-                </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+            <ul class="dropdown">
+              <li><a href="our-values.html">Our Values</a></li>
+              <li><a href="why-choose-us.html">Why Choose Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
-            
-            <div class="toggle-container">
-                <input type="checkbox" id="mode-toggle" class="toggle-input">
-                <label for="mode-toggle" class="toggle-label">
-                    <span class="toggle-ball"></span>
-                    <i class="fas fa-sun icon sun-icon"></i>
-                    <i class="fas fa-moon icon moon-icon"></i>
-                </label>
-            </div>
-            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button2">Request Quotation</a>
-        </nav>
+          </li>
+          <li>
+            <a href="services.html">Services</a>
+
+            <ul class="dropdown">
+              <li><a href="renovation.html">Renovations</a></li>
+              <li><a href="newhomes.html">New Homes</a></li>
+              <li><a href="extensions.html">Extensions</a></li>
+              <li><a href="fit-outs.html">Fit Outs</a></li>
+              <li><a href="maintenance.html">Maintenance</a></li>
+              <li><a href="insurance.html">Insurance</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+
+        <div class="toggle-container">
+          <input type="checkbox" id="mode-toggle" class="toggle-input" />
+          <label for="mode-toggle" class="toggle-label">
+            <span class="toggle-ball"></span>
+            <i class="fas fa-sun icon sun-icon"></i>
+            <i class="fas fa-moon icon moon-icon"></i>
+          </label>
+        </div>
+        <a
+          href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2"
+          class="cta-button2"
+          >Request Quotation</a
+        >
+      </nav>
     </header>
 
-
-     
     <button class="scroll-up-arrow">&#8593;</button>
 
     <section class="booking-banner">
-        <div class="booking-banner-container">
-          <div class="banner-left">
-            <h2 style="font-family: Poppins";>Ready for a MAXIMUM BUILD?</h2>
-            <p style="font-family: Poppins";>
-              Whether you're planning a renovation, exploring your <br>
-              construction options, or just curious — we're here to guide <br>
-              you every step of the way.
-            </p>
-          </div>
-          <div class="banner-right">
-            <a style="font-family: Poppins"; Poppins href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="booking-button">Schedule a Call</a>
-          </div>
+      <div class="booking-banner-container">
+        <div class="banner-left">
+          <h2 style="font-family: Poppins" ;>Ready for a MAXIMUM BUILD?</h2>
+          <p style="font-family: Poppins" ;>
+            Whether you're planning a renovation, exploring your <br />
+            construction options, or just curious — we're here to guide <br />
+            you every step of the way.
+          </p>
         </div>
+        <div class="banner-right">
+          <a
+            style="font-family: Poppins"
+            ;
+            Poppins
+            href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2"
+            class="booking-button"
+            >Schedule a Call</a
+          >
+        </div>
+      </div>
     </section>
 
-  
     <footer class="footer">
-        <div class="footer-content">
-            <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
-            <div class="footer-left">
-                <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
-                <p>Phone <br><a href="tel:0418 872 166">0418 872 166</a></br></p>
-                <p>Email <a><br>admin@maximumbuild.com.au </a></br></p>
-                <p>Service Areas <a><br>Gold Coast & Brisbane</a></br></p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/maximumbuild1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="mailto:admin@maximumbuild.com.au" aria-label="Gmail"><i class="fas fa-envelope social-icon"></i></a>
-                    <a href="https://www.instagram.com/maximumbuild/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.linkedin.com/company/maximum-build/about/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin social-icon"></i></a>
-                </div>
-            </div>
-    
-            <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
-            <div class="footer-center">
-                <h2 style="margin-left: 10px;">Maximum Build</h2>
-                <ul style="text-align: left;">
-                    <li>QBCC License #150 149 22</li>
-                    <li>Master Builders QLD  #66149</li>
-                </ul>
-              
-                <div class="master-builders">
-                    <img src="assets/MBA_ProudMember_Logo.png" alt="Master Builders Logo" class="master-builders-logo">
-                </div>
-            </div>
-    
-            <!-- 3rd Grid: Right - Office Hours -->
-            <div class="footer-right">
-                <h3>Office Hours</h3>
-                <ul class="office-hours">
-                    <li><span class="day">Monday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Tuesday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Wednesday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Thursday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Friday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Saturday</span><span class="time">Closed</span></li>
-                    <li><span class="day">Sunday</span><span class="time">Closed</span></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
+        <div class="footer-left">
+          <a href="index.html" class="logo"
+            ><img src="assets/main_logo.png" alt="Company Logo"
+          /></a>
+          <p>Phone <br /><a href="tel:0418872166">0418 872 166</a></p>
+          <p>
+            Email <br /><a href="mailto:admin@maximumbuild.com.au"
+              >admin@maximumbuild.com.au</a
+            >
+          </p>
+          <p>
+            Service Areas <br /><a href="/contact.html"
+              >Gold Coast & Brisbane</a
+            >
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/maximumbuild1"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f social-icon"></i
+            ></a>
+            <a href="mailto:admin@maximumbuild.com.au" aria-label="Gmail"
+              ><i class="fas fa-envelope social-icon"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/maximumbuild/"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram social-icon"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/maximum-build/about/"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin social-icon"></i
+            ></a>
+          </div>
         </div>
-    
-        <!-- Horizontal Line -->
-        <hr class="footer-line">
-    
-        <!-- Copyright Notice -->
-        <div class="footer-bottom">
-            <p>© Maximum Build 2025. All rights reserved.</p>
-            <a class="privacy-policy" href="/privacy.html">Privacy Policy & Terms of Service</a>
+
+        <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
+        <div class="footer-center">
+          <h2 style="margin-left: 10px">Maximum Build</h2>
+          <ul style="text-align: left">
+            <li>QBCC License #150 149 22</li>
+            <li>Master Builders QLD #66149</li>
+          </ul>
+
+          <div class="master-builders">
+            <img
+              src="assets/MBA_ProudMember_Logo.png"
+              alt="Master Builders Logo"
+              class="master-builders-logo"
+            />
+          </div>
         </div>
+
+        <!-- 3rd Grid: Right - Office Hours -->
+        <div class="footer-right">
+          <h3>Office Hours</h3>
+          <ul class="office-hours">
+            <li>
+              <span class="day">Monday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Tuesday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Wednesday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Thursday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Friday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Saturday</span><span class="time">Closed</span>
+            </li>
+            <li>
+              <span class="day">Sunday</span><span class="time">Closed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal Line -->
+      <hr class="footer-line" />
+
+      <!-- Copyright Notice -->
+      <div class="footer-bottom">
+        <p>© Maximum Build 2025. All rights reserved.</p>
+        <a class="privacy-policy" href="/privacy.html"
+          >Privacy Policy & Terms of Service</a
+        >
+      </div>
     </footer>
-    
-    
-    
-    
-  
-    
 
     <script src="script.js"></script>
-<script>
+    <script>
+      const form = document.getElementById("quote-form");
+      const modal = document.getElementById("thankYouModal");
+      const closeModal = document.querySelector(".close");
 
-const form = document.getElementById('quote-form');
-const modal = document.getElementById('thankYouModal');
-const closeModal = document.querySelector('.close');
+      // Form submission logic
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-// Form submission logic
-form.addEventListener('submit', async function(event) {
-    event.preventDefault();
+        const formData = {
+          name: document.getElementById("name").value,
+          phone: document.getElementById("phone").value,
+          email: document.getElementById("email").value,
+          date: document.getElementById("date").value,
+          address: document.getElementById("address").value,
+          message: document.getElementById("message").value,
+          date: new Date().toISOString().split("T")[0], // Current date in YYYY-MM-DD format
+        };
 
-    const formData = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        date: document.getElementById('date').value,
-        address: document.getElementById('address').value,
-        message: document.getElementById('message').value,
-        date: new Date().toISOString().split('T')[0], // Current date in YYYY-MM-DD format
-    };
-
-    const query = `
+        const query = `
         mutation {
             create_item(
                 board_id: 1933350367,
@@ -455,102 +536,97 @@ form.addEventListener('submit', async function(event) {
             }
         }`;
 
-    try {
-        const response = await fetch('/api/submitForm', {
-            method: 'POST',
+        try {
+          const response = await fetch("/api/submitForm", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({ query }),
-        });
+          });
 
-        const result = await response.json();
+          const result = await response.json();
 
-        if (result.success) {
+          if (result.success) {
             modal.style.display = "block";
             document.body.style.overflow = "hidden";
             form.reset(); // Reset the form after successful submission
-        } else {
-            alert('There was an error. Please try again later.');
+          } else {
+            alert("There was an error. Please try again later.");
+          }
+        } catch (error) {
+          alert(
+            "There was an error sending your data. Please try again later."
+          );
+          console.error(error);
         }
-    } catch (error) {
-        alert('There was an error sending your data. Please try again later.');
-        console.error(error);
-    }
-});
+      });
 
-// Close button functionality
-closeModal.addEventListener('click', function() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-});
-
-// Close modal when clicking outside of it
-window.addEventListener('click', function(event) {
-    if (event.target === modal) {
+      // Close button functionality
+      closeModal.addEventListener("click", function () {
         modal.style.display = "none";
         document.body.style.overflow = "auto";
-    }
-});
+      });
 
-</script>
-
-  <script>
-    const toggleInput = document.getElementById('mode-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const menuToggle = document.getElementById('menu-toggle');
-
-    // Toggle nav links on burger icon click
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Optional: close the menu when a link is clicked
-    navLinks.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-    });
-
-  </script>
-  <script>
-    // Get the button element
-    const toggleButton = document.getElementById('mode-toggle');
-    const body = document.body;
-
-    // Check if dark mode is enabled in localStorage on page load
-    if (localStorage.getItem('dark-mode') === 'enabled') {
-        body.classList.add('dark-mode');
-    }
-
-    // Toggle dark mode and save the preference
-    toggleButton.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        
-        // Save the preference to localStorage
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('dark-mode', 'enabled');
-        } else {
-            localStorage.removeItem('dark-mode');
+      // Close modal when clicking outside of it
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
         }
-    });
+      });
+    </script>
 
-  </script>
-  <script>
- 
-  </script>
-<script>
-    window.onscroll = function() {
-    var header = document.querySelector('header'); // Select the header
-    var links = document.querySelectorAll('nav ul li a'); // Select all navigation links
+    <script>
+      const toggleInput = document.getElementById("mode-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      const menuToggle = document.getElementById("menu-toggle");
 
-    // When the page is scrolled down
-    if (window.scrollY > 0) {
-        header.classList.add('scrolled'); // Add the 'scrolled' class to the header
-    } else {
-        header.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
-    }
-};
+      // Toggle nav links on burger icon click
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
 
-</script>
-    
-</body>
+      // Optional: close the menu when a link is clicked
+      navLinks.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    </script>
+    <script>
+      // Get the button element
+      const toggleButton = document.getElementById("mode-toggle");
+      const body = document.body;
+
+      // Check if dark mode is enabled in localStorage on page load
+      if (localStorage.getItem("dark-mode") === "enabled") {
+        body.classList.add("dark-mode");
+      }
+
+      // Toggle dark mode and save the preference
+      toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+
+        // Save the preference to localStorage
+        if (body.classList.contains("dark-mode")) {
+          localStorage.setItem("dark-mode", "enabled");
+        } else {
+          localStorage.removeItem("dark-mode");
+        }
+      });
+    </script>
+    <script></script>
+    <script>
+      window.onscroll = function () {
+        var header = document.querySelector("header"); // Select the header
+        var links = document.querySelectorAll("nav ul li a"); // Select all navigation links
+
+        // When the page is scrolled down
+        if (window.scrollY > 0) {
+          header.classList.add("scrolled"); // Add the 'scrolled' class to the header
+        } else {
+          header.classList.remove("scrolled"); // Remove the 'scrolled' class when at the top
+        }
+      };
+    </script>
+  </body>
 </html>

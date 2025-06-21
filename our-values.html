@@ -1,326 +1,440 @@
 <html lang="en">
-    <head>
+  <head>
+    <!--  Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-134Q08WMTY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-134Q08WMTY");
+    </script>
 
-           <!--  Google Analytics -->
-           <script async src="https://www.googletagmanager.com/gtag/js?id=G-134Q08WMTY"></script>
-           <script>
-             window.dataLayer = window.dataLayer || [];
-             function gtag(){dataLayer.push(arguments);}
-             gtag('js', new Date());
-             gtag('config', 'G-134Q08WMTY');
-           </script>
-           
-        <!-- Meta Basics -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Maximum Build is your trusted home building and renovation expert. We specialise in renovations, new homes, high rises, extensions, office fits, and maintenance." />
-        <meta name="author" content="Maximum Build" />
-        <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="52YFa7x21GbSpVtYdheTi9BXpieTgaEliF9ib-fWOEw" />
-        <link rel="canonical" href="https://www.maximumbuild.com.au/" />
-      
-        <!-- Title -->
-        <title>Gold Coast Builders | Maximum Build - Home Building & Renovation Experts</title>
-      
-        <!-- Fonts and Icons -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-      
-        <!-- ✅ Favicon (update to actual path) -->
-        <link rel="icon" type="image/png" href="/favicon.png" type="image/png" sizes="48x48" />
-      
-        <!-- Styles -->
-        <link rel="stylesheet" href="styles.css" />
-      
-        <!-- ✅ Open Graph for Facebook/LinkedIn -->
-        <meta property="og:title" content="Gold Coast Builders | Maximum Build" />
-        <meta property="og:description" content="Looking for trusted Gold Coast builders? Maximum Build specialises in custom homes and renovations. Get a free quote today." />
-        <meta property="og:url" content="https://www.maximumbuild.com.au/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png" />
-      
-        <!-- ✅ Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Gold Coast Builders | Maximum Build" />
-        <meta name="twitter:description" content="Maximum Build offers custom home building and renovation services across the Gold Coast." />
-        <meta name="twitter:image" content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png" />
-</head>
+    <!-- Meta Basics -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Maximum Build is your trusted home building and renovation expert. We specialise in renovations, new homes, high rises, extensions, office fits, and maintenance."
+    />
+    <meta name="author" content="Maximum Build" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="52YFa7x21GbSpVtYdheTi9BXpieTgaEliF9ib-fWOEw"
+    />
+    <link rel="canonical" href="https://www.maximumbuild.com.au/" />
 
-<style>
+    <!-- Title -->
+    <title>
+      Gold Coast Builders | Maximum Build - Home Building & Renovation Experts
+    </title>
+
+    <!-- Fonts and Icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- ✅ Favicon (update to actual path) -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png"
+      type="image/png"
+      sizes="48x48"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- ✅ Open Graph for Facebook/LinkedIn -->
+    <meta property="og:title" content="Gold Coast Builders | Maximum Build" />
+    <meta
+      property="og:description"
+      content="Looking for trusted Gold Coast builders? Maximum Build specialises in custom homes and renovations. Get a free quote today."
+    />
+    <meta property="og:url" content="https://www.maximumbuild.com.au/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png"
+    />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gold Coast Builders | Maximum Build" />
+    <meta
+      name="twitter:description"
+      content="Maximum Build offers custom home building and renovation services across the Gold Coast."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png"
+    />
+  </head>
+
+  <style>
     /* Section Styles */
     .values-section {
-        background-color: #f9f9f9;
+      background-color: #f9f9f9;
     }
 
     .values-heading {
-        text-align: center;
-        font-size: 2.5rem;
-        color: #22283E;
-        margin-bottom: 40px;
+      text-align: center;
+      font-size: 2.5rem;
+      color: #22283e;
+      margin-bottom: 40px;
     }
 
     .values-list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 30px;
     }
 
     .value-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-            width: 350px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      width: 350px;
     }
 
     .value-card:hover {
-        transform: translateY(-10px);
+      transform: translateY(-10px);
     }
 
     .value-card i {
-        font-size: 3rem;
-        color: #22283E;
-        margin-bottom: 20px;
+      font-size: 3rem;
+      color: #22283e;
+      margin-bottom: 20px;
     }
 
     .value-card h3 {
-        font-size: 1.5rem;
-        color: #22283E;
-        margin-bottom: 10px;
-        font-family: 'Poppins';
+      font-size: 1.5rem;
+      color: #22283e;
+      margin-bottom: 10px;
+      font-family: "Poppins";
     }
 
     .value-card p {
-        font-size: 1rem;
-        color: #555;
-        font-family: 'Poppins';
+      font-size: 1rem;
+      color: #555;
+      font-family: "Poppins";
     }
 
     /* Responsive Adjustments */
     @media (max-width: 768px) {
-        .values-list {
-            grid-template-columns: 1fr;
-        }
+      .values-list {
+        grid-template-columns: 1fr;
+      }
 
-        .values-heading {
-            font-size: 2rem;
-        }
+      .values-heading {
+        font-size: 2rem;
+      }
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <div class="menu-toggle" ></div>
-                <div class="menu-toggle"></div>
-                <div class="menu-toggle"></div>
-            </div>
-            <div class="mobile-logo">
-                <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="about.html">About Us</a>
-                 
-                    <ul class="dropdown">
-                        <li><a href="our-values.html">Our Values</a></li>
-                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </li>
-                <li><a href="services.html">Services</a>
-                
-                    <ul class="dropdown">
-                        <li><a href="renovation.html">Renovations</a></li>
-                        <li><a href="newhomes.html">New Homes</a></li>
-                        <li><a href="extensions.html">Extensions</a></li>
-                        <li><a href="fit-outs.html">Fit Outs</a></li>
-                        <li><a href="maintenance.html">Maintenance</a></li>
-                        <li><a href="insurance.html">Insurance</a></li>
-                    </ul>
+      <nav>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="menu-toggle"></div>
+          <div class="menu-toggle"></div>
+          <div class="menu-toggle"></div>
+        </div>
+        <div class="mobile-logo">
+          <a href="index.html" class="logo"
+            ><img src="assets/main_logo.png" alt="Company Logo"
+          /></a>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="about.html">About Us</a>
 
-                </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+            <ul class="dropdown">
+              <li><a href="our-values.html">Our Values</a></li>
+              <li><a href="why-choose-us.html">Why Choose Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
-            
-            <div class="toggle-container">
-                <input type="checkbox" id="mode-toggle" class="toggle-input">
-                <label for="mode-toggle" class="toggle-label">
-                    <span class="toggle-ball"></span>
-                    <i class="fas fa-sun icon sun-icon"></i>
-                    <i class="fas fa-moon icon moon-icon"></i>
-                </label>
-            </div>
-            <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button2">Request Quotation</a>
-        </nav>
+          </li>
+          <li>
+            <a href="services.html">Services</a>
+
+            <ul class="dropdown">
+              <li><a href="renovation.html">Renovations</a></li>
+              <li><a href="newhomes.html">New Homes</a></li>
+              <li><a href="extensions.html">Extensions</a></li>
+              <li><a href="fit-outs.html">Fit Outs</a></li>
+              <li><a href="maintenance.html">Maintenance</a></li>
+              <li><a href="insurance.html">Insurance</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+
+        <div class="toggle-container">
+          <input type="checkbox" id="mode-toggle" class="toggle-input" />
+          <label for="mode-toggle" class="toggle-label">
+            <span class="toggle-ball"></span>
+            <i class="fas fa-sun icon sun-icon"></i>
+            <i class="fas fa-moon icon moon-icon"></i>
+          </label>
+        </div>
+        <a
+          href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2"
+          class="cta-button2"
+          >Request Quotation</a
+        >
+      </nav>
     </header>
 
     <button class="scroll-up-arrow">&#8593;</button>
 
     <section class="values-section">
-        <div class="service-area1">
-            <h2 style="color:white" class="carousel-heading">Our Values</h2>
-            <div style="text-align: center;" class="about-text">
-                <p>" The Success of your project is our Priority "</p>
-            </div>
+      <div class="service-area1">
+        <h2 style="color: white" class="carousel-heading">Our Values</h2>
+        <div style="text-align: center" class="about-text">
+          <p>" The Success of your project is our Priority "</p>
+        </div>
+      </div>
+
+      <div class="values-list">
+        <!-- Value Card 1 -->
+        <div class="value-card">
+          <i class="fas fa-handshake"></i>
+          <h3>Integrity</h3>
+          <p>
+            We believe in honest communication and transparency with our
+            clients. Integrity is the foundation of every project we undertake.
+          </p>
         </div>
 
-        <div class="values-list">
-            <!-- Value Card 1 -->
-            <div class="value-card">
-                <i class="fas fa-handshake"></i>
-                <h3>Integrity</h3>
-                <p>We believe in honest communication and transparency with our clients. Integrity is the foundation of every project we undertake.</p>
-            </div>
-            
-            <!-- Value Card 2 -->
-            <div class="value-card">
-                <i class="fas fa-tools"></i>
-                <h3>Quality Craftsmanship</h3>
-                <p>Our team of experts is dedicated to providing high-quality work that exceeds expectations and stands the test of time.</p>
-            </div>
-
-            <!-- Value Card 3 -->
-            <div class="value-card">
-                <i class="fas fa-users"></i>
-                <h3>Customer Focused</h3>
-                <p>Our clients are at the heart of everything we do. We are committed to delivering personalised solutions that meet your needs and goals. We focus on transparency and communication of the highest standards from start to finish.                </p>
-            </div>
-
-            <!-- Value Card 4 -->
-            <div class="value-card">
-                <i class="fas fa-clipboard-check"></i>
-                <h3>Commitment to Safety</h3>
-                <p>We prioritise safety on every job site. We ensure the safety of our team, clients, and the community through careful planning and execution.</p>
-            </div>
-
-            <!-- Value Card 5 -->
-            <div class="value-card">
-                <i class="fas fa-recycle"></i>
-                <h3>Sustainability</h3>
-                <p>We are dedicated to using sustainable practices and materials in our projects, ensuring minimal environmental impact while enhancing the longevity of our work.</p>
-            </div>
-
-            <!-- Value Card 6 -->
-            <div class="value-card">
-                <i class="fas fa-trophy"></i>
-                <h3>Excellence</h3>
-                <p>We constantly strive for excellence in all aspects of our work, from design to execution. We strive to deliver outstanding results that meet the needs and expectations of each client every time.</p>
-            </div>
+        <!-- Value Card 2 -->
+        <div class="value-card">
+          <i class="fas fa-tools"></i>
+          <h3>Quality Craftsmanship</h3>
+          <p>
+            Our team of experts is dedicated to providing high-quality work that
+            exceeds expectations and stands the test of time.
+          </p>
         </div>
+
+        <!-- Value Card 3 -->
+        <div class="value-card">
+          <i class="fas fa-users"></i>
+          <h3>Customer Focused</h3>
+          <p>
+            Our clients are at the heart of everything we do. We are committed
+            to delivering personalised solutions that meet your needs and goals.
+            We focus on transparency and communication of the highest standards
+            from start to finish.
+          </p>
+        </div>
+
+        <!-- Value Card 4 -->
+        <div class="value-card">
+          <i class="fas fa-clipboard-check"></i>
+          <h3>Commitment to Safety</h3>
+          <p>
+            We prioritise safety on every job site. We ensure the safety of our
+            team, clients, and the community through careful planning and
+            execution.
+          </p>
+        </div>
+
+        <!-- Value Card 5 -->
+        <div class="value-card">
+          <i class="fas fa-recycle"></i>
+          <h3>Sustainability</h3>
+          <p>
+            We are dedicated to using sustainable practices and materials in our
+            projects, ensuring minimal environmental impact while enhancing the
+            longevity of our work.
+          </p>
+        </div>
+
+        <!-- Value Card 6 -->
+        <div class="value-card">
+          <i class="fas fa-trophy"></i>
+          <h3>Excellence</h3>
+          <p>
+            We constantly strive for excellence in all aspects of our work, from
+            design to execution. We strive to deliver outstanding results that
+            meet the needs and expectations of each client every time.
+          </p>
+        </div>
+      </div>
     </section>
 
-     
     <footer class="footer">
-        <div class="footer-content">
-            <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
-            <div class="footer-left">
-                <a href="index.html" class="logo"><img src="assets/main_logo.png" alt="Company Logo"></a>
-                <p>Phone <br><a href="tel:0418 872 166">0418 872 166</a></br></p>
-                <p>Email <a><br>admin@maximumbuild.com.au </a></br></p>
-                <p>Service Areas <a><br>Gold Coast & Brisbane </a></br></p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/maximumbuild1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="mailto:admin@maximumbuild.com.au" aria-label="Gmail"><i class="fas fa-envelope social-icon"></i></a>
-                    <a href="https://www.instagram.com/maximumbuild/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://www.linkedin.com/company/maximum-build/about/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin social-icon"></i></a>
-                </div>
-            </div>
-    
-            <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
-            <div class="footer-center">
-                <h2 style="margin-left: 10px;">Maximum Build</h2>
-                <ul style="text-align: left;">
-                    <li>QBCC License #150 149 22</li>
-                    <li>Master Builders QLD  #66149</li>
-                </ul>
-                <div class="master-builders">
-                    <img src="assets/MBA_ProudMember_Logo.png" alt="Master Builders Logo" class="master-builders-logo">
-                </div>
-            </div>
-    
-            <!-- 3rd Grid: Right - Office Hours -->
-            <div class="footer-right">
-                <h3>Office Hours</h3>
-                <ul class="office-hours">
-                    <li><span class="day">Monday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Tuesday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Wednesday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Thursday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Friday</span><span class="time">7:00am - 4:00pm</span></li>
-                    <li><span class="day">Saturday</span><span class="time">Closed</span></li>
-                    <li><span class="day">Sunday</span><span class="time">Closed</span></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <!-- 1st Grid: Left - Logo, Contact Info, Social Icons -->
+        <div class="footer-left">
+          <a href="index.html" class="logo"
+            ><img src="assets/main_logo.png" alt="Company Logo"
+          /></a>
+          <p>Phone <br /><a href="tel:0418872166">0418 872 166</a></p>
+          <p>
+            Email <br /><a href="mailto:admin@maximumbuild.com.au"
+              >admin@maximumbuild.com.au</a
+            >
+          </p>
+          <p>
+            Service Areas <br /><a href="/contact.html"
+              >Gold Coast & Brisbane</a
+            >
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/maximumbuild1"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f social-icon"></i
+            ></a>
+            <a href="mailto:admin@maximumbuild.com.au" aria-label="Gmail"
+              ><i class="fas fa-envelope social-icon"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/maximumbuild/"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram social-icon"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/maximum-build/about/"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin social-icon"></i
+            ></a>
+          </div>
         </div>
-    
-        <!-- Horizontal Line -->
-        <hr class="footer-line">
-    
-        <!-- Copyright Notice -->
-        <div class="footer-bottom">
-            <p>© Maximum Build 2025. All rights reserved.</p>
-            <a class="privacy-policy" href="/privacy.html">Privacy Policy & Terms of Service</a>
+
+        <!-- 2nd Grid: Center - Company Info, License, Master Builders Logo -->
+        <div class="footer-center">
+          <h2 style="margin-left: 10px">Maximum Build</h2>
+          <ul style="text-align: left">
+            <li>QBCC License #150 149 22</li>
+            <li>Master Builders QLD #66149</li>
+          </ul>
+          <div class="master-builders">
+            <img
+              src="assets/MBA_ProudMember_Logo.png"
+              alt="Master Builders Logo"
+              class="master-builders-logo"
+            />
+          </div>
         </div>
+
+        <!-- 3rd Grid: Right - Office Hours -->
+        <div class="footer-right">
+          <h3>Office Hours</h3>
+          <ul class="office-hours">
+            <li>
+              <span class="day">Monday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Tuesday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Wednesday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Thursday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Friday</span
+              ><span class="time">7:00am - 4:00pm</span>
+            </li>
+            <li>
+              <span class="day">Saturday</span><span class="time">Closed</span>
+            </li>
+            <li>
+              <span class="day">Sunday</span><span class="time">Closed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal Line -->
+      <hr class="footer-line" />
+
+      <!-- Copyright Notice -->
+      <div class="footer-bottom">
+        <p>© Maximum Build 2025. All rights reserved.</p>
+        <a class="privacy-policy" href="/privacy.html"
+          >Privacy Policy & Terms of Service</a
+        >
+      </div>
     </footer>
 
     <script src="script.js"></script>
 
-
     <script>
-        const toggleInput = document.getElementById('mode-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const menuToggle = document.getElementById('menu-toggle');
+      const toggleInput = document.getElementById("mode-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      const menuToggle = document.getElementById("menu-toggle");
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
 
-        navLinks.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
+      navLinks.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
     </script>
     <script>
-        // Get the button element
-        const toggleButton = document.getElementById('mode-toggle');
-        const body = document.body;
-    
-        // Check if dark mode is enabled in localStorage on page load
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-            body.classList.add('dark-mode');
+      // Get the button element
+      const toggleButton = document.getElementById("mode-toggle");
+      const body = document.body;
+
+      // Check if dark mode is enabled in localStorage on page load
+      if (localStorage.getItem("dark-mode") === "enabled") {
+        body.classList.add("dark-mode");
+      }
+
+      // Toggle dark mode and save the preference
+      toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+
+        // Save the preference to localStorage
+        if (body.classList.contains("dark-mode")) {
+          localStorage.setItem("dark-mode", "enabled");
+        } else {
+          localStorage.removeItem("dark-mode");
         }
-    
-        // Toggle dark mode and save the preference
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Save the preference to localStorage
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('dark-mode', 'enabled');
-            } else {
-                localStorage.removeItem('dark-mode');
-            }
-        });
-    
-      </script>
-      <script>
-        window.onscroll = function() {
-        var header = document.querySelector('header'); // Select the header
-        var links = document.querySelectorAll('nav ul li a'); // Select all navigation links
-    
+      });
+    </script>
+    <script>
+      window.onscroll = function () {
+        var header = document.querySelector("header"); // Select the header
+        var links = document.querySelectorAll("nav ul li a"); // Select all navigation links
+
         // When the page is scrolled down
         if (window.scrollY > 0) {
-            header.classList.add('scrolled'); // Add the 'scrolled' class to the header
+          header.classList.add("scrolled"); // Add the 'scrolled' class to the header
         } else {
-            header.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
+          header.classList.remove("scrolled"); // Remove the 'scrolled' class when at the top
         }
-    };
-    
+      };
     </script>
-</body>
+  </body>
 </html>
