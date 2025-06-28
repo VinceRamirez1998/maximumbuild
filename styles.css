@@ -99,7 +99,7 @@ nav {
 }
 
 .nav-links .dropdown li a:hover {
-  background-color: #00001a;
+  background-color: #0078e1;
   color: white !important;
 }
 
@@ -214,12 +214,12 @@ nav {
 
 /* General button styling */
 .cta-button {
-  background-color: #22283e; /* Background color */
+  background-color: #0078e1; /* Background color */
   color: white;
   padding: 10px 20px; /* Adjust button padding for better spacing */
   text-decoration: none; /* Remove underline */
   border-radius: 0px !important; /* Rounded corners */
-  border: 2px solid #22283e; /* Dark border */
+  border: 2px solid #0078e1; /* Dark border */
   transition: background-color 0.3s; /* Smooth background color transition */
   font-family: "Poppins"; /* Font family */
   display: inline-block; /* Button size adjusts to text */
@@ -278,33 +278,51 @@ nav {
 }
 
 .cta-button1 {
-  background-color: #22283e; /* Darker background on hover */
+  background-color: #0078e1; /* Darker background on hover */
   color: white;
   padding: 5px 12px; /* Adjust button padding */
   text-decoration: none; /* Remove underline */
-  border-radius: 25px; /* Rounded corners */
-  border: 2px solid #22283e;
+  border-radius: 0px; /* Rounded corners */
+  border: 2px solid #0078e1;
   margin-left: 5px; /* Space from the toggle */
   transition: background-color 0.3s; /* Smooth background transition */
   font-family: "Poppins";
+}
+
+.cta-button1:hover {
+  transition: background-color 0.3s; /* Smooth background transition */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #0078e1; /* Darker background on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 .cta-button2 {
-  background-color: #22283e; /* Darker background on hover */
+  background-color: #0078e1; /* Darker background on hover */
   color: white;
   padding: 5px 12px; /* Adjust button padding */
   text-decoration: none; /* Remove underline */
-  border-radius: 25px; /* Rounded corners */
-  border: 2px solid #22283e;
+  border-radius: 0px; /* Rounded corners */
+  border: 2px solid #0078e1;
   margin-left: 5px; /* Space from the toggle */
   transition: background-color 0.3s; /* Smooth background transition */
   font-family: "Poppins";
 }
-
+.cta-button2:hover {
+  transition: background-color 0.3s; /* Smooth background transition */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #0078e1; /* Darker background on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+  cursor: pointer; /* Pointer cursor on hover */
+}
 .cta-button:hover {
   background-color: #22283e; /* Darker background on hover */
   color: white;
   font-family: "Poppins";
+  transition: background-color 0.3s; /* Smooth background transition */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 /* Darken effect on hover */
@@ -587,6 +605,7 @@ section {
     justify-content: space-between;
     z-index: 1;
     font-size: 14px;
+    display: none !important;
   }
 
   .logo img {
@@ -1525,6 +1544,7 @@ body.dark-mode .whitecolor {
   height: 34px; /* Height of the toggle */
   align-items: center; /* Center toggle vertically */
   margin-left: 10px; /* Reduce margin for a closer fit */
+  display: none !important;
 }
 
 .toggle-input {
@@ -1651,6 +1671,7 @@ body.dark-mode .whitecolor {
 
   .toggle-container {
     margin-left: auto; /* Move toggle to the right */
+    display: none !important;
   }
 
   /* Styles for toggle input */
@@ -1750,14 +1771,18 @@ body.dark-mode .whitecolor {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: black;
+  background-color: #0078e1;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 .learn-more-button:hover {
-  background-color: #292a2b !important;
+  transition: background-color 0.3s; /* Smooth background transition */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #0078e1; /* Darker background on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 .image-content h2 {
@@ -1769,7 +1794,7 @@ body.dark-mode .whitecolor {
 }
 
 #service-areas {
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
 
 #why-use-maximumbuild {
