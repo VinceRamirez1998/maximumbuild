@@ -73,7 +73,7 @@ nav {
 }
 
 .nav-links .dropdown {
-  display: none; /* Hide dropdown by default */
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -84,6 +84,10 @@ nav {
   list-style: none;
   width: 200px;
   z-index: 1000;
+}
+
+.mobile-only {
+  display: none !important;
 }
 
 .nav-links li:hover .dropdown {
@@ -482,6 +486,10 @@ section {
 
   .service-area1 {
     padding-bottom: 60px !important;
+  }
+
+  .mobile-only {
+    display: block !important;
   }
 
   .about-image {
@@ -1631,7 +1639,7 @@ body.dark-mode .whitecolor {
 /* Responsive styles */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide links by default */
+    display: none;
     flex-direction: column; /* Stack links vertically */
     position: absolute; /* Position it absolutely */
     background-color: #fff; /* Background color for light mode */
