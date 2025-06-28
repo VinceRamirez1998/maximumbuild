@@ -218,7 +218,7 @@ nav {
   color: white;
   padding: 10px 20px; /* Adjust button padding for better spacing */
   text-decoration: none; /* Remove underline */
-  border-radius: 25px; /* Rounded corners */
+  border-radius: 0px !important; /* Rounded corners */
   border: 2px solid #22283e; /* Dark border */
   transition: background-color 0.3s; /* Smooth background color transition */
   font-family: "Poppins"; /* Font family */
@@ -244,7 +244,7 @@ nav {
   }
 
   .cta-button {
-    padding: 3px 15px; /* Adjust padding for mobile */
+    padding: 15px 25px !important; /* Adjust padding for mobile */
     font-size: 14px; /* Adjust the font size */
     margin-left: 10px; /* Space between title and button */
   }
@@ -720,7 +720,7 @@ html {
   height: 350px; /* Fixed height */
   object-fit: cover; /* Ensure the image covers the area without distortion */
   transition: transform 0.3s ease; /* Transition for image size */
-  border-radius: 30px;
+  border-radius: 2px;
 }
 
 .service-area:hover .service-content img {
