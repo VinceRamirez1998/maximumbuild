@@ -247,6 +247,7 @@ nav {
     padding: 15px 25px !important; /* Adjust padding for mobile */
     font-size: 14px; /* Adjust the font size */
     margin-left: 10px; /* Space between title and button */
+    background-color: #0078e1;
   }
   .heading-part {
     font-size: 27px !important;
@@ -274,6 +275,7 @@ nav {
   .cta-button {
     padding: 5px 16px; /* Adjust padding for medium screens */
     font-size: 15px; /* Adjust font size */
+    background-color: #0078e1;
   }
 }
 
@@ -477,6 +479,10 @@ section {
     align-items: center; /* Center items */
   }
 
+  .service-area1 {
+    padding-bottom: 60px !important;
+  }
+
   .about-image {
     margin-bottom: 20px; /* Space between images and text */
     padding: 0 15px; /* Add horizontal padding to create space */
@@ -562,13 +568,13 @@ section {
 @media (max-width: 768px) {
   /* Button styles */
   .cta-button1 {
-    background-color: #22283e;
+    background-color: #0078e1;
     color: white;
     padding-left: 5px;
     padding-right: 5px;
     text-decoration: none;
-    border-radius: 25px;
-    border: 2px solid #22283e;
+    border-radius: 0px;
+    border: 2px solid #0078e1;
     margin-left: 5px;
     transition: background-color 0.3s;
     font-family: "Poppins";
@@ -576,14 +582,14 @@ section {
   }
 
   .cta-button2 {
-    background-color: #22283e;
+    background-color: #0078e1;
     color: white;
     padding-top: 7px;
     padding-left: 7px;
     padding-right: 7px;
     text-decoration: none;
-    border-radius: 25px;
-    border: 2px solid #22283e;
+    border-radius: 0px;
+    border: 2px solid #0078e1;
     margin-left: 5px;
     transition: background-color 0.3s;
     font-family: "Poppins";
@@ -756,6 +762,7 @@ html {
   background-color: rgba(0, 0, 0, 0.7); /* Dark background */
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .service-area:hover img {
