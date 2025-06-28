@@ -1246,7 +1246,7 @@ html {
 
 .customer-rating {
   font-size: 1.5em; /* Larger font size for rating */
-  color: gold; /* Gold color for stars */
+  color: #0078e1; /* Gold color for stars */
   margin: 10px 0;
 }
 
