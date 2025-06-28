@@ -2231,6 +2231,7 @@ body.dark-mode .whitecolor {
   font-weight: 600;
   white-space: nowrap;
   transition: background 0.3s ease, color 0.3s ease;
+  font-family: "Poppins" !important;
 }
 
 .booking-button:hover {
