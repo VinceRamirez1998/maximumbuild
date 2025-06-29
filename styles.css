@@ -232,6 +232,10 @@ nav {
   margin-top: 15px; /* Space between the content and button */
 }
 
+.mobile-header-logo {
+  display: none;
+}
+
 /* Container for title and button */
 .title-and-button {
   display: flex; /* Aligns the title and button horizontally */
@@ -245,6 +249,30 @@ nav {
 
 /* For mobile devices */
 @media screen and (max-width: 768px) {
+  .mobile-header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #0e6cc5, #003f7f);
+    padding: 10px 0;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .mobile-header-logo.scrolled {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+
+  .mobile-header-logo img {
+    width: 160px;
+    height: auto;
+  }
+
+  .mobile-logo {
+    display: none;
+  }
   .title-and-button {
     flex-wrap: wrap; /* Allow the title and button to wrap onto new lines */
     justify-content: center; /* Centers the title and button if they wrap */
