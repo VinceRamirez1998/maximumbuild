@@ -50,7 +50,7 @@
             right: 0;
             bottom: 0;
             background: black;
-            opacity: 20%;
+            opacity: 70%;
         }
 
     .customfont{
@@ -152,6 +152,83 @@
     font-family: 'Poppins';
     border: 2px solid white;
 }
+
+.about-hero {
+  background: #fff;
+  padding: 48px 16px 0 16px;
+  text-align: center;
+}
+
+.about-hero__content {
+  margin-bottom: 32px;
+}
+
+.about-hero__title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8rem;
+  color: #4fa3e3;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 0.3em;
+}
+
+.about-hero__subtitle {
+  font-family: 'Inter', sans-serif;
+  color: #757575;
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.about-hero__image-container {
+  position: relative;
+  max-width: 950px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(50,50,50,0.08);
+}
+
+.about-hero__image {
+  width: 100%;
+  display: block;
+  max-height: 340px;
+  object-fit: cover;
+}
+
+.about-hero__icon-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 16px rgba(80,80,80,0.13);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero__icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .about-hero__title {
+    font-size: 2rem;
+  }
+  .about-hero__image-container {
+    max-width: 98vw;
+  }
+  .about-hero__icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
     
 
 
@@ -441,6 +518,21 @@
    
 
     <div id="learn-more">
+    
+        <section class="about-hero">
+            <div class="about-hero__content">
+              <h1 class="about-hero__title">Innovative Design</h1>
+              <p class="about-hero__subtitle">Design That Matters &bull; Impact That Lasts</p>
+            </div>
+            <div class="about-hero__image-container">
+              <img src="your-image.png" alt="Modern interior with ocean view" class="about-hero__image" />
+              <div class="about-hero__icon-wrapper">
+                <img src="your-logo.png" alt="Logo" class="about-hero__icon" />
+              </div>
+            </div>
+          </section>
+          
+
     <section style="padding-bottom:60px;" id="tomsabout">
         <div class="tomsabout">
             <div class="top-links">
