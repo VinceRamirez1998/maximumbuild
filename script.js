@@ -191,17 +191,3 @@ window.onscroll = function () {
     header.classList.remove("scrolled"); // Remove the 'scrolled' class when at the top
   }
 };
-
-///scroll effect for mobile header
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  const mobileHeader = document.querySelector(".mobile-header-logo");
-
-  if (window.scrollY >= 1) {
-    header?.classList.add("scrolled");
-    mobileHeader?.classList.add("scrolled");
-  } else {
-    header?.classList.remove("scrolled");
-    mobileHeader?.classList.remove("scrolled");
-  }
-});
