@@ -21,6 +21,7 @@ header {
 header.scrolled {
   background: #00001a; /* Dark background when scrolled */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+  padding-top: 60px !important;
 }
 
 nav ul li a {
