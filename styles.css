@@ -239,6 +239,10 @@ nav {
   gap: 10px; /* Space between title and button */
 }
 
+.maximumimpact {
+  font-weight: 800;
+}
+
 /* For mobile devices */
 @media screen and (max-width: 768px) {
   .title-and-button {
@@ -266,6 +270,8 @@ nav {
   }
   .maximumimpact {
     font-size: 20px !important;
+    color: white;
+    font-weight: 800;
   }
 }
 
@@ -486,6 +492,7 @@ section {
 
   .service-area1 {
     padding-bottom: 60px !important;
+    padding-bottom: 20px !important;
   }
 
   .mobile-only {
@@ -764,7 +771,7 @@ html {
 .service-content .description {
   display: none; /* Hidden by default */
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
