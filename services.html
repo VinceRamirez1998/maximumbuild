@@ -414,7 +414,7 @@
         width: 250px; /* Allow full width up to max-width */
       }
 
-      .hero {
+      .hero3 {
         position: relative;
         height: 85vh; /* Full viewport height */
         width: 100%;
@@ -533,7 +533,7 @@
         .bg-video {
           object-fit: contain !important; /* Ensure video covers the whole background */
         }
-        .hero {
+        .hero3 {
           height: 30vh;
           padding-top: 0;
         }
@@ -658,7 +658,7 @@
       }
     </style>
 
-    <div class="hero">
+    <div class="hero3">
       <video
         autoplay
         muted
@@ -668,7 +668,7 @@
         id="videoSource"
         class="bg-video"
       >
-        <source src="assets/service-banner-bg.mp4" type="video/mp4" />
+        <source src="assets/service-banner-bg2.mp4" type="video/mp4" />
         <p>Your browser does not support the video tag.</p>
       </video>
       <!-- <div class="hero-content">
@@ -687,9 +687,10 @@
           <a href="renovation.html">Renovation</a> |
           <a href="newhomes.html">New Homes</a> |
           <a href="insurance.html">Insurance</a> |
+          <a href="rectification-work.html">Rectification Work</a> |
           <a href="extensions.html">Extensions</a> |
           <a href="fit-outs.html">Fit Outs</a> |
-          <a href="maintenance.html">Maintenance</a>
+          <a href="maintenance.html">Maintenance</a> |
         </div>
         <div class="about-content">
           <div class="text-content">
@@ -713,6 +714,11 @@
               <li>
                 <strong class="bluecolor">Insurance</strong>: Expertise in
                 constructing and fixing damage caused to your property.
+              </li>
+              <li>
+                <strong class="bluecolor">Rectification Work</strong>: Expert
+                solutions to identify and resolve structural or aesthetic
+                building defects with precision and care.
               </li>
               <li>
                 <strong class="bluecolor">Extensions</strong>: Expand your
@@ -1194,10 +1200,10 @@
 
         if (window.matchMedia("(max-width: 768px)").matches) {
           // Mobile
-          videoSource.src = "assets/service-banner-bg.mp4";
+          videoSource.src = "assets/service-banner-bg2.mp4";
         } else {
           // Desktop
-          videoSource.src = "assets/service-banner-bg.mp4";
+          videoSource.src = "assets/service-banner-bg2.mp4";
         }
 
         video.load(); // Reload video with new source
