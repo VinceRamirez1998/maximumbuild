@@ -46,6 +46,201 @@
         <meta name="twitter:description" content="Maximum Build offers custom home building and renovation services across the Gold Coast." />
         <meta name="twitter:image" content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png" />
 </head>
+
+<style>
+    /*-----------------------------------
+      Globals
+    -----------------------------------*/
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+    .dark-theme {
+        --dark-navy: #0f172a;
+        --mid-navy: #1e293b;
+        --light-blue: #60a5fa;
+        --gray-700: #1e293b;
+        --gray-400: #94a3b8;
+        }
+        *,
+        *::before,
+        *::after {
+        box-sizing: border-box;
+        }
+
+  
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f1f5f9;
+    }
+    a {
+      text-decoration: none;
+    }
+  
+    /*-----------------------------------
+      Why Partner Section
+    -----------------------------------*/
+    .why-partner {
+      padding: 2.5rem 1rem;
+    }
+    .why-partner__inner {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+      height: 420px;
+    }
+  
+    /* Left panel (gradient + text) */
+    .why-partner__content {
+      flex: 1 1 50%;
+      padding: 0rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(
+        135deg,
+        var(--dark-navy) 0%,
+        var(--mid-navy) 50%,
+        var(--light-blue) 100%
+      );
+      color: #f1f5f9;
+      height: 100%;
+      /* remove scrolling */
+      overflow: visible;
+    }
+    .why-partner__title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: #fff;
+    }
+    .why-partner__subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      color: #e2e8f0;
+    }
+    .why-partner__text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      color: #e2e8f0;
+    }
+    .why-partner__btn {
+      display: inline-block;
+      width: 167px;
+      padding: 0.65rem 1.5rem;
+      margin-top: 1rem;
+      background: #fff;
+      color: var(--dark-navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .why-partner__btn:hover {
+      background: #f1f1f1;
+      transform: translateY(-2px);
+    }
+  
+    /* Right panel (white + visual) */
+    .why-partner__visual {
+      flex: 1 1 50%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      height: 100%;
+    }
+    .why-partner__visual img {
+      max-width: 70%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0.5rem;
+    }
+
+    .benefits-list{
+        padding-left:327px !important;
+        padding-right:327px !important;
+        width: 100% !important;
+    }
+  
+    /*-----------------------------------
+      Responsive Breakpoints
+    -----------------------------------*/
+    @media (max-width: 1024px) {
+      .why-partner__inner {
+        flex-direction: column;
+        height: auto;
+      }
+      .why-partner__content,
+      .why-partner__visual {
+        flex: 1 1 100%;
+        height: auto;
+      }
+      .why-partner__content {
+        padding: 2rem 1.5rem;
+        text-align: center;
+      }
+      .why-partner__btn {
+        width: 100%;
+        padding: 0.85rem 1rem;
+      }
+    }
+  
+    @media (max-width: 600px) {
+        .why-partner__inner {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .why-partner__visual img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+      .why-partner {
+        padding: 2rem 0.5rem;
+      }
+      .why-partner__title {
+        font-size: 1.75rem;
+      }
+      .why-partner__subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+      .why-partner__text {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+      .why-partner__content {
+        padding: 1.5rem 1rem;
+      }
+      .why-partner__visual {
+        padding: 1rem;
+      }
+
+      #tomsabout{
+        padding-bottom: 0 !important;
+      }
+    }
+  
+    @media (max-width: 400px) {
+      .why-partner__btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+  
+
 <body>
     <header>
         <nav>
@@ -303,6 +498,7 @@
                 padding-left: 0;
                 padding-right: 0;
                 margin-bottom: 70px;
+                padding: 0 !important;
             }
     
         .cta-button1{
@@ -407,6 +603,31 @@
                 </div>
             </section>
 
+            <!-- WHY PARTNER SECTION -->
+            <section class="why-partner dark-theme">
+                    <div class="why-partner__inner">
+                    <!-- LEFT: Text -->
+                    <div class="why-partner__content">
+                        <h2 class="why-partner__title">Why Partner with Us?</h2>
+                        <p class="why-partner__text">
+                        At <strong>Maximum Build</strong>, we take pride in being one of the Gold Coast's prominent construction companies, dedicated to delivering dependable solutions tailored to the needs of multi-unit developments and body corporates. Our expertise lies in swiftly identifying and resolving issues, ensuring your building not only adheres to regulations but also operates at its best, both aesthetically and functionally.
+                        </p>
+                        <p class="why-partner__text">
+                            From building rectifications to stunning renovations, our skilled team manages every detail, from coordinating all trades to overseeing the entire process from inception to completion, ensuring a seamless experience. Trust Maximum Build for reliable solutions and exceptional results
+                        </p>
+                        <a href="https://calendly.com/rozanne-slipper/30min" class="why-partner__btn">Schedule a Call</a>
+                    </div>
+                
+                    <!-- RIGHT: Visual on white -->
+                    <!-- <div class="why-partner__visual">
+                        <img
+                        src="https://www.maximumbuild.com.au/assets/maximumlogo.png"
+                        alt="Construction illustration"
+                        />
+                    </div> -->
+                    </div>
+                </section>
+  
             <section id="why-use-maximumbuild">
                 <div style="padding-bottom: 30px;" class="service-area1">
                     <h2 style="color:white" class="carousel-heading">Need a Rectification Work?</h2>

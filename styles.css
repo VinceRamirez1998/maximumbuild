@@ -1393,7 +1393,7 @@ html {
 
 @media (max-width: 480px) {
   .carousel-heading {
-    font-size: 1.1rem !important; /* Smaller font size for mobile */
+    font-size: 1.5rem !important; /* Smaller font size for mobile */
   }
   .nav-links li a {
     margin-left: 30px;
