@@ -105,7 +105,11 @@
         h1 {
         font-size: 1.5rem; /* or 40px */
         }
-
+        @media (max-width: 767px) {
+        .hero-content {
+            display: none !important;
+        }
+        }
 
     .loader {
     position: fixed;
@@ -869,7 +873,7 @@ body.dark-mode .cta-button:hover {
         
         if (window.matchMedia('(max-width: 768px)').matches) {
             // Mobile
-            videoSource.src = 'assets/maximumbg.mp4';
+            videoSource.src = 'assets/mobile-maximumbuild.mp4';
         } else {
             // Desktop
             videoSource.src = 'assets/maximumvid.mp4';
