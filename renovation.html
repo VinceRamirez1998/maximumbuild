@@ -48,7 +48,23 @@
         <meta name="twitter:image" content="https://www.maximumbuild.com.au/assets/maximumbuild_goldcoast.png" />
 </head>
 
+<style>
+    .mobile-break::before {
+  content: "\A"; /* line break */
+  white-space: pre;
+  display: none;
+}
 
+@media (max-width: 480px) {
+  .mobile-break::before {
+    display: inline;
+  }
+  .mobile-break{
+    font-size: 1.5rem !important;
+  }
+}
+
+</style>
 <body>
     <header>
         <nav>
@@ -406,7 +422,7 @@
 
                         </div>
                         <div style="margin-bottom: 20px;" class="image-content">
-                            <img src="assets/rennovations.jpg" alt="Innovative Design" />
+                            <img src="assets/new-renovation.webp" alt="Innovative Design" />
                         </div>
                     </div>
                 </div>
@@ -414,7 +430,9 @@
 
             <section id="why-use-maximumbuild">
                 <div style="padding-bottom: 30px;" class="service-area1">
-                    <h2 style="color:white" class="carousel-heading">Need a Renovations Builder Gold Coast?</h2>
+                    <h2 style="color:white" class="carousel-heading">
+                        Need a Renovations Builder <span class="mobile-break">Gold Coast?</span>
+                      </h2>
                     <div style="text-align: center;" class="about-text">
                         <a>Contact our team today!</a>
                         <a href="https://forms.monday.com/forms/0d5bd2c7396d3e8230fb7af73ac1f50b?r=apse2" class="cta-button1">Request Quotation</a>
