@@ -401,10 +401,20 @@ body.dark-mode .cta-button:hover {
     
 
     <div class="hero">
-        <video autoplay muted loop playsinline preload="metadata"  id="videoSource" class="bg-video">
+        <video
+            id="videoSource"
+            class="bg-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/poster-desktop.jpg" 
+            >
             <source src="assets/maximumvid.mp4" type="video/mp4">
             <p>Your browser does not support the video tag.</p>
-        </video>
+            </video>
+ 
         <div class="hero-content">
             <h1 class="customfont">
               Innovative Design
@@ -867,30 +877,33 @@ body.dark-mode .cta-button:hover {
         });
     </script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const video = document.getElementById('bgVideo');
-        const source = document.getElementById('videoSource');
-        const isMobile = window.matchMedia('(max-width: 486px)').matches;
-    
-        if (isMobile) {
-            source.src = 'assets/mobile-vid.mp4';
-            video.setAttribute('poster', 'assets/poster-mobile.jpeg');
-        }
-    
-        video.load();
-    
-        // Wait for loader to finish
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').style.display = 'none';
-                video.play().catch(err => {
-                    console.warn('Autoplay failed:', err);
-                    // fallback (optional): show poster image only
-                });
-            }, 4000);
-        });
+    const video = document.getElementById('videoSource');
+  
+    function updateVideoSource() {
+      const isMobile = window.innerWidth <= 468;
+  
+      // swap out the <source>
+      video.querySelector('source').src = isMobile
+        ? 'assets/mobile-vid.mp4'
+        : 'assets/maximumvid.mp4';
+  
+      // swap the poster too
+      video.poster = isMobile
+        ? 'assets/poster-mobile.jpg'
+        : 'assets/poster-desktop.jpg';
+  
+      video.load();
+      video.play().catch(() => {});
+    }
+  
+    window.addEventListener('DOMContentLoaded', updateVideoSource);
+    window.addEventListener('resize', () => {
+      clearTimeout(window._resizeTimer);
+      window._resizeTimer = setTimeout(updateVideoSource, 150);
     });
-    </script>
+  </script>
+  
+
     
 
     
