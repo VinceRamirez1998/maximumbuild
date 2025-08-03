@@ -201,7 +201,7 @@ body.dark-mode .cta-button:hover {
 
 .hero {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 89vh; /* Full viewport height */
     width: 100%;
     overflow: hidden; /* Ensures video doesn't overflow */
     display: flex;
@@ -221,6 +221,7 @@ body.dark-mode .cta-button:hover {
 }
 
 .bg-video {
+    -webkit-playsinline: true;
         position: absolute;
         top: 0;
         left: 0;
@@ -867,20 +868,25 @@ body.dark-mode .cta-button:hover {
         });
     </script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const video = document.querySelector('.bg-video');
-        const videoSource = document.getElementById('videoSource');
-        
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            // Mobile
-            videoSource.src = 'assets/ios-mobile.mp4';
-        } else {
-            // Desktop
-            videoSource.src = 'assets/maximumvid.mp4';
-        }
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('videoSource');
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-        video.load(); // Reload video with new source
-    });
+  video.src = isMobile
+    ? 'assets/ios-mobile.mp4'
+    : 'assets/maximumvid.mp4';
+
+  // force iOS to treat it as muted
+  video.muted = true;
+  video.setAttribute('muted','');
+
+  video.load();
+  video.play().catch(err => {
+    // swallow “not allowed” errors
+    console.warn('video autoplay failed:', err);
+  });
+});
+
 </script>
 
     
