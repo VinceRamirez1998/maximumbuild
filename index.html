@@ -201,7 +201,7 @@ body.dark-mode .cta-button:hover {
 
 .hero {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 90vh; /* Full viewport height */
     width: 100%;
     overflow: hidden; /* Ensures video doesn't overflow */
     display: flex;
@@ -293,6 +293,9 @@ body.dark-mode .cta-button:hover {
         align-items: center; /* Center content horizontally */
         width: 100%;
     }
+    .hero::before {
+    display: none !important;
+  }
 
     .hero-content p {
         font-size: 1rem;
@@ -868,31 +871,44 @@ body.dark-mode .cta-button:hover {
     </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const video = document.querySelector('.bg-video');
+        const video = document.getElementById('videoSource');
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
     
-        // Force attributes on video tag
-        video.muted = true;
-        video.autoplay = true;
-        video.playsInline = true;
-        video.loop = true;
-    
-        // Create and assign new <source> element
+        // Setup source
         const source = document.createElement('source');
-        source.src = isMobile ? 'assets/mobile-view.mp4' : 'assets/maximumvid.mp4';
+        source.src = isMobile ? 'assets/mobile-vid.mp4' : 'assets/maximumvid.mp4';
         source.type = 'video/mp4';
-    
-        // Replace any existing source
         video.innerHTML = '';
         video.appendChild(source);
     
-        // Reload and try to play
+        // Common autoplay-safe attributes
+        video.muted = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.preload = 'auto';
+    
+        // Mobile only: add poster image
+        if (isMobile) {
+            video.setAttribute('poster', 'assets/video-poster.jpg');
+        }
+    
         video.load();
-        video.play().catch(err => {
-            console.warn('Autoplay failed:', err);
+    
+        // Delay playback until after loader hides
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                video.play().catch(err => console.warn('Autoplay failed:', err));
+            }, 4000);
         });
     });
     </script>
+    
     
 
     
