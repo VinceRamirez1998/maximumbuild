@@ -401,20 +401,10 @@ body.dark-mode .cta-button:hover {
     
 
     <div class="hero">
-        <video
-            id="videoSource"
-            class="bg-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="assets/poster-desktop.jpg" 
-            >
+        <video autoplay muted loop playsinline preload="metadata"  id="videoSource" class="bg-video">
             <source src="assets/maximumvid.mp4" type="video/mp4">
             <p>Your browser does not support the video tag.</p>
-            </video>
- 
+        </video>
         <div class="hero-content">
             <h1 class="customfont">
               Innovative Design
@@ -872,39 +862,26 @@ body.dark-mode .cta-button:hover {
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').style.display = 'none'; // Hide the loader
-                // document.body.style.overflow = 'auto';
+                document.body.style.overflow = 'auto'; // Allow scrolling again
             }, 4000); // 3 seconds
         });
     </script>
 <script>
-    const video = document.getElementById('videoSource');
-  
-    function updateVideoSource() {
-      const isMobile = window.innerWidth <= 468;
-  
-      // swap out the <source>
-      video.querySelector('source').src = isMobile
-        ? 'assets/mobile-vid.mp4'
-        : 'assets/maximumvid.mp4';
-  
-      // swap the poster too
-      video.poster = isMobile
-        ? 'assets/poster-mobile.jpg'
-        : 'assets/poster-desktop.jpg';
-  
-      video.load();
-      video.play().catch(() => {});
-    }
-  
-    window.addEventListener('DOMContentLoaded', updateVideoSource);
-    window.addEventListener('resize', () => {
-      clearTimeout(window._resizeTimer);
-      window._resizeTimer = setTimeout(updateVideoSource, 150);
-    });
-  </script>
-  
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.querySelector('.bg-video');
+        const videoSource = document.getElementById('videoSource');
+        
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            // Mobile
+            videoSource.src = 'assets/mobile-vid.mp4';
+        } else {
+            // Desktop
+            videoSource.src = 'assets/maximumvid.mp4';
+        }
 
-    
+        video.load(); // Reload video with new source
+    });
+</script>
 
     
 </body>
