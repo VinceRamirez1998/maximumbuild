@@ -109,33 +109,7 @@
         .hero-content {
             display: none !important;
         }
-        
         }
-
-        @media (max-width: 468px) {
-        .hero::before {
-            display: none !important;
-        }
-        }
-
-        .mobile-poster-overlay {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background-color: black;
-            pointer-events: none;
-            }
-      
-        .mobile-poster-overlay img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        }
-
 
     .loader {
     position: fixed;
@@ -319,9 +293,6 @@ body.dark-mode .cta-button:hover {
         align-items: center; /* Center content horizontally */
         width: 100%;
     }
-    .hero::before {
-    display: none !important;
-  }
 
     .hero-content p {
         font-size: 1rem;
@@ -430,15 +401,10 @@ body.dark-mode .cta-button:hover {
     
 
     <div class="hero">
-        <div class="mobile-poster-overlay">
-            <img src="assets/poster-mobile.jpg" alt="Mobile Poster">
-          </div>
-          
         <video autoplay muted loop playsinline preload="metadata"  id="videoSource" class="bg-video">
             <source src="assets/maximumvid.mp4" type="video/mp4">
             <p>Your browser does not support the video tag.</p>
         </video>
-        
         <div class="hero-content">
             <h1 class="customfont">
               Innovative Design
@@ -896,51 +862,35 @@ body.dark-mode .cta-button:hover {
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').style.display = 'none'; // Hide the loader
-                document.body.style.overflow = 'auto'; // Allow scrolling again
+                // document.body.style.overflow = 'auto';
             }, 4000); // 3 seconds
         });
     </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const video = document.getElementById('videoSource');
-        const isMobile = window.matchMedia('(max-width: 468px)').matches;
+        const video = document.getElementById('bgVideo');
+        const source = document.getElementById('videoSource');
+        const isMobile = window.matchMedia('(max-width: 486px)').matches;
     
-        // Setup source
-        const source = document.createElement('source');
-        source.src = isMobile ? 'assets/mobile-vid.mp4' : 'assets/maximumvid.mp4';
-        source.type = 'video/mp4';
-        video.innerHTML = '';
-        video.appendChild(source);
-    
-        // Common autoplay-safe attributes
-        video.muted = true;
-        video.autoplay = true;
-        video.loop = true;
-        video.playsInline = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        video.preload = 'auto';
-    
-        // Mobile only: add poster image
         if (isMobile) {
+            source.src = 'assets/mobile-vid.mp4';
             video.setAttribute('poster', 'assets/poster-mobile.jpeg');
-
         }
     
         video.load();
     
-        // Delay playback until after loader hides
+        // Wait for loader to finish
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').style.display = 'none';
-                document.body.style.overflow = 'auto';
-                video.play().catch(err => console.warn('Autoplay failed:', err));
+                video.play().catch(err => {
+                    console.warn('Autoplay failed:', err);
+                    // fallback (optional): show poster image only
+                });
             }, 4000);
         });
     });
     </script>
-    
     
 
     
