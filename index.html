@@ -417,7 +417,16 @@ body.dark-mode .cta-button:hover {
     
 
     <div class="hero">
-        <video autoplay muted loop playsinline preload="metadata"  id="videoSource" class="bg-video">
+        <video
+        id="videoSource"
+        class="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="auto"
+      >
             <source src="assets/maximumvid.mp4" type="video/mp4">
             <p>Your browser does not support the video tag.</p>
         </video>
@@ -887,20 +896,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('videoSource');
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
+  // Swap source
   video.src = isMobile
     ? 'assets/ios-mobile.mp4'
     : 'assets/maximumvid.mp4';
 
-  // force iOS to treat it as muted
+  // Force muted and inline
   video.muted = true;
   video.setAttribute('muted','');
+  video.playsInline = true;
+  video.setAttribute('webkit-playsinline','');
 
   video.load();
   video.play().catch(err => {
-    // swallow “not allowed” errors
-    console.warn('video autoplay failed:', err);
+    console.warn('iOS autoplay blocked:', err);
   });
 });
+
 
 </script>
 
