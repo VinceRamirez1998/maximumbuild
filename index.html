@@ -226,7 +226,7 @@ body.dark-mode .cta-button:hover {
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: fill !important; /* Ensure video covers the whole background */
+        object-fit: cover !important; /* Ensure video covers the whole background */
         z-index: -1; /* Send the video behind the content */
     }
 
@@ -873,7 +873,7 @@ body.dark-mode .cta-button:hover {
         
         if (window.matchMedia('(max-width: 768px)').matches) {
             // Mobile
-            videoSource.src = 'assets/mobile-maximumbuild.mp4';
+            videoSource.src = 'assets/sample.mp4';
         } else {
             // Desktop
             videoSource.src = 'assets/maximumvid.mp4';
