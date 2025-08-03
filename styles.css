@@ -339,7 +339,7 @@ nav {
 
 /* Darken effect on hover */
 .hero:hover {
-  /* filter: brightness(75%); Darken image on hover */
+  filter: brightness(100%) !important; /* Darken image on hover */
 }
 
 .hero2:hover {
