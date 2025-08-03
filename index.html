@@ -201,7 +201,7 @@ body.dark-mode .cta-button:hover {
 
 .hero {
     position: relative;
-    height: 90vh; /* Full viewport height */
+    height: 100vh; /* Full viewport height */
     width: 100%;
     overflow: hidden; /* Ensures video doesn't overflow */
     display: flex;
@@ -869,19 +869,31 @@ body.dark-mode .cta-button:hover {
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const video = document.querySelector('.bg-video');
-        const videoSource = document.getElementById('videoSource');
-        
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            // Mobile
-            videoSource.src = 'assets/sample.mp4';
-        } else {
-            // Desktop
-            videoSource.src = 'assets/maximumvid.mp4';
-        }
-
-        video.load(); // Reload video with new source
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    
+        // Force attributes on video tag
+        video.muted = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.loop = true;
+    
+        // Create and assign new <source> element
+        const source = document.createElement('source');
+        source.src = isMobile ? 'assets/mobile-view.mp4' : 'assets/maximumvid.mp4';
+        source.type = 'video/mp4';
+    
+        // Replace any existing source
+        video.innerHTML = '';
+        video.appendChild(source);
+    
+        // Reload and try to play
+        video.load();
+        video.play().catch(err => {
+            console.warn('Autoplay failed:', err);
+        });
     });
-</script>
+    </script>
+    
 
     
 </body>
